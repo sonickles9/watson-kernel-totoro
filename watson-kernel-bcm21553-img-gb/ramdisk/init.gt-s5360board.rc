@@ -1,0 +1,253 @@
+on init
+
+    # sdcard
+    mkdir /mnt/sdcard 0000 system system
+    symlink /mnt/sdcard /sdcard
+
+    # sd-ext
+    export SD_EXT_DIRECTORY /mnt/sd-ext
+    mkdir /mnt/sd-ext 0000 system system
+    symlink /mnt/sd-ext /sd-ext
+
+    # vold.fstab (workaround)
+    symlink /system/etc/vold.fstab /etc/vold.fstab
+
+    # zRAM - see https://source.android.com/devices/low-ram.html
+    write /proc/sys/vm/page-cluster 0
+
+on fs
+
+# mount device partitions
+    mount yaffs2 mtd@system /system
+    mount yaffs2 mtd@system /system ro remount
+    mount yaffs2 mtd@userdata /data nosuid nodev
+    mount yaffs2 mtd@cache /cache nosuid nodev
+
+on post-fs
+
+    chown system system /sys/module/bcm215xx_pm/parameters/debug
+
+# Force Power Down
+    chmod 0660 /sys/class/sec/pm/power_down
+    chown root system /sys/class/sec/pm/power_down
+
+# CPU Governor
+    chmod 0660 /sys/class/sec/cpu/cpu_gov
+    chown root system /sys/class/sec/cpu/cpu_gov
+
+# waketime CSP461560
+    chown radio system /sys/module/bcm_fuse_net/parameters/pdp_waketime
+
+on boot
+	chmod 0666 /dev/v3d
+#permisssion for cacheops
+    chmod 0666 /dev/cache-ops
+
+# Adjust socket buffer to enlarge TCP receive window for high bandwidth
+    write /proc/sys/net/ipv4/tcp_adv_win_scale 1
+
+    chown system system /sys/class/backlight/aat1401-backlight/brightness
+    chown system system /sys/class/backlight/pwm-keypad-backlight.0/brightness
+
+    chmod 0660 /dev/bcm_kril
+    chown root radio /dev/bcm_kril
+    chmod 0660 /dev/bcm_vsp
+    chmod 0660 /dev/bcm_atc
+    chown system system /dev/bcm_kpdp
+    chown shell system /dev/bcm_atc
+    chmod 0660 /dev/bcm_alsa_voip
+    chown radio system /dev/bcm_alsa_voip
+    chmod 0666 /dev/v3d
+    insmod /system/lib/modules/hx170dec.ko
+    insmod /system/lib/modules/h6270enc.ko
+#    insmod /system/lib/modules/gememalloc.ko
+    insmod /system/lib/modules/brcm_switch.ko
+    insmod /system/lib/modules/bcm_headsetsw.ko
+    chmod 0777 /dev/camera
+    chown system system /sys/bcm/cache
+    chmod 0771 /dev/ttyGS0
+    chown system system /dev/ttyGS0
+    chown system system /dev/ttyS0
+
+    chown system system /sys/module/bcm215xx_pm/parameters/debug
+
+    # for silent reset
+    chown system system /proc/dump_enable
+    chown system system /proc/silent
+
+# # for multi csc
+    chown radio radio /proc/LinuStoreIII/efs_info
+    chmod 0664 /proc/LinuStoreIII/efs_info
+# # for protecting key string
+    chown radio radio /proc/LinuStoreIII/keystr
+    chmod 0664 /proc/LinuStoreIII/keystr
+# # for ril_prop
+    chown radio radio /proc/LinuStoreIII/ril_prop
+    chmod 0664 /proc/LinuStoreIII/ril_prop
+# # for fsbuild_check
+    chown radio radio /proc/LinuStoreIII/fsbuild_check
+    chmod 0664 /proc/LinuStoreIII/fsbuild_check
+
+#snamy.jeong@samsung.com_110502 loopback test mode.
+    chmod 0666 /dev/bcm_alsa_pcg
+
+# for Dump On/Off
+    chmod 0777 /data/dump_enable
+
+# Force Power Down
+    chmod 0660 /sys/class/sec/pm/power_down
+    chown root system /sys/class/sec/pm/power_down
+# CPU Governor
+    chmod 0660 /sys/class/sec/cpu/cpu_gov
+    chown root system /sys/class/sec/cpu/cpu_gov
+
+## for YAMAHA geomagnetic sensor
+#accelerometer
+    chown system input /sys/class/input/input3/enable
+    chown system input /sys/class/input/input3/delay
+    chown system input /sys/class/input/input3/wake
+#geomagnetic
+    chown system input /sys/class/input/input1/enable
+    chown system input /sys/class/input/input1/delay
+    chown system input /sys/class/input/input1/wake
+#geomagnetic_raw
+    chown compass input /sys/class/input/input2/offsets
+#orientation
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/delay
+    chown system input /sys/class/input/input4/wake
+
+## sensor mounting direction
+#accelerometer
+    write /sys/class/input/input3/position 3
+#geomagnetic
+    write /sys/class/input/input1/position 0
+
+# waketime CSP461560
+    chown radio system /sys/module/bcm_fuse_net/parameters/pdp_waketime
+
+# Set the correct bluetooth MAC Address
+    setprop ro.bt.bdaddr_path "/data/misc/bluetooth/.nvmac_bt.info"
+
+# Define broadcom gps properties
+    setprop gps.fd.block "false"
+
+#for ASE application
+    mkdir /data/brcm
+    mkdir /data/brcm/ase
+    mkdir /data/brcm/ase/extras
+    mkdir /data/brcm/ase/scripts
+    chmod 0775 /data/brcm
+    chmod 0775 /data/brcm/ase
+    chmod 0775 /data/brcm/ase/extras
+    chmod 0775 /data/brcm/ase/scripts
+    copy /system/etc/adb.sh /data/brcm/ase/scripts/adb.sh
+    copy /system/etc/rndis.sh /data/brcm/ase/scripts/rndis.sh
+    copy /system/etc/logcfg.sh /data/brcm/ase/scripts/logcfg.sh
+    copy /system/etc/modem.sh /data/brcm/ase/scripts/modem.sh
+    copy /system/etc/atmode.sh /data/brcm/ase/scripts/atmode.sh
+    copy /system/etc/usbconfig.sh /data/brcm/ase/scripts/usbconfig.sh
+
+    chmod 0775 /data/brcm/ase/scripts/adb.sh
+    chmod 0775 /data/brcm/ase/scripts/rndis.sh
+    chmod 0775 /data/brcm/ase/scripts/logcfg.sh
+    chmod 0775 /data/brcm/ase/scripts/modem.sh
+    chmod 0775 /data/brcm/ase/scripts/atmode.sh
+    chmod 0775 /data/brcm/ase/scripts/usbconfig.sh
+
+# for kexec
+    chmod 755 /system/bin/kexec
+    chmod 0771 /data
+    chmod 0777 /data/kexec.sh
+
+#runSysCmd
+    mkdir /data/misc/utils 0775
+# DUN uses /data/misc/utils
+    chown system system /data/misc/utils
+
+#permisssion for cacheops
+    chmod 0666 /dev/cache-ops
+
+# WIFI
+    chmod 0770 /system/etc/wifi
+    chmod 0660 /system/etc/wifi/wpa_supplicant.conf
+    chown wifi wifi /system/etc/wifi/wpa_supplicant.conf
+    #wpa_supplicant control socket for android wifi.c (android private socket)
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    chmod 0770 /data/misc/wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    chown wifi wifi /data/misc/wifi
+    chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+   	mkdir /data/misc/dhcp 0770 dhcp dhcp
+   	chown dhcp dhcp /data/misc/dhcp
+	chmod 0775 /data/misc/dhcp
+
+    # Let wifi control BT_VREG_CTL GPIO
+    chown wifi wifi /sys/class/gpio/gpio21/value
+    chmod 0664 /sys/class/gpio/gpio21/value
+
+# Bluetooth
+    chown root bluetooth /dev/ttyS1
+    chmod 0660 /dev/ttyS1
+    chown root bluetooth /sys/class/rfkill/rfkill0
+    chown root bluetooth /sys/class/rfkill/rfkill0/state
+    chown root bluetooth /sys/class/rfkill/rfkill0/claim
+    chown root bluetooth /sys/class/rfkill/rfkill0/soft
+    chmod 0664 /sys/class/rfkill/rfkill0/state
+    chmod 0664 /sys/class/rfkill/rfkill0/claim
+    chmod 0664 /sys/class/rfkill/rfkill0/soft
+    chown root bluetooth /sys/class/sound/controlC0/FMDirectPlay
+    chmod 0664 /sys/class/sound/controlC0/FMDirectPlay
+    chown root net_bt_admin /sys/devices/system/cpu/cpufreq/bcm21553/dvfs
+    chmod 0664 /sys/devices/system/cpu/cpufreq/bcm21553/dvfs
+    setprop service.brcm.bt.pbap_mode btld
+    copy /system/etc/local.prop /data/local.prop
+    chown system bluetooth /data/local.prop
+    chmod 0660 /data/local.prop
+
+    setprop ro.bt.bdaddr_path "/data/misc/bluetooth/.nvmac_bt.info"
+
+#for GPS files
+
+    chown gps system /dev/ttyS2
+
+    write /sys/class/gpio/export 56
+    chown gps system /sys/class/gpio/gpio56/value
+    chown gps system /sys/class/gpio/gpio56/direction
+    write /sys/class/gpio/gpio56/value 0
+    write /sys/class/gpio/gpio56/direction out
+
+    write /sys/class/gpio/export 23
+    chown gps system /sys/class/gpio/gpio23/value
+    chown gps system /sys/class/gpio/gpio23/direction
+    write /sys/class/gpio/gpio23/value 0
+    write /sys/class/gpio/gpio23/direction out
+    chown gps system /data/gps/glgpsctrl
+    chown gps system /dev/bcm_gps
+    chown gps system /dev/bcm_cntin
+
+#for VT config
+    mkdir /data/vt 0775
+    chmod 0775 /system/etc/vt/3g324mConfig.val
+    chmod 0775 /system/etc/vt/testplay.3gp
+    chmod 0775 /system/etc/vt/testplay.jpg
+    chmod 0775 /system/etc/vt/testplay.bmp
+    copy /system/etc/vt/3g324mConfig.val /data/vt/3g324mConfig.val
+    copy /system/etc/vt/testplay.3gp /data/vt/testplay.3gp
+    copy /system/etc/vt/testplay.jpg /data/vt/testplay.jpg
+    copy /system/etc/vt/testplay.bmp /data/vt/testplay.bmp
+    chmod 0775 /data/vt/3g324mConfig.val
+    chmod 0775 /data/vt/testplay.3gp
+    chmod 0775 /data/vt/testplay.jpg
+    chmod 0775 /data/vt/testplay.bmp
+    chmod 0775 /mnt/sdcard/vt
+
+    # Use misc partition for flash OTP access
+    chown root radio /dev/mtd/mtd9
+    chmod 0640 /dev/mtd/mtd9
+
+
+
+service charger /charger
+    class charger

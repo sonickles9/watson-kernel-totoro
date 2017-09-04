@@ -1,0 +1,50 @@
+import init.gt-s5360board.bt.rc
+import init.gt-s5360board.fs.rc
+import init.gt-s5360board.gps.rc
+import init.gt-s5360board.sensors.rc
+import init.gt-s5360board.usb.rc
+import init.gt-s5360board.wifi.rc
+
+on init
+
+    # sdcard
+    export EXTERNAL_STORAGE /mnt/sdcard
+    mkdir /mnt/sdcard 0000 system system
+    symlink /mnt/sdcard /sdcard
+
+    # sd-ext
+    export SD_EXT_DIRECTORY /mnt/sd-ext
+    mkdir /mnt/sd-ext 0000 system system
+    symlink /mnt/sd-ext /sd-ext
+
+    # vold.fstab (workaround)
+    symlink /system/etc/vold.fstab /etc/vold.fstab
+
+    # zRAM - see https://source.android.com/devices/low-ram.html
+    write /proc/sys/vm/page-cluster 0
+
+on fs
+
+# mount device partitions
+    mount yaffs2 mtd@system /system
+    mount yaffs2 mtd@system /system ro remount
+    mount yaffs2 mtd@userdata /data nosuid nodev
+    mount yaffs2 mtd@cache /cache nosuid nodev
+
+on post-fs-data
+
+    chown system system /sys/module/bcm215xx_pm/parameters/debug
+
+# Force Power Down
+    chmod 0660 /sys/class/sec/pm/power_down
+    chown root system /sys/class/sec/pm/power_down
+
+# CPU Governor
+    chmod 0660 /sys/class/sec/cpu/cpu_gov
+    chown root system /sys/class/sec/cpu/cpu_gov
+    
+# waketime CSP461560
+    chown radio system /sys/module/bcm_fuse_net/parameters/pdp_waketime
+
+service charger /charger
+    class charger

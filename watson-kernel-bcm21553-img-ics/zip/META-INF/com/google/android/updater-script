@@ -1,0 +1,23 @@
+ui_print("GetuX Kernel CM11 (Only for TOTORO)");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print(">> Unpacking kernel..............(V)");
+ui_print("> Please Wait       ");
+ui_print("");
+ui_print(">> Installing GetuX Kernel v1 BETA 2...(V)");
+ui_print("");
+run_program("/system/bin/mount -w /dev/block/mtdblk8 /system");
+show_progress(0.100000, 0);
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "boot"),
+       delete("/tmp/boot.img"));
+package_extract_dir("system", "/system/");
+ui_print(">> Kernel Installed.............(V)");
+show_progress(0.800000, 0);
+ui_print(">> Installation Finished........(V)");
+ui_print("");
+ui_print(">> Regards");
+ui_print(">> cleverior.ipul \(^_^)/");
+show_progress(1, 0);
+ui_print("");

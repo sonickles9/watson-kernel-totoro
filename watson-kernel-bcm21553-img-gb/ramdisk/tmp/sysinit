@@ -1,0 +1,92 @@
+#!/system/bin/sh
+
+# Copyright © 2017 Sonickles9
+# Copy and redistribution is NOT allowed without former permissions.
+
+# error codes: watson's error codes follow a simple(?) notation:
+# (number of the tweak (0 or 1 if watson))(error code: 2 characters
+# example: 1(watson)01(insert error here)
+ERR_BB_MISSING=001
+ERR_WATSOND_INSUFFICIENT_ARGS=002
+ERR_CRUCIAL_LOGFILE_NONEXSITANT=003
+ERR_SYSTEM_RO=004
+
+#our master binary; watson won't work without this
+box="busybox"
+
+# declarations
+DATAFOLDER="/data/Watson/"
+LOGFOLDER="/data/Watson/log/"
+LOGFILE="/data/Watson/log/Initd.log"
+DO_LOG="$box"' tee -a '"$LOGFILE"
+
+#fetch /system device name
+systemdev=$($box mount | $box grep system | $box awk '{print $1}')
+
+#mount rootfs as read/write (no need for now)
+$box mount -o remount,rw /
+
+#first we run the simpler command,
+#in case it fails, then we run the
+#other commands
+$box mount -o remount,rw /system 2> /dev/null
+stat=$?
+if [ "$stat" != 0 ]
+then
+$box mount -o remount,rw $systemdev 2> /dev/null
+fi
+stat=$?
+if [ "$stat" != 0 ]
+then
+$box mount -o remount,rw $systemdev /system
+stat=$?
+fi
+if [ "$stat" != 0 ]
+then
+$box echo "/system could not be re-mounted as read/write. "
+$box echo "Please check if you are properly rooted, or if "
+$box echo "your superuser binary is properly installed.   "
+exit $ERR_SYSTEM_RO
+fi
+
+#end of block
+
+# Watson init.d
+export PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+getprop="/system/etc/Watson/getprop"
+prop="/system/etc/Watson/watson.prop"
+verbose="$($getprop WATSON.verbose $prop)"
+
+if [ -e $LOGFILE ]
+then
+$box rm $LOGFILE
+else
+$box mkdir /data/Watson > /dev/null
+$box mkdir /data/Watson/log > /dev/null
+fi
+touch $LOGFILE
+
+if [ "$verbose" == '1' ]
+then
+ERR="$LOGFILE"
+$box echo "Verbose mode is ON" | $DO_LOG
+else
+ERR="/dev/null"
+fi
+
+$box echo "Watson sysinit service" | $DO_LOG
+$box echo "Service initiated @ $(date)" | $DO_LOG
+$box echo "Verbose mode is $verbose" | $DO_LOG
+
+scripts=$($box find /system/etc/init.d/* | sort -n)
+
+( for script in $scripts
+do
+$box echo "Executing script $script" | $DO_LOG
+logwrapper sh $script
+$box echo "Script $script ran and returned status $?" | $DO_LOG
+done
+
+$box echo "Done executing scripts." | $DO_LOG
+) &
+

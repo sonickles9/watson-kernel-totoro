@@ -1,0 +1,41 @@
+on property:sys.usb.config=none
+    stop adbd
+    write /sys/class/usb_composite/acm/enable 0
+    write /sys/class/usb_composite/adb/enable 0
+    write /sys/class/usb_composite/obex/enable 0
+    write /sys/class/usb_composite/rndis/enable 0
+    write /sys/class/usb_composite/usb_mass_storage/enable 0
+    exec /system/bin/netcfg usb0 down
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=adb
+    write /sys/class/usb_composite/adb/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mass_storage
+    # we need to give mass_storage a little kick when returning from rndis
+    write /proc/brcm_switch 2
+    write /sys/class/usb_composite/usb_mass_storage/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mass_storage,adb
+    write /sys/class/usb_composite/adb/enable 1
+    write /sys/class/usb_composite/usb_mass_storage/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=rndis
+    write /sys/class/usb_composite/rndis/enable 1
+    exec /system/bin/netcfg usb0 up
+    setprop sys.usb.state ${sys.usb.config}
+
+# note: the legacy usb stack can't enumerate rndis with adb, so we'll ignore adb
+on property:sys.usb.config=rndis,adb
+    #write /sys/class/usb_composite/adb/enable 1
+    write /sys/class/usb_composite/rndis/enable 1
+    exec /system/bin/netcfg usb0 up
+    #start adbd
+    setprop sys.usb.state ${sys.usb.config}
+
+

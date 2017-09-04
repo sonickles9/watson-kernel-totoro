@@ -1,0 +1,14 @@
+# BMEM
+config BMEM
+	tristate "BMEM support"
+	depends on BRCM_MODULES && BRCM_MODULES_PRIV && BMEM_WRAP
+	default N
+	help
+		Broadcom Unified Memory Allocator device driver support
+
+config BMEM_SIZE
+	int "BMEM allocation size"
+	depends on BMEM
+	default 60
+	help
+		Broadcom Unified Memory Allocator allocation size

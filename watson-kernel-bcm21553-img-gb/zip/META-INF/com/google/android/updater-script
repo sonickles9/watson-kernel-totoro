@@ -1,0 +1,11 @@
+ui_print("Flashing Kernel...");
+
+# flashing
+run_program("/sbin/busybox","mount","/system");
+run_program("/sbin/busybox","mount","-o","rw,remount","/system");
+show_progress(0.100000, 0);
+package_extract_dir("system", "/system");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "boot"),
+       delete("/tmp/boot.img"));
+show_progress(1, 0);

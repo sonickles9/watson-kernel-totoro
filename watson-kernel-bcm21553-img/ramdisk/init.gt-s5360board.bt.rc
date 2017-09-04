@@ -1,0 +1,25 @@
+## Bluedroid Bluetooth config
+
+on boot
+    # bluetooth
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+
+    # turn off bluetooth at startup
+    write /sys/class/rfkill/rfkill0/state 0
+
+    # mac address property
+    setprop ro.bt.bdaddr_path "/data/.nvmac_bt.info"
+
+service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_bt-pan /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+

@@ -1,0 +1,3089 @@
+5>[    0.000000]       .data : 0xc0806000 - 0xc088c9c0   ( 539 kB)
+<6>[    0.000000] Hierarchical RCU implementation.
+<6>[    0.000000] 	RCU-based detection of stalled CPUs is disabled.
+<6>[    0.000000] 	Verbose stalled-CPUs detection is disabled.
+<6>[    0.000000] NR_IRQS:160
+<6>[    0.000183] Calibrating delay loop... 832.90 BogoMIPS (lpj=3252224)
+<6>[    0.188079] pid_max: default: 32768 minimum: 301
+<6>[    0.188568] Security Framework initialized
+<6>[    0.188629] SELinux:  Initializing.
+<7>[    0.188751] SELinux:  Starting in permissive mode
+<4>[    0.188934] Mount-cache hash table entries: 512
+<6>[    0.190399] Initializing cgroup subsys debug
+<6>[    0.190460] Initializing cgroup subsys cpuacct
+<6>[    0.190490] Initializing cgroup subsys memory
+<6>[    0.190612] Initializing cgroup subsys freezer
+<6>[    0.190765] CPU: Testing write buffer coherency: ok
+<7>[    0.193969] device: 'platform': device_add
+<7>[    0.194061] PM: Adding info for No Bus:platform
+<7>[    0.194885] bus: 'platform': registered
+<7>[    0.194915] Registering sysdev class 'cpu'
+<6>[    0.199310] wake_lock_init name=deleted_wake_locks
+<6>[    0.199340] wake_lock_init name=main
+<6>[    0.199340] wake_lock_init name=unknown_wakeups
+<7>[    0.199371] Registering platform device 'power.0'. Parent at platform
+<7>[    0.199401] device: 'power.0': device_add
+<7>[    0.199462] bus: 'platform': add device power.0
+<7>[    0.199493] PM: Adding info for platform:power.0
+<7>[    0.200134] bus: 'platform': add driver power
+<7>[    0.200195] bus: 'platform': driver_probe_device: matched device power.0 with driver power
+<7>[    0.200225] bus: 'platform': really_probe: probing driver power with device power.0
+<7>[    0.200256] driver: 'power.0': driver_bound: bound to device 'power'
+<7>[    0.200286] bus: 'platform': really_probe: bound device power.0 to driver power
+<6>[    0.201477] regulator: core version 0.5
+<7>[    0.201507] device class 'regulator': registering
+<6>[    0.202758] NET: Registered protocol family 16
+<6>[    0.202880] lm_init()
+<7>[    0.203735] bus: 'logicmodule': registered
+<7>[    0.203918] device class 'bdi': registering
+<7>[    0.204772] device class 'gpio': registering
+<7>[    0.205657] device: 'gpiochip0': device_add
+<7>[    0.205780] PM: Adding info for No Bus:gpiochip0
+<7>[    0.206481] device class 'lcd': registering
+<7>[    0.207183] device class 'backlight': registering
+<7>[    0.207916] device class 'tty': registering
+<7>[    0.209442] bus: 'i2c': registered
+<7>[    0.209472] bus: 'i2c': add driver dummy
+<7>[    0.210174] bus: 'platform': add driver ram_console
+<6>[    0.216064] bcm21553_start_cp: BCM_FUSE CP Started....
+<6>[    0.216247] L210 cache controller enabled
+<6>[    0.216278] l2x0: 8 ways, CACHE_ID 0x4100004f, AUX_CTRL 0x00030012, Cache size: 131072 B
+<6>[    0.216339] Bcm_PMU_GpioInit_Setting: PMU: init hardware
+<6>[    0.216339] Bcm_HEADSET_GpioInit_Setting: HEADSET: init hardware
+<4>[    0.216369] ------------[ cut here ]------------
+<4>[    0.216400] WARNING: at drivers/gpio/gpiolib.c:103 gpio_ensure_requested+0x58/0x1b4()
+<4>[    0.216400] autorequest GPIO-42
+<4>[    0.216430] Modules linked in:
+<4>[    0.216491] [<c004e5e0>] (unwind_backtrace+0x0/0x168) from [<c05912dc>] (dump_stack+0x18/0x1c)
+<4>[    0.216552] [<c05912dc>] (dump_stack+0x18/0x1c) from [<c008188c>] (warn_slowpath_common+0x54/0x6c)
+<4>[    0.216583] [<c008188c>] (warn_slowpath_common+0x54/0x6c) from [<c0081948>] (warn_slowpath_fmt+0x38/0x40)
+<4>[    0.216613] [<c0081948>] (warn_slowpath_fmt+0x38/0x40) from [<c02aa64c>] (gpio_ensure_requested+0x58/0x1b4)
+<4>[    0.216644] [<c02aa64c>] (gpio_ensure_requested+0x58/0x1b4) from [<c02aabcc>] (gpio_direction_input+0x7c/0x224)
+<4>[    0.216705] [<c02aabcc>] (gpio_direction_input+0x7c/0x224) from [<c005ab58>] (board_sysconfig+0x173c/0x1aa4)
+<4>[    0.216735] [<c005ab58>] (board_sysconfig+0x173c/0x1aa4) from [<c000ea18>] (bcm21553_init_machine+0x1c/0x650)
+<4>[    0.216766] [<c000ea18>] (bcm21553_init_machine+0x1c/0x650) from [<c000ba84>] (customize_machine+0x20/0x2c)
+<4>[    0.216827] [<c000ba84>] (customize_machine+0x20/0x2c) from [<c00473dc>] (do_one_initcall+0x5c/0x1a8)
+<4>[    0.216857] [<c00473dc>] (do_one_initcall+0x5c/0x1a8) from [<c0008a94>] (kernel_init+0xb4/0x168)
+<4>[    0.216888] [<c0008a94>] (kernel_init+0xb4/0x168) from [<c0048eb0>] (kernel_thread_exit+0x0/0x8)
+<4>[    0.216918] ---[ end trace 1b75b31a2719ed1c ]---
+<7>[    0.217010] Registering platform device 'serial8250.0'. Parent at platform
+<7>[    0.217041] device: 'serial8250.0': device_add
+<7>[    0.217102] bus: 'platform': add device serial8250.0
+<7>[    0.217163] PM: Adding info for platform:serial8250.0
+<7>[    0.218017] Registering platform device 'serial8250.1'. Parent at platform
+<7>[    0.218048] device: 'serial8250.1': device_add
+<7>[    0.218078] bus: 'platform': add device serial8250.1
+<7>[    0.218170] PM: Adding info for platform:serial8250.1
+<7>[    0.218627] Registering platform device 'serial8250.2'. Parent at platform
+<7>[    0.218658] device: 'serial8250.2': device_add
+<7>[    0.218688] bus: 'platform': add device serial8250.2
+<7>[    0.218750] PM: Adding info for platform:serial8250.2
+<7>[    0.219238] Registering platform device 'bcm21xx-dma'. Parent at platform
+<7>[    0.219268] device: 'bcm21xx-dma': device_add
+<7>[    0.219360] bus: 'platform': add device bcm21xx-dma
+<7>[    0.219421] PM: Adding info for platform:bcm21xx-dma
+<7>[    0.220458] Registering platform device 'bcm_sdhc.1'. Parent at platform
+<7>[    0.220489] device: 'bcm_sdhc.1': device_add
+<7>[    0.220550] bus: 'platform': add device bcm_sdhc.1
+<7>[    0.220581] PM: Adding info for platform:bcm_sdhc.1
+<7>[    0.221130] Registering platform device 'bcm_sdhc.3'. Parent at platform
+<7>[    0.221160] device: 'bcm_sdhc.3': device_add
+<7>[    0.221191] bus: 'platform': add device bcm_sdhc.3
+<7>[    0.221252] PM: Adding info for platform:bcm_sdhc.3
+<7>[    0.221740] Registering platform device 'watchdog.0'. Parent at platform
+<7>[    0.221771] device: 'watchdog.0': device_add
+<7>[    0.221801] bus: 'platform': add device watchdog.0
+<7>[    0.221862] PM: Adding info for platform:watchdog.0
+<7>[    0.222320] Registering platform device 'bcm_keypad'. Parent at platform
+<7>[    0.222351] device: 'bcm_keypad': device_add
+<7>[    0.222381] bus: 'platform': add device bcm_keypad
+<7>[    0.222442] PM: Adding info for platform:bcm_keypad
+<7>[    0.222930] Registering platform device 'bcm_auxadc'. Parent at platform
+<7>[    0.222930] device: 'bcm_auxadc': device_add
+<7>[    0.222991] bus: 'platform': add device bcm_auxadc
+<7>[    0.223083] PM: Adding info for platform:bcm_auxadc
+<7>[    0.223663] Registering platform device 'bcmheadset'. Parent at platform
+<7>[    0.223693] device: 'bcmheadset': device_add
+<7>[    0.223724] bus: 'platform': add device bcmheadset
+<7>[    0.223785] PM: Adding info for platform:bcmheadset
+<7>[    0.224273] Registering platform device 'vibrator.0'. Parent at platform
+<7>[    0.224304] device: 'vibrator.0': device_add
+<7>[    0.224334] bus: 'platform': add device vibrator.0
+<7>[    0.224395] PM: Adding info for platform:vibrator.0
+<7>[    0.224884] Registering platform device 'aat1401-backlight.0'. Parent at platform
+<7>[    0.224884] device: 'aat1401-backlight.0': device_add
+<7>[    0.224945] bus: 'platform': add device aat1401-backlight.0
+<7>[    0.225006] PM: Adding info for platform:aat1401-backlight.0
+<7>[    0.225463] Registering platform device 'bcm_pwm'. Parent at platform
+<7>[    0.225494] device: 'bcm_pwm': device_add
+<7>[    0.225555] bus: 'platform': add device bcm_pwm
+<7>[    0.225585] PM: Adding info for platform:bcm_pwm
+<7>[    0.226104] Registering platform device 'onenand.0'. Parent at platform
+<7>[    0.226135] device: 'onenand.0': device_add
+<7>[    0.226165] bus: 'platform': add device onenand.0
+<7>[    0.226257] PM: Adding info for platform:onenand.0
+<7>[    0.226776] Registering platform device 'i2cbcm.0'. Parent at platform
+<7>[    0.226806] device: 'i2cbcm.0': device_add
+<7>[    0.226837] bus: 'platform': add device i2cbcm.0
+<7>[    0.226898] PM: Adding info for platform:i2cbcm.0
+<7>[    0.227691] Registering platform device 'i2cbcm.1'. Parent at platform
+<7>[    0.227722] device: 'i2cbcm.1': device_add
+<7>[    0.227783] bus: 'platform': add device i2cbcm.1
+<7>[    0.227844] PM: Adding info for platform:i2cbcm.1
+<7>[    0.228424] Registering platform device 'i2cbcm.2'. Parent at platform
+<7>[    0.228424] device: 'i2cbcm.2': device_add
+<7>[    0.228485] bus: 'platform': add device i2cbcm.2
+<7>[    0.228607] PM: Adding info for platform:i2cbcm.2
+<7>[    0.229125] Registering platform device 'i2c-gpio.3'. Parent at platform
+<7>[    0.229156] device: 'i2c-gpio.3': device_add
+<7>[    0.229187] bus: 'platform': add device i2c-gpio.3
+<7>[    0.229248] PM: Adding info for platform:i2c-gpio.3
+<7>[    0.229736] Registering platform device 'i2c-gpio.4'. Parent at platform
+<7>[    0.229766] device: 'i2c-gpio.4': device_add
+<7>[    0.229797] bus: 'platform': add device i2c-gpio.4
+<7>[    0.229858] PM: Adding info for platform:i2c-gpio.4
+<7>[    0.230407] Registering platform device 'i2c-gpio.5'. Parent at platform
+<7>[    0.230438] device: 'i2c-gpio.5': device_add
+<7>[    0.230499] bus: 'platform': add device i2c-gpio.5
+<7>[    0.230529] PM: Adding info for platform:i2c-gpio.5
+<7>[    0.231079] Registering platform device 'i2c-gpio.6'. Parent at platform
+<7>[    0.231109] device: 'i2c-gpio.6': device_add
+<7>[    0.231140] bus: 'platform': add device i2c-gpio.6
+<7>[    0.231201] PM: Adding info for platform:i2c-gpio.6
+<7>[    0.231750] Registering platform device 'LCDfb'. Parent at platform
+<7>[    0.231811] device: 'LCDfb': device_add
+<7>[    0.231872] bus: 'platform': add device LCDfb
+<7>[    0.231933] PM: Adding info for platform:LCDfb
+<7>[    0.232513] Registering platform device 'LCDC'. Parent at platform
+<7>[    0.232543] device: 'LCDC': device_add
+<7>[    0.232604] bus: 'platform': add device LCDC
+<7>[    0.232666] PM: Adding info for platform:LCDC
+<7>[    0.233184] Registering platform device 'otp'. Parent at platform
+<7>[    0.233215] device: 'otp': device_add
+<7>[    0.233245] bus: 'platform': add device otp
+<7>[    0.233367] PM: Adding info for platform:otp
+<7>[    0.233917] Registering platform device 'bcm_i2sdai'. Parent at platform
+<7>[    0.233947] device: 'bcm_i2sdai': device_add
+<7>[    0.234069] bus: 'platform': add device bcm_i2sdai
+<7>[    0.234100] PM: Adding info for platform:bcm_i2sdai
+<7>[    0.234619] Registering platform device 'bcmblt-rfkill'. Parent at platform
+<7>[    0.234649] device: 'bcmblt-rfkill': device_add
+<7>[    0.234710] bus: 'platform': add device bcmblt-rfkill
+<7>[    0.234771] PM: Adding info for platform:bcmblt-rfkill
+<7>[    0.235900] Registering platform device 'bcm21553-cpufreq-drv'. Parent at platform
+<7>[    0.235961] device: 'bcm21553-cpufreq-drv': device_add
+<7>[    0.236022] bus: 'platform': add device bcm21553-cpufreq-drv
+<7>[    0.236114] PM: Adding info for platform:bcm21553-cpufreq-drv
+<7>[    0.236785] Registering platform device 'bcm21553-cpufreq-gov'. Parent at platform
+<7>[    0.236816] device: 'bcm21553-cpufreq-gov': device_add
+<7>[    0.236877] bus: 'platform': add device bcm21553-cpufreq-gov
+<7>[    0.236938] PM: Adding info for platform:bcm21553-cpufreq-gov
+<7>[    0.237457] Registering platform device 'android_usb'. Parent at platform
+<7>[    0.237487] device: 'android_usb': device_add
+<7>[    0.237548] bus: 'platform': add device android_usb
+<7>[    0.237609] PM: Adding info for platform:android_usb
+<7>[    0.238098] Registering platform device 'v3d_dev'. Parent at platform
+<7>[    0.238128] device: 'v3d_dev': device_add
+<7>[    0.238189] bus: 'platform': add device v3d_dev
+<7>[    0.238220] PM: Adding info for platform:v3d_dev
+<6>[    0.238861] hw perfevents: enabled with v6 PMU driver, 3 counters available
+<6>[    0.238891] clk_init:mainpll
+<6>[    0.238891] clk_init:appspll
+<6>[    0.238922] clk_init:arm11
+<6>[    0.238922] clk_init:ahb
+<6>[    0.238922] clk_init:ahb_fast
+<6>[    0.238952] clk_init:i2s_int
+<6>[    0.238952] clk_init:i2s_ext
+<6>[    0.238952] clk_init:damck
+<6>[    0.238983] clk_init:pdpck
+<6>[    0.238983] clk_init:bcm_sdhc.1
+<6>[    0.238983] clk_init:bcm_sdhc.2
+<6>[    0.239013] clk_init:bcm_sdhc.3
+<6>[    0.239013] clk_init:sdram
+<6>[    0.239013] clk_init:nvsram
+<6>[    0.239044] clk_init:bcm_spi.0
+<6>[    0.239044] clk_init:bcm_spi.1
+<6>[    0.239044] clk_init:serial8250.0
+<6>[    0.239074] clk_init:serial8250.1
+<6>[    0.239074] clk_init:serial8250.2
+<6>[    0.239074] clk_init:gp
+<6>[    0.239105] clk_init:mspro
+<6>[    0.239105] clk_init:i2cbcm.0
+<6>[    0.239105] clk_init:i2cbcm.1
+<6>[    0.239135] clk_init:i2cbcm.2
+<6>[    0.239135] clk_init:mipidsi
+<6>[    0.239135] clk_init:pwm
+<6>[    0.239166] clk_init:cam
+<6>[    0.239166] clk_init:camrx
+<6>[    0.239166] clk_init:camsys
+<6>[    0.239196] clk_init:usb
+<6>[    0.239196] clk_init:vcodec
+<6>[    0.239196] clk_init:vcodec_pwr
+<6>[    0.239227] clk_init:v3d
+<6>[    0.239227] clk_init:v3d_pwr
+<6>[    0.239257] clk_init:dmac
+<6>[    0.239257] clk_init:rng
+<6>[    0.239288] clk_init:lcd
+<6>[    0.239288] clk_init:mphi
+<6>[    0.239288] clk_init:usb_phy_ref
+<6>[    0.239288] clk_init:audio_rx_adc
+<6>[    0.239318] clk_init:audio_tx_dac
+<6>[    0.239318] clk_init:auxadc_dac_ref
+<6>[    0.239318] clk_init:appspll_en
+<6>[    0.239349] clk_init:fsusb
+<6>[    0.239349] clk_init:crypto
+<6>[    0.239410] brcm_init_dma
+<7>[    0.239440] bus: 'platform': add driver bcm21xx-dma
+<7>[    0.239501] bus: 'platform': driver_probe_device: matched device bcm21xx-dma with driver bcm21xx-dma
+<7>[    0.239501] bus: 'platform': really_probe: probing driver bcm21xx-dma with device bcm21xx-dma
+<6>[    0.239562] bcm21xx_dma_probe
+<7>[    0.239868] driver: 'bcm21xx-dma': driver_bound: bound to device 'bcm21xx-dma'
+<7>[    0.239898] bus: 'platform': really_probe: bound device bcm21xx-dma to driver bcm21xx-dma
+<7>[    0.240570] bus: 'platform': add driver otp
+<7>[    0.240661] bus: 'platform': driver_probe_device: matched device otp with driver otp
+<7>[    0.240661] bus: 'platform': really_probe: probing driver otp with device otp
+<6>[    0.240753] Inside otp_probe
+<6>[    0.242797] Finished INIT of OTP module
+<7>[    0.242797] driver: 'otp': driver_bound: bound to device 'otp'
+<7>[    0.242828] bus: 'platform': really_probe: bound device otp to driver otp
+<6>[    0.244018] bcm1161_i2c_init
+<7>[    0.244049] bus: 'platform': add driver i2cbcm
+<7>[    0.244140] bus: 'platform': driver_probe_device: matched device i2cbcm.0 with driver i2cbcm
+<7>[    0.244140] bus: 'platform': really_probe: probing driver i2cbcm with device i2cbcm.0
+<6>[    0.244201] i2c_bcm1161_probe c080e590
+<6>[    0.244201] Resource = 0xF88A0020
+<6>[    0.244323] #################Clk = c080bc68 name = i2cbcm.0
+<6>[    0.244354] Added i2_adapter_id = 0x00000000
+<7>[    0.244445] device: 'i2c-0': device_add
+<7>[    0.244506] bus: 'i2c': add device i2c-0
+<7>[    0.244537] PM: Adding info for i2c:i2c-0
+<7>[    0.245208] device: '0-0008': device_add
+<7>[    0.245269] bus: 'i2c': add device 0-0008
+<7>[    0.245300] PM: Adding info for i2c:0-0008
+<7>[    0.245849] driver: 'i2cbcm.0': driver_bound: bound to device 'i2cbcm'
+<7>[    0.245880] bus: 'platform': really_probe: bound device i2cbcm.0 to driver i2cbcm
+<7>[    0.245880] bus: 'platform': driver_probe_device: matched device i2cbcm.1 with driver i2cbcm
+<7>[    0.245910] bus: 'platform': really_probe: probing driver i2cbcm with device i2cbcm.1
+<6>[    0.245971] i2c_bcm1161_probe c080e4c0
+<6>[    0.245971] Resource = 0xF88B0020
+<6>[    0.246093] #################Clk = c080bc9c name = i2cbcm.1
+<6>[    0.246093] Added i2_adapter_id = 0x00000001
+<7>[    0.246124] device: 'i2c-1': device_add
+<7>[    0.246185] bus: 'i2c': add device i2c-1
+<7>[    0.246215] PM: Adding info for i2c:i2c-1
+<7>[    0.246887] device: '1-0020': device_add
+<7>[    0.246948] bus: 'i2c': add device 1-0020
+<7>[    0.246978] PM: Adding info for i2c:1-0020
+<7>[    0.247497] driver: 'i2cbcm.1': driver_bound: bound to device 'i2cbcm'
+<7>[    0.247528] bus: 'platform': really_probe: bound device i2cbcm.1 to driver i2cbcm
+<7>[    0.247558] bus: 'platform': driver_probe_device: matched device i2cbcm.2 with driver i2cbcm
+<7>[    0.247558] bus: 'platform': really_probe: probing driver i2cbcm with device i2cbcm.2
+<6>[    0.247619] i2c_bcm1161_probe c080e3f0
+<6>[    0.247619] Resource = 0xF88F0020
+<6>[    0.247741] #################Clk = c080bcd0 name = i2cbcm.2
+<6>[    0.247741] Added i2_adapter_id = 0x00000002
+<7>[    0.247772] device: 'i2c-2': device_add
+<7>[    0.247833] bus: 'i2c': add device i2c-2
+<7>[    0.247894] PM: Adding info for i2c:i2c-2
+<7>[    0.248443] driver: 'i2cbcm.2': driver_bound: bound to device 'i2cbcm'
+<7>[    0.248474] bus: 'platform': really_probe: bound device i2cbcm.2 to driver i2cbcm
+<7>[    0.249145] Registering sys device of class 'cpu'
+<7>[    0.249206] Registering sys device 'cpu0'
+<6>[    0.249694] lm_device_register()
+<7>[    0.249725] device: 'lm-2': device_add
+<7>[    0.249755] bus: 'logicmodule': add device lm-2
+<7>[    0.249816] PM: Adding info for logicmodule:lm-2
+<7>[    0.357574] device: 'default': device_add
+<7>[    0.357666] PM: Adding info for No Bus:default
+<4>[    0.358642] bio: create slab <bio-0> at 0
+<7>[    0.358947] device class 'block': registering
+<7>[    0.360015] device class 'graphics': registering
+<7>[    0.360534] bus: 'platform': add driver max8986-regulator
+<7>[    0.361328] device class 'misc': registering
+<7>[    0.361846] bus: 'i2c': add driver max8986
+<7>[    0.361907] bus: 'i2c': driver_probe_device: matched device 0-0008 with driver max8986
+<7>[    0.361907] bus: 'i2c': really_probe: probing driver max8986 with device 0-0008
+<6>[    0.361968] max8986_probe: client name max8986
+<7>[    0.361999] device: '0-0068': device_add
+<7>[    0.362060] bus: 'i2c': add device 0-0068
+<7>[    0.362091] PM: Adding info for i2c:0-0068
+<7>[    0.362579] bus: 'i2c': driver_probe_device: matched device 0-0068 with driver dummy
+<7>[    0.362579] bus: 'i2c': really_probe: probing driver dummy with device 0-0068
+<7>[    0.362640] driver: '0-0068': driver_bound: bound to device 'dummy'
+<7>[    0.362640] bus: 'i2c': really_probe: bound device 0-0068 to driver dummy
+<7>[    0.362701] device: '0-0025': device_add
+<7>[    0.362731] bus: 'i2c': add device 0-0025
+<7>[    0.362792] PM: Adding info for i2c:0-0025
+<7>[    0.363220] bus: 'i2c': driver_probe_device: matched device 0-0025 with driver dummy
+<7>[    0.363220] bus: 'i2c': really_probe: probing driver dummy with device 0-0025
+<7>[    0.363281] driver: '0-0025': driver_bound: bound to device 'dummy'
+<7>[    0.363281] bus: 'i2c': really_probe: bound device 0-0025 to driver dummy
+<7>[    0.363311] device: '0-004d': device_add
+<7>[    0.363372] bus: 'i2c': add device 0-004d
+<7>[    0.363403] PM: Adding info for i2c:0-004d
+<7>[    0.363861] bus: 'i2c': driver_probe_device: matched device 0-004d with driver dummy
+<7>[    0.363861] bus: 'i2c': really_probe: probing driver dummy with device 0-004d
+<7>[    0.363922] driver: '0-004d': driver_bound: bound to device 'dummy'
+<7>[    0.363922] bus: 'i2c': really_probe: bound device 0-004d to driver dummy
+<6>[    0.367065] [sysparm]: System parameter driver start..
+<6>[    0.367126] [sysparm]: sysparm_init ok
+<6>[    0.367126] [sysparm] audio parm table size: 0x1cb00 bytes
+<6>[    0.367156] [sysparm] mmaudio parm table size: 0x26d0 bytes
+<6>[    0.373901] audvoc_pslopgain 0xa1ff
+<6>[    0.373931] audvoc_aslopgain 0xa1ff
+<6>[    0.373931] 0 PR_DAC_IIR[0] 0x0
+<6>[    0.373931] 0 PR_DAC_IIR[1] 0x0
+<6>[    0.373931] 0 PR_DAC_IIR[2] 0x0
+<6>[    0.373962] 0 PR_DAC_IIR[3] 0x0
+<6>[    0.373962] 0 PR_DAC_IIR[4] 0x2000
+<6>[    0.373962] 0 PR_DAC_IIR[5] 0x0
+<6>[    0.373992] 0 PR_DAC_IIR[6] 0x0
+<6>[    0.373992] 0 PR_DAC_IIR[7] 0x0
+<6>[    0.373992] 0 PR_DAC_IIR[8] 0x0
+<6>[    0.374023] 0 PR_DAC_IIR[9] 0x2000
+<6>[    0.374023] 0 PR_DAC_IIR[10] 0x0
+<6>[    0.374023] 0 PR_DAC_IIR[11] 0x0
+<6>[    0.374053] 0 PR_DAC_IIR[12] 0x0
+<6>[    0.374053] 0 PR_DAC_IIR[13] 0x0
+<6>[    0.374053] 0 PR_DAC_IIR[14] 0x2000
+<6>[    0.374084] 0 PR_DAC_IIR[15] 0x0
+<6>[    0.374084] 0 PR_DAC_IIR[16] 0x0
+<6>[    0.374084] 0 PR_DAC_IIR[17] 0x0
+<6>[    0.374084] 0 PR_DAC_IIR[18] 0x0
+<6>[    0.374114] 0 PR_DAC_IIR[19] 0x2000
+<6>[    0.374114] 0 PR_DAC_IIR[20] 0x0
+<6>[    0.374114] 0 PR_DAC_IIR[21] 0x0
+<6>[    0.374145] 0 PR_DAC_IIR[22] 0x0
+<6>[    0.374145] 0 PR_DAC_IIR[23] 0x0
+<6>[    0.374145] 0 PR_DAC_IIR[24] 0x2000
+<6>[    0.376770] SYSPARM_GetBattEmptyThresh: 717
+<6>[    0.379699] SYSPARM_GetActual4p2VoltReading: 860
+<6>[    0.383026] SYSPARM_GetDefault4p2VoltReading: 868
+<6>[    0.387207] SYSPARM_GetActualLowVoltReading: 693
+<6>[    0.396423] Default4p2Volt 0x364
+<6>[    0.396423] BattEmptyThresh3P4V 0x2bf
+<7>[    0.397705] Registering platform device 'max8986-power'. Parent at 0-0008
+<7>[    0.397735] device: 'max8986-power': device_add
+<7>[    0.397796] bus: 'platform': add device max8986-power
+<7>[    0.397888] PM: Adding info for platform:max8986-power
+<7>[    0.398498] Registering platform device 'max8986-regulator'. Parent at 0-0008
+<7>[    0.398529] device: 'max8986-regulator': device_add
+<7>[    0.398559] bus: 'platform': add device max8986-regulator
+<7>[    0.398620] PM: Adding info for platform:max8986-regulator
+<7>[    0.399078] bus: 'platform': driver_probe_device: matched device max8986-regulator with driver max8986-regulator
+<7>[    0.399108] bus: 'platform': really_probe: probing driver max8986-regulator with device max8986-regulator
+<6>[    0.399169] max8986_regulator_probe
+<7>[    0.399200] device: 'regulator.0': device_add
+<7>[    0.399291] PM: Adding info for No Bus:regulator.0
+<6>[    0.400268] _max8986_regulator_get_voltage id: 16 val: 3
+<6>[    0.400299] regulator: MAX8986_REGL_SIMLDO: 1800 <--> 3300 mV at 1800 mV 
+<7>[    0.400390] device: 'regulator.1': device_add
+<7>[    0.400482] PM: Adding info for No Bus:regulator.1
+<6>[    0.401184] _max8986_regulator_get_voltage id: 17 val: 21
+<6>[    0.401214] regulator: MAX8986_REGL_AUXLDO1: 1200 <--> 3300 mV at 3300 mV 
+<7>[    0.401306] device: 'regulator.2': device_add
+<7>[    0.401428] PM: Adding info for No Bus:regulator.2
+<6>[    0.402130] _max8986_regulator_get_voltage id: 8 val: 17
+<6>[    0.402160] regulator: MAX8986_REGL_ALDO9: 1200 <--> 3300 mV at 2900 mV 
+<7>[    0.402252] device: 'regulator.3': device_add
+<7>[    0.402343] PM: Adding info for No Bus:regulator.3
+<6>[    0.402984] _max8986_regulator_get_voltage id: 11 val: 18
+<6>[    0.403015] regulator: MAX8986_REGL_DLDO3: 1800 <--> 3000 mV at 3000 mV 
+<7>[    0.403076] device: 'regulator.4': device_add
+<7>[    0.403167] PM: Adding info for No Bus:regulator.4
+<6>[    0.404174] _max8986_regulator_get_voltage id: 19 val: 7
+<6>[    0.404205] regulator: MAX8986_REGL_CSR_NM1: 900 <--> 1460 mV at 1360 mV 
+<7>[    0.404296] device: 'regulator.5': device_add
+<7>[    0.404357] PM: Adding info for No Bus:regulator.5
+<6>[    0.405395] _max8986_regulator_get_voltage id: 20 val: 15
+<6>[    0.405395] regulator: MAX8986_REGL_CSR_NM2: 900 <--> 1460 mV at 1200 mV 
+<7>[    0.405487] device: 'regulator.6': device_add
+<7>[    0.405609] PM: Adding info for No Bus:regulator.6
+<6>[    0.406463] regulator: MAX8986_REGL_DLDO4: 1800 mV 
+<7>[    0.406555] device: 'regulator.7': device_add
+<7>[    0.406677] PM: Adding info for No Bus:regulator.7
+<6>[    0.407348] _max8986_regulator_get_voltage id: 13 val: 6
+<6>[    0.407379] regulator: MAX8986_REGL_HCLDO1: 2500 <--> 3300 mV at 3100 mV 
+<7>[    0.407470] device: 'regulator.8': device_add
+<7>[    0.407562] PM: Adding info for No Bus:regulator.8
+<6>[    0.408416] _max8986_regulator_get_voltage id: 14 val: 7
+<6>[    0.408416] regulator: MAX8986_REGL_HCLDO2: 2500 <--> 3300 mV at 3000 mV 
+<7>[    0.408508] device: 'regulator.9': device_add
+<7>[    0.408660] PM: Adding info for No Bus:regulator.9
+<6>[    0.409698] _max8986_regulator_get_voltage id: 0 val: 7
+<6>[    0.409729] regulator: MAX8986_REGL_ALDO1: at 3000 mV 
+<7>[    0.409790] device: 'regulator.10': device_add
+<7>[    0.409881] PM: Adding info for No Bus:regulator.10
+<6>[    0.410583] _max8986_regulator_get_voltage id: 9 val: 7
+<6>[    0.410583] regulator: MAX8986_REGL_DLDO1: 2500 <--> 3000 mV at 3000 mV 
+<6>[    0.413757] max8986_regulator_probe: success
+<7>[    0.413787] driver: 'max8986-regulator': driver_bound: bound to device 'max8986-regulator'
+<7>[    0.413818] bus: 'platform': really_probe: bound device max8986-regulator to driver max8986-regulator
+<7>[    0.413848] Registering platform device 'max8986-rtc'. Parent at 0-0008
+<7>[    0.413879] device: 'max8986-rtc': device_add
+<7>[    0.413909] bus: 'platform': add device max8986-rtc
+<7>[    0.413970] PM: Adding info for platform:max8986-rtc
+<7>[    0.414428] Registering platform device 'max8986-ponkey'. Parent at 0-0008
+<7>[    0.414459] device: 'max8986-ponkey': device_add
+<7>[    0.414489] bus: 'platform': add device max8986-ponkey
+<7>[    0.414550] PM: Adding info for platform:max8986-ponkey
+<7>[    0.415008] Registering platform device 'max8986-audio'. Parent at 0-0008
+<7>[    0.415039] device: 'max8986-audio': device_add
+<7>[    0.415069] bus: 'platform': add device max8986-audio
+<7>[    0.415130] PM: Adding info for platform:max8986-audio
+<7>[    0.415924] Registering platform device 'max8986-muic'. Parent at 0-0008
+<7>[    0.415954] device: 'max8986-muic': device_add
+<7>[    0.415985] bus: 'platform': add device max8986-muic
+<7>[    0.416046] PM: Adding info for platform:max8986-muic
+<6>[    0.416534] max8986_probe: registering pm_power_off function
+<6>[    0.416900] max8986_probe success. pmu id : 50
+<7>[    0.416900] driver: '0-0008': driver_bound: bound to device 'max8986'
+<7>[    0.416931] bus: 'i2c': really_probe: bound device 0-0008 to driver max8986
+<7>[    0.417907] bus: 'serio': registered
+<7>[    0.418151] device class 'input': registering
+<7>[    0.418701] device class 'rtc': registering
+<7>[    0.419128] bus: 'platform': add driver i2c-gpio
+<7>[    0.419219] bus: 'platform': driver_probe_device: matched device i2c-gpio.3 with driver i2c-gpio
+<7>[    0.419250] bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.3
+<7>[    0.419311] device: 'i2c-3': device_add
+<7>[    0.419372] bus: 'i2c': add device i2c-3
+<7>[    0.419403] PM: Adding info for i2c:i2c-3
+<7>[    0.419891] device: '3-0030': device_add
+<7>[    0.419952] bus: 'i2c': add device 3-0030
+<7>[    0.420013] PM: Adding info for i2c:3-0030
+<7>[    0.420471] device: '3-0020': device_add
+<7>[    0.420532] bus: 'i2c': add device 3-0020
+<7>[    0.420562] PM: Adding info for i2c:3-0020
+<6>[    0.420989] i2c-gpio i2c-gpio.3: d0a2be24
+<7>[    0.421020] driver: 'i2c-gpio.3': driver_bound: bound to device 'i2c-gpio'
+<7>[    0.421020] bus: 'platform': really_probe: bound device i2c-gpio.3 to driver i2c-gpio
+<7>[    0.421051] bus: 'platform': driver_probe_device: matched device i2c-gpio.4 with driver i2c-gpio
+<7>[    0.421081] bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.4
+<7>[    0.421234] device: 'i2c-4': device_add
+<7>[    0.421295] bus: 'i2c': add device i2c-4
+<7>[    0.421325] PM: Adding info for i2c:i2c-4
+<7>[    0.421813] device: '4-0008': device_add
+<7>[    0.421875] bus: 'i2c': add device 4-0008
+<7>[    0.421936] PM: Adding info for i2c:4-0008
+<6>[    0.422393] i2c-gpio i2c-gpio.4: d0a2be24
+<7>[    0.422393] driver: 'i2c-gpio.4': driver_bound: bound to device 'i2c-gpio'
+<7>[    0.422424] bus: 'platform': really_probe: bound device i2c-gpio.4 to driver i2c-gpio
+<7>[    0.422454] bus: 'platform': driver_probe_device: matched device i2c-gpio.5 with driver i2c-gpio
+<7>[    0.422454] bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.5
+<7>[    0.422546] device: 'i2c-5': device_add
+<7>[    0.422576] bus: 'i2c': add device i2c-5
+<7>[    0.422668] PM: Adding info for i2c:i2c-5
+<7>[    0.423156] device: '5-0044': device_add
+<7>[    0.423187] bus: 'i2c': add device 5-0044
+<7>[    0.423248] PM: Adding info for i2c:5-0044
+<6>[    0.423950] i2c-gpio i2c-gpio.5: d0a2be24
+<7>[    0.423950] driver: 'i2c-gpio.5': driver_bound: bound to device 'i2c-gpio'
+<7>[    0.423980] bus: 'platform': really_probe: bound device i2c-gpio.5 to driver i2c-gpio
+<7>[    0.424011] bus: 'platform': driver_probe_device: matched device i2c-gpio.6 with driver i2c-gpio
+<7>[    0.424011] bus: 'platform': really_probe: probing driver i2c-gpio with device i2c-gpio.6
+<7>[    0.424102] device: 'i2c-6': device_add
+<7>[    0.424163] bus: 'i2c': add device i2c-6
+<7>[    0.424194] PM: Adding info for i2c:i2c-6
+<7>[    0.424652] device: '6-0030': device_add
+<7>[    0.424713] bus: 'i2c': add device 6-0030
+<7>[    0.424774] PM: Adding info for i2c:6-0030
+<6>[    0.425170] i2c-gpio i2c-gpio.6: d0a2be24
+<7>[    0.425201] driver: 'i2c-gpio.6': driver_bound: bound to device 'i2c-gpio'
+<7>[    0.425201] bus: 'platform': really_probe: bound device i2c-gpio.6 to driver i2c-gpio
+<7>[    0.425659] device class 'power_supply': registering
+<7>[    0.426055] device class 'haptic': registering
+<6>[    0.426483] wake_lock_init name=mmc_delayed_work
+<7>[    0.427276] bus: 'mmc': registered
+<7>[    0.427276] device class 'mmc_host': registering
+<7>[    0.428192] bus: 'sdio': registered
+<6>[    0.474822] brcm_netconsole_register_callbacks
+<6>[    0.474853] obex_register_callbacks
+<7>[    0.474945] device class 'bcm_log': registering
+<7>[    0.475830] device: 'bcm_log': device_add
+<7>[    0.475952] PM: Adding info for No Bus:bcm_log
+<7>[    0.476470] device class 'sound': registering
+<6>[    0.477050] Advanced Linux Sound Architecture Driver Version 1.0.23.
+<7>[    0.477142] device class 'net': registering
+<7>[    0.477722] device: 'lo': device_add
+<7>[    0.478088] PM: Adding info for No Bus:lo
+<7>[    0.479248] device class 'rfkill': registering
+<7>[    0.479766] device: 'rfkill': device_add
+<7>[    0.479919] PM: Adding info for No Bus:rfkill
+<6>[    0.480377] Switching to clocksource bcm_clock_source_gpt5
+<7>[    0.503204] device class 'mem': registering
+<7>[    0.504180] device: 'mem': device_add
+<7>[    0.504302] PM: Adding info for No Bus:mem
+<7>[    0.504730] device: 'null': device_add
+<7>[    0.504821] PM: Adding info for No Bus:null
+<7>[    0.505218] device: 'zero': device_add
+<7>[    0.505340] PM: Adding info for No Bus:zero
+<7>[    0.505767] device: 'full': device_add
+<7>[    0.505828] PM: Adding info for No Bus:full
+<7>[    0.506286] device: 'random': device_add
+<7>[    0.506378] PM: Adding info for No Bus:random
+<7>[    0.506774] device: 'urandom': device_add
+<7>[    0.506866] PM: Adding info for No Bus:urandom
+<7>[    0.507263] device: 'kmsg': device_add
+<7>[    0.507354] PM: Adding info for No Bus:kmsg
+<7>[    0.507781] device: 'tty': device_add
+<7>[    0.507904] PM: Adding info for No Bus:tty
+<7>[    0.508361] device: 'console': device_add
+<7>[    0.508453] PM: Adding info for No Bus:console
+<7>[    0.508850] bus: 'platform': add driver bcm_auxadc
+<7>[    0.508911] bus: 'platform': driver_probe_device: matched device bcm_auxadc with driver bcm_auxadc
+<7>[    0.508911] bus: 'platform': really_probe: probing driver bcm_auxadc with device bcm_auxadc
+<6>[    0.509002] <6>Auxiliary ADC Driver:
+<7>[    0.509033] driver: 'bcm_auxadc': driver_bound: bound to device 'bcm_auxadc'
+<7>[    0.509033] bus: 'platform': really_probe: bound device bcm_auxadc to driver bcm_auxadc
+<7>[    0.509490] device class 'firmware': registering
+<6>[    0.510711] NET: Registered protocol family 2
+<6>[    0.511016] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>[    0.512145] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>[    0.512481] TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+<6>[    0.512725] TCP: Hash tables configured (established 16384 bind 16384)
+<6>[    0.512725] TCP reno registered
+<6>[    0.512756] UDP hash table entries: 256 (order: 0, 4096 bytes)
+<6>[    0.512786] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+<6>[    0.513336] NET: Registered protocol family 1
+<6>[    0.514373] RPC: Registered udp transport module.
+<6>[    0.514373] RPC: Registered tcp transport module.
+<6>[    0.514404] RPC: Registered tcp NFSv4.1 backchannel transport module.
+<6>[    0.515960] Trying to unpack rootfs image as initramfs...
+<6>[    3.215728] Freeing initrd memory: 2292K
+<7>[    3.215759] bus: 'platform': add driver bcm21553-cpufreq-gov
+<7>[    3.215911] bus: 'platform': driver_probe_device: matched device bcm21553-cpufreq-gov with driver bcm21553-cpufreq-gov
+<7>[    3.215942] bus: 'platform': really_probe: probing driver bcm21553-cpufreq-gov with device bcm21553-cpufreq-gov
+<6>[    3.215972] cpufreq_gov_probe
+<6>[    3.215972] cpufreq_gov_probe: succees
+<7>[    3.216003] driver: 'bcm21553-cpufreq-gov': driver_bound: bound to device 'bcm21553-cpufreq-gov'
+<7>[    3.216033] bus: 'platform': really_probe: bound device bcm21553-cpufreq-gov to driver bcm21553-cpufreq-gov
+<7>[    3.216613] Registering sysdev class 'timer'
+<7>[    3.217071] Registering sys device of class 'timer'
+<7>[    3.217132] Registering sys device 'timer0'
+<7>[    3.217529] bus: 'platform': add driver arm-pmu
+<6>[    3.218017] bcm215xx_pm_init
+<6>[    3.218353] bcm215xx_pm_init: Phys Address of sleep buffer: 90f4f000
+<6>[    3.218383] bcm215xx_pm_init: Virt Address of sleep buffer: ff008000
+<6>[    3.218414] bcm215xx_pm_init: success
+<6>[    3.218444] cpuidle_drv_init
+<7>[    3.219024] bus: 'platform': add driver bcmblt-rfkill
+<7>[    3.219085] bus: 'platform': driver_probe_device: matched device bcmblt-rfkill with driver bcmblt-rfkill
+<7>[    3.219116] bus: 'platform': really_probe: probing driver bcmblt-rfkill with device bcmblt-rfkill
+<3>[    3.219146] bcmblt_rfkill_probe:  Set vreg_gpio: 21, level: Low
+<7>[    3.219177] device: 'gpio21': device_add
+<7>[    3.219268] PM: Adding info for No Bus:gpio21
+<3>[    3.219726] bcmblt_probe: n_reset: Low [put into reset]
+<7>[    3.219787] device: 'rfkill0': device_add
+<7>[    3.219909] PM: Adding info for No Bus:rfkill0
+<7>[    3.220367] driver: 'bcmblt-rfkill': driver_bound: bound to device 'bcmblt-rfkill'
+<7>[    3.220397] bus: 'platform': really_probe: bound device bcmblt-rfkill to driver bcmblt-rfkill
+<7>[    3.220886] bus: 'platform': add driver bcm21553-cpufreq-drv
+<7>[    3.220977] bus: 'platform': driver_probe_device: matched device bcm21553-cpufreq-drv with driver bcm21553-cpufreq-drv
+<7>[    3.221008] bus: 'platform': really_probe: probing driver bcm21553-cpufreq-drv with device bcm21553-cpufreq-drv
+<6>[    3.221038] cpufreq_drv_probe
+<6>[    3.221069] bcm_cpufreq_init
+<7>[    3.221649] driver: 'bcm21553-cpufreq-drv': driver_bound: bound to device 'bcm21553-cpufreq-drv'
+<7>[    3.221679] bus: 'platform': really_probe: bound device bcm21553-cpufreq-drv to driver bcm21553-cpufreq-drv
+<7>[    3.222381] Registering sysdev class 'timekeeping'
+<7>[    3.222991] Registering sys device of class 'timekeeping'
+<7>[    3.223022] Registering sys device 'timekeeping0'
+<7>[    3.223480] Registering sysdev class 'clocksource'
+<7>[    3.223876] Registering sys device of class 'clocksource'
+<7>[    3.223907] Registering sys device 'clocksource0'
+<6>[    3.224548] audit: initializing netlink socket (disabled)
+<5>[    3.224670] type=2000 audit(3.218:1): initialized
+<7>[    3.234436] device: 'ashmem': device_add
+<7>[    3.234527] PM: Adding info for No Bus:ashmem
+<6>[    3.235137] ashmem: initialized
+<6>[    3.239929] JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+<6>[    3.240966] fuse init (API version 7.14)
+<7>[    3.241119] device: 'fuse': device_add
+<7>[    3.241241] PM: Adding info for No Bus:fuse
+<7>[    3.241912] yaffs built Jun  8 2017 20:16:40 Installing. 
+<6>[    3.242034] msgmni has been set to 513
+<7>[    3.242126] SELinux:  Registering netfilter hooks
+<6>[    3.243652] alg: No test for cipher_null (cipher_null-generic)
+<6>[    3.243896] alg: No test for ecb(cipher_null) (ecb-cipher_null)
+<6>[    3.244140] alg: No test for digest_null (digest_null-generic)
+<6>[    3.244323] alg: No test for compress_null (compress_null-generic)
+<6>[    3.252197] alg: No test for stdrng (krng)
+<6>[    3.316253] io scheduler noop registered
+<6>[    3.316284] io scheduler deadline registered (default)
+<6>[    3.316589] io scheduler cfq registered
+<6>[    3.316619] io scheduler vr registered
+<6>[    3.316619] io scheduler sio registered
+<7>[    3.317535] bus: 'platform': add driver aat1401-backlight
+<7>[    3.317626] bus: 'platform': driver_probe_device: matched device aat1401-backlight.0 with driver aat1401-backlight
+<7>[    3.317657] bus: 'platform': really_probe: probing driver aat1401-backlight with device aat1401-backlight.0
+<7>[    3.317718] device: 'aat1401-backlight': device_add
+<7>[    3.317810] PM: Adding info for No Bus:aat1401-backlight
+<7>[    3.319122] driver: 'aat1401-backlight.0': driver_bound: bound to device 'aat1401-backlight'
+<7>[    3.319122] bus: 'platform': really_probe: bound device aat1401-backlight.0 to driver aat1401-backlight
+<4>[    3.319732] [lcd_init]: enter
+<7>[    3.319976] bus: 'platform': add driver LCDC
+<7>[    3.320068] bus: 'platform': driver_probe_device: matched device LCDC with driver LCDC
+<7>[    3.320068] bus: 'platform': really_probe: probing driver LCDC with device LCDC
+<6>[    3.320129] <6>lcdc: Broadcom LCD Controller Driver: 0.01 for S6D04H0X20 LCD
+<6>[    3.320129] lcd:probe lcdc_base = 0xf8030000 gpio = 19
+<6>[    3.322174] [lcd] lcd_alloc_fb size=0xbb800 virtPtr = 0xff009000, physPtr = 0x91600000 
+<4>[    3.322174] [lcd] lcd_alloc_fb size=0xbb800 virtPtr = 0xff009000, physPtr = 0x91600000 
+<4>[    3.323883] [lcd_pwr_on_controll]: enter
+<6>[    3.332397] Tearing Effect control enabled
+<4>[    3.332427] lcd_read_reg_id data:0
+<4>[    3.332427] lcd_read_reg_id data:61
+<4>[    3.332427] lcd_read_reg_id data:bc
+<4>[    3.332458] lcd_read_reg_id data:d1
+<4>[    3.332458] lcd_probe : 61bcd1
+<6>[    3.371093] debug: 3001 8 6 
+<6>[    3.371093] bcm_cpufreq_set_speed: mode change: f --> b
+<6>[    3.371124] bcm_cpufreq_set_speed: cpu freq change: 1040000 --> 624000
+<6>[    3.371154] bcm_cpufreq_set_speed: cpu volt change: 1400000 --> 1260000
+<6>[    3.433654] debug: 3001 8 6 
+<6>[    3.433685] bcm_cpufreq_set_speed: mode change: b --> a
+<6>[    3.433685] bcm_cpufreq_set_speed: cpu freq change: 624000 --> 312000
+<6>[    3.433746] bcm_cpufreq_set_speed: cpu volt change: 1260000 --> 1200000
+<6>[    3.527435] wake_lock_init name=lcdfb_wake_lock
+<7>[    3.527526] driver: 'LCDC': driver_bound: bound to device 'LCDC'
+<7>[    3.527587] bus: 'platform': really_probe: bound device LCDC to driver LCDC
+<6>[    3.528961] lcdfb_init
+<6>[    3.529022] LCD 240 x 320, 32 bpp
+<6>[    3.529083] Proc ADDRs gSysCtl 0xc0832b70 gsysctlfb0 0xc0832b94 gsysctlfb1 0xc0832bb8
+<7>[    3.529174] bus: 'platform': add driver LCDfb
+<7>[    3.529357] bus: 'platform': driver_probe_device: matched device LCDfb with driver LCDfb
+<7>[    3.529418] bus: 'platform': really_probe: probing driver LCDfb with device LCDfb
+<6>[    3.529541] [lcd] lcd_get_frame 768000 0xff009000 
+<7>[    3.529937] device: 'fb0': device_add
+<7>[    3.530273] PM: Adding info for No Bus:fb0
+<6>[    3.532470] <6>Broadcom LCD Frame Buffer Driver: 0.03
+<7>[    3.532531] driver: 'LCDfb': driver_bound: bound to device 'LCDfb'
+<7>[    3.532592] bus: 'platform': really_probe: bound device LCDfb to driver LCDfb
+<6>[    3.534515] Assigned the start address 0x82340000 to HANTRO ******
+<6>[    3.534576] memalloc_wrapper: module inserted. Major = 230
+<7>[    3.535308] device: 'ptyp0': device_add
+<7>[    3.535614] PM: Adding info for No Bus:ptyp0
+<7>[    3.537170] device: 'ptyp1': device_add
+<7>[    3.537445] PM: Adding info for No Bus:ptyp1
+<7>[    3.538909] device: 'ptyp2': device_add
+<7>[    3.539215] PM: Adding info for No Bus:ptyp2
+<7>[    3.540527] device: 'ptyp3': device_add
+<7>[    3.540802] PM: Adding info for No Bus:ptyp3
+<7>[    3.542083] device: 'ptyp4': device_add
+<7>[    3.542480] PM: Adding info for No Bus:ptyp4
+<6>[    3.543334] debug: 3001 8 6 
+<6>[    3.543395] bcm_cpufreq_set_speed: mode change: a --> f
+<6>[    3.543457] bcm_cpufreq_set_speed: cpu freq change: 312000 --> 1040000
+<6>[    3.543518] bcm_cpufreq_set_speed: cpu volt change: 1200000 --> 1400000
+<6>[    3.543548] max8986_get_best_voltage_inx: no possible values for min_uV = 1400000 & max_uV = 1400000
+<7>[    3.543914] device: 'ptyp5': device_add
+<7>[    3.544036] PM: Adding info for No Bus:ptyp5
+<7>[    3.544525] device: 'ptyp6': device_add
+<7>[    3.544616] PM: Adding info for No Bus:ptyp6
+<7>[    3.545043] device: 'ptyp7': device_add
+<7>[    3.545135] PM: Adding info for No Bus:ptyp7
+<7>[    3.545562] device: 'ptyp8': device_add
+<7>[    3.545654] PM: Adding info for No Bus:ptyp8
+<7>[    3.546081] device: 'ptyp9': device_add
+<7>[    3.546173] PM: Adding info for No Bus:ptyp9
+<7>[    3.546630] device: 'ptypa': device_add
+<7>[    3.546722] PM: Adding info for No Bus:ptypa
+<7>[    3.547149] device: 'ptypb': device_add
+<7>[    3.547271] PM: Adding info for No Bus:ptypb
+<7>[    3.547729] device: 'ptypc': device_add
+<7>[    3.547821] PM: Adding info for No Bus:ptypc
+<7>[    3.548248] device: 'ptypd': device_add
+<7>[    3.548339] PM: Adding info for No Bus:ptypd
+<7>[    3.548828] device: 'ptype': device_add
+<7>[    3.548919] PM: Adding info for No Bus:ptype
+<7>[    3.549346] device: 'ptypf': device_add
+<7>[    3.549438] PM: Adding info for No Bus:ptypf
+<7>[    3.549896] device: 'ptyq0': device_add
+<7>[    3.549987] PM: Adding info for No Bus:ptyq0
+<7>[    3.550415] device: 'ptyq1': device_add
+<7>[    3.550537] PM: Adding info for No Bus:ptyq1
+<7>[    3.551177] device: 'ptyq2': device_add
+<7>[    3.551330] PM: Adding info for No Bus:ptyq2
+<7>[    3.551849] device: 'ptyq3': device_add
+<7>[    3.551940] PM: Adding info for No Bus:ptyq3
+<7>[    3.552368] device: 'ptyq4': device_add
+<7>[    3.552490] PM: Adding info for No Bus:ptyq4
+<7>[    3.552917] device: 'ptyq5': device_add
+<7>[    3.553009] PM: Adding info for No Bus:ptyq5
+<7>[    3.553436] device: 'ptyq6': device_add
+<7>[    3.553527] PM: Adding info for No Bus:ptyq6
+<7>[    3.554016] device: 'ptyq7': device_add
+<7>[    3.554107] PM: Adding info for No Bus:ptyq7
+<7>[    3.554595] device: 'ptyq8': device_add
+<7>[    3.554748] PM: Adding info for No Bus:ptyq8
+<7>[    3.555206] device: 'ptyq9': device_add
+<7>[    3.555297] PM: Adding info for No Bus:ptyq9
+<7>[    3.555755] device: 'ptyqa': device_add
+<7>[    3.555877] PM: Adding info for No Bus:ptyqa
+<7>[    3.556365] device: 'ptyqb': device_add
+<7>[    3.556488] PM: Adding info for No Bus:ptyqb
+<7>[    3.556945] device: 'ptyqc': device_add
+<7>[    3.557067] PM: Adding info for No Bus:ptyqc
+<7>[    3.557525] device: 'ptyqd': device_add
+<7>[    3.557617] PM: Adding info for No Bus:ptyqd
+<7>[    3.558044] device: 'ptyqe': device_add
+<7>[    3.558166] PM: Adding info for No Bus:ptyqe
+<7>[    3.559082] device: 'ptyqf': device_add
+<7>[    3.559265] PM: Adding info for No Bus:ptyqf
+<7>[    3.559814] device: 'ptyr0': device_add
+<7>[    3.559967] PM: Adding info for No Bus:ptyr0
+<7>[    3.560424] device: 'ptyr1': device_add
+<7>[    3.560546] PM: Adding info for No Bus:ptyr1
+<7>[    3.560974] device: 'ptyr2': device_add
+<7>[    3.561096] PM: Adding info for No Bus:ptyr2
+<7>[    3.561553] device: 'ptyr3': device_add
+<7>[    3.561676] PM: Adding info for No Bus:ptyr3
+<7>[    3.562103] device: 'ptyr4': device_add
+<7>[    3.562255] PM: Adding info for No Bus:ptyr4
+<7>[    3.562683] device: 'ptyr5': device_add
+<7>[    3.562805] PM: Adding info for No Bus:ptyr5
+<7>[    3.563262] device: 'ptyr6': device_add
+<7>[    3.563415] PM: Adding info for No Bus:ptyr6
+<7>[    3.563842] device: 'ptyr7': device_add
+<7>[    3.563964] PM: Adding info for No Bus:ptyr7
+<7>[    3.564422] device: 'ptyr8': device_add
+<7>[    3.564575] PM: Adding info for No Bus:ptyr8
+<7>[    3.565002] device: 'ptyr9': device_add
+<7>[    3.565124] PM: Adding info for No Bus:ptyr9
+<7>[    3.565582] device: 'ptyra': device_add
+<7>[    3.565704] PM: Adding info for No Bus:ptyra
+<7>[    3.566131] device: 'ptyrb': device_add
+<7>[    3.566284] PM: Adding info for No Bus:ptyrb
+<7>[    3.567199] device: 'ptyrc': device_add
+<7>[    3.567413] PM: Adding info for No Bus:ptyrc
+<7>[    3.567901] device: 'ptyrd': device_add
+<7>[    3.568054] PM: Adding info for No Bus:ptyrd
+<7>[    3.568511] device: 'ptyre': device_add
+<7>[    3.568664] PM: Adding info for No Bus:ptyre
+<7>[    3.569152] device: 'ptyrf': device_add
+<7>[    3.569274] PM: Adding info for No Bus:ptyrf
+<7>[    3.569732] device: 'ptys0': device_add
+<7>[    3.569854] PM: Adding info for No Bus:ptys0
+<7>[    3.570281] device: 'ptys1': device_add
+<7>[    3.570434] PM: Adding info for No Bus:ptys1
+<7>[    3.570892] device: 'ptys2': device_add
+<7>[    3.571014] PM: Adding info for No Bus:ptys2
+<7>[    3.571502] device: 'ptys3': device_add
+<7>[    3.571685] PM: Adding info for No Bus:ptys3
+<7>[    3.572143] device: 'ptys4': device_add
+<7>[    3.572296] PM: Adding info for No Bus:ptys4
+<7>[    3.572753] device: 'ptys5': device_add
+<7>[    3.572875] PM: Adding info for No Bus:ptys5
+<7>[    3.573333] device: 'ptys6': device_add
+<7>[    3.573455] PM: Adding info for No Bus:ptys6
+<7>[    3.573944] device: 'ptys7': device_add
+<7>[    3.574096] PM: Adding info for No Bus:ptys7
+<7>[    3.575042] device: 'ptys8': device_add
+<7>[    3.575256] PM: Adding info for No Bus:ptys8
+<7>[    3.575744] device: 'ptys9': device_add
+<7>[    3.575927] PM: Adding info for No Bus:ptys9
+<7>[    3.576416] device: 'ptysa': device_add
+<7>[    3.576538] PM: Adding info for No Bus:ptysa
+<7>[    3.576995] device: 'ptysb': device_add
+<7>[    3.577148] PM: Adding info for No Bus:ptysb
+<7>[    3.577606] device: 'ptysc': device_add
+<7>[    3.577758] PM: Adding info for No Bus:ptysc
+<7>[    3.578216] device: 'ptysd': device_add
+<7>[    3.578369] PM: Adding info for No Bus:ptysd
+<7>[    3.578826] device: 'ptyse': device_add
+<7>[    3.578979] PM: Adding info for No Bus:ptyse
+<7>[    3.579467] device: 'ptysf': device_add
+<7>[    3.579620] PM: Adding info for No Bus:ptysf
+<7>[    3.580078] device: 'ttyp0': device_add
+<7>[    3.580261] PM: Adding info for No Bus:ttyp0
+<7>[    3.580718] device: 'ttyp1': device_add
+<7>[    3.580871] PM: Adding info for No Bus:ttyp1
+<7>[    3.581329] device: 'ttyp2': device_add
+<7>[    3.581481] PM: Adding info for No Bus:ttyp2
+<7>[    3.582000] device: 'ttyp3': device_add
+<7>[    3.582611] PM: Adding info for No Bus:ttyp3
+<7>[    3.583740] device: 'ttyp4': device_add
+<7>[    3.583984] PM: Adding info for No Bus:ttyp4
+<7>[    3.584503] device: 'ttyp5': device_add
+<7>[    3.584655] PM: Adding info for No Bus:ttyp5
+<7>[    3.585113] device: 'ttyp6': device_add
+<7>[    3.585296] PM: Adding info for No Bus:ttyp6
+<7>[    3.585754] device: 'ttyp7': device_add
+<7>[    3.585937] PM: Adding info for No Bus:ttyp7
+<7>[    3.586425] device: 'ttyp8': device_add
+<7>[    3.586578] PM: Adding info for No Bus:ttyp8
+<7>[    3.587036] device: 'ttyp9': device_add
+<7>[    3.587310] PM: Adding info for No Bus:ttyp9
+<7>[    3.587768] device: 'ttypa': device_add
+<7>[    3.587951] PM: Adding info for No Bus:ttypa
+<7>[    3.588409] device: 'ttypb': device_add
+<7>[    3.588592] PM: Adding info for No Bus:ttypb
+<7>[    3.589050] device: 'ttypc': device_add
+<7>[    3.589202] PM: Adding info for No Bus:ttypc
+<7>[    3.589691] device: 'ttypd': device_add
+<7>[    3.590057] PM: Adding info for No Bus:ttypd
+<7>[    3.590576] device: 'ttype': device_add
+<7>[    3.590728] PM: Adding info for No Bus:ttype
+<7>[    3.591217] device: 'ttypf': device_add
+<7>[    3.591369] PM: Adding info for No Bus:ttypf
+<7>[    3.591827] device: 'ttyq0': device_add
+<7>[    3.591979] PM: Adding info for No Bus:ttyq0
+<7>[    3.592437] device: 'ttyq1': device_add
+<7>[    3.592590] PM: Adding info for No Bus:ttyq1
+<7>[    3.593048] device: 'ttyq2': device_add
+<7>[    3.593231] PM: Adding info for No Bus:ttyq2
+<7>[    3.593658] device: 'ttyq3': device_add
+<7>[    3.593841] PM: Adding info for No Bus:ttyq3
+<7>[    3.594299] device: 'ttyq4': device_add
+<7>[    3.594482] PM: Adding info for No Bus:ttyq4
+<7>[    3.594970] device: 'ttyq5': device_add
+<7>[    3.595123] PM: Adding info for No Bus:ttyq5
+<7>[    3.595611] device: 'ttyq6': device_add
+<7>[    3.595764] PM: Adding info for No Bus:ttyq6
+<7>[    3.596252] device: 'ttyq7': device_add
+<7>[    3.596435] PM: Adding info for No Bus:ttyq7
+<7>[    3.596893] device: 'ttyq8': device_add
+<7>[    3.597076] PM: Adding info for No Bus:ttyq8
+<7>[    3.597534] device: 'ttyq9': device_add
+<7>[    3.598022] PM: Adding info for No Bus:ttyq9
+<7>[    3.598571] device: 'ttyqa': device_add
+<7>[    3.598785] PM: Adding info for No Bus:ttyqa
+<7>[    3.599304] device: 'ttyqb': device_add
+<7>[    3.599517] PM: Adding info for No Bus:ttyqb
+<7>[    3.600006] device: 'ttyqc': device_add
+<7>[    3.600158] PM: Adding info for No Bus:ttyqc
+<7>[    3.600646] device: 'ttyqd': device_add
+<7>[    3.600830] PM: Adding info for No Bus:ttyqd
+<7>[    3.601318] device: 'ttyqe': device_add
+<7>[    3.601470] PM: Adding info for No Bus:ttyqe
+<7>[    3.601928] device: 'ttyqf': device_add
+<7>[    3.602111] PM: Adding info for No Bus:ttyqf
+<7>[    3.602569] device: 'ttyr0': device_add
+<7>[    3.602722] PM: Adding info for No Bus:ttyr0
+<7>[    3.603210] device: 'ttyr1': device_add
+<7>[    3.603485] PM: Adding info for No Bus:ttyr1
+<7>[    3.603942] device: 'ttyr2': device_add
+<7>[    3.604125] PM: Adding info for No Bus:ttyr2
+<7>[    3.604614] device: 'ttyr3': device_add
+<7>[    3.604797] PM: Adding info for No Bus:ttyr3
+<7>[    3.605255] device: 'ttyr4': device_add
+<7>[    3.605438] PM: Adding info for No Bus:ttyr4
+<7>[    3.606323] device: 'ttyr5': device_add
+<7>[    3.606567] PM: Adding info for No Bus:ttyr5
+<7>[    3.607086] device: 'ttyr6': device_add
+<7>[    3.607269] PM: Adding info for No Bus:ttyr6
+<7>[    3.607727] device: 'ttyr7': device_add
+<7>[    3.607910] PM: Adding info for No Bus:ttyr7
+<7>[    3.608428] device: 'ttyr8': device_add
+<7>[    3.608642] PM: Adding info for No Bus:ttyr8
+<7>[    3.609130] device: 'ttyr9': device_add
+<7>[    3.609313] PM: Adding info for No Bus:ttyr9
+<7>[    3.609802] device: 'ttyra': device_add
+<7>[    3.609985] PM: Adding info for No Bus:ttyra
+<7>[    3.610473] device: 'ttyrb': device_add
+<7>[    3.610656] PM: Adding info for No Bus:ttyrb
+<7>[    3.611175] device: 'ttyrc': device_add
+<7>[    3.611358] PM: Adding info for No Bus:ttyrc
+<7>[    3.611846] device: 'ttyrd': device_add
+<7>[    3.612030] PM: Adding info for No Bus:ttyrd
+<7>[    3.612518] device: 'ttyre': device_add
+<7>[    3.612731] PM: Adding info for No Bus:ttyre
+<7>[    3.613220] device: 'ttyrf': device_add
+<7>[    3.613830] PM: Adding info for No Bus:ttyrf
+<7>[    3.614410] device: 'ttys0': device_add
+<7>[    3.614654] PM: Adding info for No Bus:ttys0
+<7>[    3.615173] device: 'ttys1': device_add
+<7>[    3.615386] PM: Adding info for No Bus:ttys1
+<7>[    3.615844] device: 'ttys2': device_add
+<7>[    3.616058] PM: Adding info for No Bus:ttys2
+<7>[    3.616577] device: 'ttys3': device_add
+<7>[    3.616760] PM: Adding info for No Bus:ttys3
+<7>[    3.617248] device: 'ttys4': device_add
+<7>[    3.617462] PM: Adding info for No Bus:ttys4
+<7>[    3.617919] device: 'ttys5': device_add
+<7>[    3.618164] PM: Adding info for No Bus:ttys5
+<7>[    3.618652] device: 'ttys6': device_add
+<7>[    3.618865] PM: Adding info for No Bus:ttys6
+<7>[    3.619354] device: 'ttys7': device_add
+<7>[    3.619567] PM: Adding info for No Bus:ttys7
+<7>[    3.620056] device: 'ttys8': device_add
+<7>[    3.620239] PM: Adding info for No Bus:ttys8
+<7>[    3.620758] device: 'ttys9': device_add
+<7>[    3.620971] PM: Adding info for No Bus:ttys9
+<7>[    3.621917] device: 'ttysa': device_add
+<7>[    3.622192] PM: Adding info for No Bus:ttysa
+<7>[    3.622741] device: 'ttysb': device_add
+<7>[    3.622955] PM: Adding info for No Bus:ttysb
+<7>[    3.623443] device: 'ttysc': device_add
+<7>[    3.623718] PM: Adding info for No Bus:ttysc
+<7>[    3.624206] device: 'ttysd': device_add
+<7>[    3.624420] PM: Adding info for No Bus:ttysd
+<7>[    3.624877] device: 'ttyse': device_add
+<7>[    3.625152] PM: Adding info for No Bus:ttyse
+<7>[    3.625610] device: 'ttysf': device_add
+<7>[    3.625823] PM: Adding info for No Bus:ttysf
+<7>[    3.626403] device: 'ptmx': device_add
+<7>[    3.626617] PM: Adding info for No Bus:ptmx
+<7>[    3.627166] bus: 'platform': add driver vibrator
+<7>[    3.627258] bus: 'platform': driver_probe_device: matched device vibrator.0 with driver vibrator
+<7>[    3.627258] bus: 'platform': really_probe: probing driver vibrator with device vibrator.0
+<7>[    3.627319] device class 'timed_output': registering
+<7>[    3.627807] device: 'vibrator': device_add
+<7>[    3.627929] PM: Adding info for No Bus:vibrator
+<7>[    3.628356] driver: 'vibrator.0': driver_bound: bound to device 'vibrator'
+<7>[    3.628387] bus: 'platform': really_probe: bound device vibrator.0 to driver vibrator
+<6>[    3.628875] cache-ops: *** Register device cache-ops **
+<6>[    3.629302] cache-ops: Registration success.
+<7>[    3.629302] device class 'cache-ops': registering
+<7>[    3.629882] device: 'cache-ops': device_add
+<7>[    3.630065] PM: Adding info for No Bus:cache-ops
+<6>[    3.630523]  init :bcm_pwm_driver
+<7>[    3.630554] bus: 'platform': add driver bcm_pwm
+<7>[    3.630615] bus: 'platform': driver_probe_device: matched device bcm_pwm with driver bcm_pwm
+<7>[    3.630645] bus: 'platform': really_probe: probing driver bcm_pwm with device bcm_pwm
+<7>[    3.630706] driver: 'bcm_pwm': driver_bound: bound to device 'bcm_pwm'
+<7>[    3.630737] bus: 'platform': really_probe: bound device bcm_pwm to driver bcm_pwm
+<7>[    3.631195] bus: 'platform': add driver bcm_i2sdai
+<7>[    3.631286] bus: 'platform': driver_probe_device: matched device bcm_i2sdai with driver bcm_i2sdai
+<7>[    3.631286] bus: 'platform': really_probe: probing driver bcm_i2sdai with device bcm_i2sdai
+<6>[    3.631347] bcm_i2s 0 module loaded successfully
+<7>[    3.631347] driver: 'bcm_i2sdai': driver_bound: bound to device 'bcm_i2sdai'
+<7>[    3.631378] bus: 'platform': really_probe: bound device bcm_i2sdai to driver bcm_i2sdai
+<6>[    3.631805] i2s module loaded successfully
+<6>[    3.631835] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+<7>[    3.631927] Registering platform device 'serial8250'. Parent at platform
+<7>[    3.631958] device: 'serial8250': device_add
+<7>[    3.632019] bus: 'platform': add device serial8250
+<7>[    3.632110] PM: Adding info for platform:serial8250
+<7>[    3.632629] device: 'ttyS0': device_add
+<7>[    3.632873] PM: Adding info for No Bus:ttyS0
+<7>[    3.633392] device: 'ttyS1': device_add
+<7>[    3.633636] PM: Adding info for No Bus:ttyS1
+<7>[    3.634094] device: 'ttyS2': device_add
+<7>[    3.634338] PM: Adding info for No Bus:ttyS2
+<7>[    3.634826] device: 'ttyS3': device_add
+<7>[    3.635009] PM: Adding info for No Bus:ttyS3
+<7>[    3.635498] bus: 'platform': add driver serial8250
+<7>[    3.635559] bus: 'platform': driver_probe_device: matched device serial8250.0 with driver serial8250
+<7>[    3.635559] bus: 'platform': really_probe: probing driver serial8250 with device serial8250.0
+<7>[    3.635711] device: 'ttyS0': device_unregister
+<7>[    3.635711] PM: Removing info for No Bus:ttyS0
+<7>[    3.636322] device: 'ttyS0': device_create_release
+<6>[    3.636352] n_val = 78, eq_2_val = 1022, factor = 12
+<6>[    3.636383] n_val = 78, eq_2_val = 1022, factor = 12
+<4>[    3.636413] ttyS0: detected caps 00000100 should be 00000900
+<6>[    3.636444] serial8250.0: ttyS0 at MMIO 0x8820000 (irq = 2) is a 16550A
+<6>[    3.636474] n_val = 340, eq_2_val = 1022, factor = 2
+<6>[    3.638000] n_val = 340, eq_2_val = 1022, factor = 2
+<6>[    3.640869] console [ttyS0] enabled
+<7>[    3.640930] device: 'ttyS0': device_add
+<7>[    3.641204] PM: Adding info for No Bus:ttyS0
+<6>[    3.641784] wake_lock_init name=serial8250.0
+<7>[    3.641815] driver: 'serial8250.0': driver_bound: bound to device 'serial8250'
+<7>[    3.641845] bus: 'platform': really_probe: bound device serial8250.0 to driver serial8250
+<7>[    3.641876] bus: 'platform': driver_probe_device: matched device serial8250.1 with driver serial8250
+<7>[    3.641876] bus: 'platform': really_probe: probing driver serial8250 with device serial8250.1
+<7>[    3.642028] device: 'ttyS1': device_unregister
+<7>[    3.642028] PM: Removing info for No Bus:ttyS1
+<7>[    3.642639] device: 'ttyS1': device_create_release
+<6>[    3.642700] n_val = 78, eq_2_val = 1022, factor = 12
+<6>[    3.642700] n_val = 78, eq_2_val = 1022, factor = 12
+<4>[    3.642761] ttyS1: detected caps 00000100 should be 00000900
+<6>[    3.642761] serial8250.1: ttyS1 at MMIO 0x8821000 (irq = 3) is a 16550A
+<7>[    3.642822] device: 'ttyS1': device_add
+<7>[    3.643035] PM: Adding info for No Bus:ttyS1
+<6>[    3.643524] wake_lock_init name=serial8250.1
+<7>[    3.643554] driver: 'serial8250.1': driver_bound: bound to device 'serial8250'
+<7>[    3.643585] bus: 'platform': really_probe: bound device serial8250.1 to driver serial8250
+<7>[    3.643585] bus: 'platform': driver_probe_device: matched device serial8250.2 with driver serial8250
+<7>[    3.643615] bus: 'platform': really_probe: probing driver serial8250 with device serial8250.2
+<7>[    3.643737] device: 'ttyS2': device_unregister
+<7>[    3.643768] PM: Removing info for No Bus:ttyS2
+<7>[    3.644348] device: 'ttyS2': device_create_release
+<6>[    3.644378] n_val = 78, eq_2_val = 1022, factor = 12
+<6>[    3.644409] n_val = 78, eq_2_val = 1022, factor = 12
+<4>[    3.644439] ttyS2: detected caps 00000100 should be 00000900
+<6>[    3.644470] serial8250.2: ttyS2 at MMIO 0x8822000 (irq = 72) is a 16550A
+<7>[    3.644500] device: 'ttyS2': device_add
+<7>[    3.645172] PM: Adding info for No Bus:ttyS2
+<6>[    3.645751] wake_lock_init name=serial8250.2
+<7>[    3.647216] driver: 'serial8250.2': driver_bound: bound to device 'serial8250'
+<7>[    3.647216] bus: 'platform': really_probe: bound device serial8250.2 to driver serial8250
+<7>[    3.647277] bus: 'platform': driver_probe_device: matched device serial8250 with driver serial8250
+<7>[    3.647308] bus: 'platform': really_probe: probing driver serial8250 with device serial8250
+<7>[    3.647338] driver: 'serial8250': driver_bound: bound to device 'serial8250'
+<7>[    3.647369] bus: 'platform': really_probe: bound device serial8250 to driver serial8250
+<7>[    3.648498] device: '1:0': device_add
+<7>[    3.648620] PM: Adding info for No Bus:1:0
+<7>[    3.649200] device: 'ram0': device_add
+<7>[    3.649444] PM: Adding info for No Bus:ram0
+<7>[    3.650177] device: '1:1': device_add
+<7>[    3.650268] PM: Adding info for No Bus:1:1
+<7>[    3.650756] device: 'ram1': device_add
+<7>[    3.650939] PM: Adding info for No Bus:ram1
+<7>[    3.651641] device: '1:2': device_add
+<7>[    3.651733] PM: Adding info for No Bus:1:2
+<7>[    3.652252] device: 'ram2': device_add
+<7>[    3.652709] PM: Adding info for No Bus:ram2
+<7>[    3.653472] device: '1:3': device_add
+<7>[    3.653564] PM: Adding info for No Bus:1:3
+<7>[    3.654052] device: 'ram3': device_add
+<7>[    3.654235] PM: Adding info for No Bus:ram3
+<7>[    3.654937] device: '1:4': device_add
+<7>[    3.655059] PM: Adding info for No Bus:1:4
+<7>[    3.655548] device: 'ram4': device_add
+<7>[    3.655761] PM: Adding info for No Bus:ram4
+<7>[    3.656433] device: '1:5': device_add
+<7>[    3.656555] PM: Adding info for No Bus:1:5
+<7>[    3.657073] device: 'ram5': device_add
+<7>[    3.657226] PM: Adding info for No Bus:ram5
+<7>[    3.657989] device: '1:6': device_add
+<7>[    3.658081] PM: Adding info for No Bus:1:6
+<7>[    3.658569] device: 'ram6': device_add
+<7>[    3.658721] PM: Adding info for No Bus:ram6
+<7>[    3.659484] device: '1:7': device_add
+<7>[    3.659576] PM: Adding info for No Bus:1:7
+<7>[    3.660125] device: 'ram7': device_add
+<7>[    3.660614] PM: Adding info for No Bus:ram7
+<7>[    3.661499] device: '1:8': device_add
+<7>[    3.661590] PM: Adding info for No Bus:1:8
+<7>[    3.662139] device: 'ram8': device_add
+<7>[    3.662292] PM: Adding info for No Bus:ram8
+<7>[    3.663024] device: '1:9': device_add
+<7>[    3.663116] PM: Adding info for No Bus:1:9
+<7>[    3.663604] device: 'ram9': device_add
+<7>[    3.663757] PM: Adding info for No Bus:ram9
+<7>[    3.664489] device: '1:10': device_add
+<7>[    3.664550] PM: Adding info for No Bus:1:10
+<7>[    3.665069] device: 'ram10': device_add
+<7>[    3.665222] PM: Adding info for No Bus:ram10
+<7>[    3.665954] device: '1:11': device_add
+<7>[    3.666046] PM: Adding info for No Bus:1:11
+<7>[    3.666595] device: 'ram11': device_add
+<7>[    3.666748] PM: Adding info for No Bus:ram11
+<7>[    3.667480] device: '1:12': device_add
+<7>[    3.667541] PM: Adding info for No Bus:1:12
+<7>[    3.668365] device: 'ram12': device_add
+<7>[    3.668548] PM: Adding info for No Bus:ram12
+<7>[    3.669372] device: '1:13': device_add
+<7>[    3.669464] PM: Adding info for No Bus:1:13
+<7>[    3.669982] device: 'ram13': device_add
+<7>[    3.670196] PM: Adding info for No Bus:ram13
+<7>[    3.670928] device: '1:14': device_add
+<7>[    3.671020] PM: Adding info for No Bus:1:14
+<7>[    3.671508] device: 'ram14': device_add
+<7>[    3.671691] PM: Adding info for No Bus:ram14
+<7>[    3.672424] device: '1:15': device_add
+<7>[    3.672515] PM: Adding info for No Bus:1:15
+<7>[    3.673034] device: 'ram15': device_add
+<7>[    3.673248] PM: Adding info for No Bus:ram15
+<6>[    3.673950] brd: module loaded
+<7>[    3.674377] device: '7:0': device_add
+<7>[    3.674499] PM: Adding info for No Bus:7:0
+<7>[    3.675048] device: 'loop0': device_add
+<7>[    3.675262] PM: Adding info for No Bus:loop0
+<7>[    3.676361] device: '7:1': device_add
+<7>[    3.676513] PM: Adding info for No Bus:7:1
+<7>[    3.677093] device: 'loop1': device_add
+<7>[    3.677276] PM: Adding info for No Bus:loop1
+<7>[    3.678009] device: '7:2': device_add
+<7>[    3.678161] PM: Adding info for No Bus:7:2
+<7>[    3.678649] device: 'loop2': device_add
+<7>[    3.678863] PM: Adding info for No Bus:loop2
+<7>[    3.679565] device: '7:3': device_add
+<7>[    3.679687] PM: Adding info for No Bus:7:3
+<7>[    3.680175] device: 'loop3': device_add
+<7>[    3.680358] PM: Adding info for No Bus:loop3
+<7>[    3.681121] device: '7:4': device_add
+<7>[    3.681213] PM: Adding info for No Bus:7:4
+<7>[    3.681762] device: 'loop4': device_add
+<7>[    3.681945] PM: Adding info for No Bus:loop4
+<7>[    3.682708] device: '7:5': device_add
+<7>[    3.682830] PM: Adding info for No Bus:7:5
+<7>[    3.683380] device: 'loop5': device_add
+<7>[    3.683532] PM: Adding info for No Bus:loop5
+<7>[    3.684783] device: '7:6': device_add
+<7>[    3.684875] PM: Adding info for No Bus:7:6
+<7>[    3.685424] device: 'loop6': device_add
+<7>[    3.685607] PM: Adding info for No Bus:loop6
+<7>[    3.686370] device: '7:7': device_add
+<7>[    3.686492] PM: Adding info for No Bus:7:7
+<7>[    3.687011] device: 'loop7': device_add
+<7>[    3.687194] PM: Adding info for No Bus:loop7
+<6>[    3.687957] loop: module loaded
+<7>[    3.687988] bus: 'platform': add driver android_pmem
+<6>[    3.688629] Android kernel panic handler initialized (bind=kpanic)
+<6>[    3.688659] [BMA222] BMA222_init
+<7>[    3.688659] device class 'accelerometer': registering
+<7>[    3.689147] device: 'accelerometer': device_add
+<7>[    3.689361] PM: Adding info for No Bus:accelerometer
+<7>[    3.689849] bus: 'i2c': add driver bma222
+<7>[    3.689910] bus: 'i2c': driver_probe_device: matched device 4-0008 with driver bma222
+<7>[    3.689941] bus: 'i2c': really_probe: probing driver bma222 with device 4-0008
+<6>[    3.689971] [BMA222] bma222_probe
+<6>[    3.689971] [BMA222] [bma222_probe] slave addr = 8
+<6>[    3.690399] [BMA222] Bosch Sensortec Device detected!
+<6>[    3.690399]  [BMA222] registered I2C driver!
+<7>[    3.690460] device: 'bma222': device_add
+<7>[    3.690612] PM: Adding info for No Bus:bma222
+<6>[    3.691101] [BMA222] bma222 device create ok
+<6>[    3.691406] [BMA222] registering lightsensor-level input device
+<7>[    3.691772] device: 'input0': device_add
+<7>[    3.692047] PM: Adding info for No Bus:input0
+<6>[    3.692687] input: accelerometer_sensor as /devices/virtual/input/input0
+<7>[    3.695190] driver: '4-0008': driver_bound: bound to device 'bma222'
+<7>[    3.695220] bus: 'i2c': really_probe: bound device 4-0008 to driver bma222
+<7>[    3.695709] bus: 'i2c': add driver gp2a_prox
+<7>[    3.695770] bus: 'i2c': driver_probe_device: matched device 5-0044 with driver gp2a_prox
+<7>[    3.695800] bus: 'i2c': really_probe: probing driver gp2a_prox with device 5-0044
+<6>[    3.695831] [GP2A] gp2a_prox_probe start 
+<6>[    3.697204] [GP2A] : prox_ctrl_regulator ON 
+<7>[    3.699584] device: 'proximity': device_add
+<7>[    3.699798] PM: Adding info for No Bus:proximity
+<7>[    3.700408] device: 'input1': device_add
+<7>[    3.700683] PM: Adding info for No Bus:input1
+<6>[    3.701232] input: proximity_sensor as /devices/virtual/input/input1
+<6>[    3.701507] wake_lock_init name=prx_wake_lock
+<6>[    3.702636] [GP2A] gpio_get_value of GPIO_PS_OUT is 1
+<6>[    3.702941] [GP2A] gp2a_prox_probe end
+<7>[    3.702941] driver: '5-0044': driver_bound: bound to device 'gp2a_prox'
+<7>[    3.702972] bus: 'i2c': really_probe: bound device 5-0044 to driver gp2a_prox
+<6>[    3.703460] mmc328x driver: init
+<7>[    3.703491] device class 'magnetic': registering
+<7>[    3.703948] device: 'magnetic': device_add
+<7>[    3.704071] PM: Adding info for No Bus:magnetic
+<7>[    3.704498] bus: 'i2c': add driver mmc328x
+<7>[    3.704559] bus: 'i2c': driver_probe_device: matched device 6-0030 with driver mmc328x
+<7>[    3.704559] bus: 'i2c': really_probe: probing driver mmc328x with device 6-0030
+<6>[    3.704589] [MMC328x] [mmc328x_probe]
+<7>[    3.704620] device: 'mmc328x': device_add
+<7>[    3.704803] PM: Adding info for No Bus:mmc328x
+<6>[    3.793029] debug: 3001 8 6 
+<6>[    3.793029] bcm_cpufreq_set_speed: mode change: f --> b
+<6>[    3.793060] bcm_cpufreq_set_speed: cpu freq change: 1040000 --> 624000
+<6>[    3.793090] bcm_cpufreq_set_speed: cpu volt change: 1400000 --> 1260000
+<6>[    3.855529] debug: 3001 8 6 
+<6>[    3.855560] bcm_cpufreq_set_speed: mode change: b --> a
+<6>[    3.855560] bcm_cpufreq_set_speed: cpu freq change: 624000 --> 312000
+<6>[    3.855651] bcm_cpufreq_set_speed: cpu volt change: 1260000 --> 1200000
+<6>[    3.902343] debug: 3001 8 6 
+<6>[    3.902374] bcm_cpufreq_set_speed: mode change: a --> f
+<6>[    3.902435] bcm_cpufreq_set_speed: cpu freq change: 312000 --> 1040000
+<6>[    3.902526] bcm_cpufreq_set_speed: cpu volt change: 1200000 --> 1400000
+<6>[    3.902526] max8986_get_best_voltage_inx: no possible values for min_uV = 1400000 & max_uV = 1400000
+<6>[    3.902893] [MMC328x] [mmc328x_probe] end!!
+<7>[    3.902893] driver: '6-0030': driver_bound: bound to device 'mmc328x'
+<7>[    3.902923] bus: 'i2c': really_probe: bound device 6-0030 to driver mmc328x
+<6>[    3.903442] [MECS] ecompass driver: init
+<7>[    3.903564] device: 'input2': device_add
+<7>[    3.903778] PM: Adding info for No Bus:input2
+<6>[    3.904327] input: magnetic_sensor as /devices/virtual/input/input2
+<7>[    3.904357] device: 'ecompass_ctrl': device_add
+<7>[    3.904571] PM: Adding info for No Bus:ecompass_ctrl
+<6>[    3.905059] [MECS] ecompass driver: end
+<7>[    3.905090] bus: 'platform': add driver max8986-muic
+<7>[    3.905181] bus: 'platform': driver_probe_device: matched device max8986-muic with driver max8986-muic
+<7>[    3.905212] bus: 'platform': really_probe: probing driver max8986-muic with device max8986-muic
+<6>[    3.905242] max8986_muic_probe
+<6>[    3.905731] Enabling MUIC.....
+<6>[    3.909790] max8986_muic_adc_isr: adc_val = 1f
+<7>[    3.909820] driver: 'max8986-muic': driver_bound: bound to device 'max8986-muic'
+<7>[    3.909820] bus: 'platform': really_probe: bound device max8986-muic to driver max8986-muic
+<7>[    3.910369] device class 'mtd': registering
+<7>[    3.910858] device: 'mtd-unmap': device_add
+<7>[    3.910980] PM: Adding info for No Bus:mtd-unmap
+<7>[    3.911499] device: 'mtd-romap': device_add
+<7>[    3.911590] PM: Adding info for No Bus:mtd-romap
+<7>[    3.912109] device: 'mtd-rwmap': device_add
+<7>[    3.912231] PM: Adding info for No Bus:mtd-rwmap
+<7>[    3.912872] bus: 'platform': add driver bcm-nand
+<7>[    3.913543] bus: 'platform': add driver onenand
+<7>[    3.913604] bus: 'platform': driver_probe_device: matched device onenand.0 with driver onenand
+<7>[    3.913635] bus: 'platform': really_probe: probing driver onenand with device onenand.0
+<7>[    3.913665] OneNAND Manufacturer: Samsung (0xec)
+<6>[    3.913696] Muxed OneNAND 512MB 1.8V 16-bit (0x50)
+<6>[    3.913696] OneNAND version = 0x0241
+<7>[    3.913726] Chip support all block unlock
+<7>[    3.913726] Chip has 4KiB pagesize
+<6>[    3.916320] Scanning device for bad blocks
+<4>[    4.098571] onenand_bbt_wait: ecc error = 0xaaaa, controller error 0x0400
+<4>[    4.098602] Bad eraseblock 1523 at 0x17cc0000
+<4>[    4.161010] Bad eraseblock 2047 at 0x1ffc0000
+<3>[    4.161102] mtd: bad character after partition (r)
+<5>[    4.161132] 15 cmdlinepart partitions found on MTD device bcm_umi-nand
+<5>[    4.161132] Creating 15 MTD partitions on "bcm_umi-nand":
+<5>[    4.161163] 0x000000000000-0x000000040000 : "bcm_boot"
+<7>[    4.161254] device: 'mtd0': device_add
+<7>[    4.161499] PM: Adding info for No Bus:mtd0
+<7>[    4.162078] device: 'mtd0ro': device_add
+<7>[    4.162200] PM: Adding info for No Bus:mtd0ro
+<7>[    4.163116] device: '31:0': device_add
+<7>[    4.163238] PM: Adding info for No Bus:31:0
+<7>[    4.163787] device: 'mtdblock0': device_add
+<7>[    4.164031] PM: Adding info for No Bus:mtdblock0
+<5>[    4.164764] 0x000000040000-0x000000240000 : "loke"
+<7>[    4.164825] device: 'mtd1': device_add
+<7>[    4.165069] PM: Adding info for No Bus:mtd1
+<7>[    4.165618] device: 'mtd1ro': device_add
+<7>[    4.165740] PM: Adding info for No Bus:mtd1ro
+<7>[    4.166564] device: '31:1': device_add
+<7>[    4.166717] PM: Adding info for No Bus:31:1
+<7>[    4.167266] device: 'mtdblock1': device_add
+<7>[    4.167449] PM: Adding info for No Bus:mtdblock1
+<5>[    4.168365] 0x000000240000-0x000000440000 : "loke_bk"
+<7>[    4.168426] device: 'mtd2': device_add
+<7>[    4.168640] PM: Adding info for No Bus:mtd2
+<7>[    4.169158] device: 'mtd2ro': device_add
+<7>[    4.169311] PM: Adding info for No Bus:mtd2ro
+<7>[    4.170166] device: '31:2': device_add
+<7>[    4.170349] PM: Adding info for No Bus:31:2
+<7>[    4.170959] device: 'mtdblock2': device_add
+<7>[    4.171142] PM: Adding info for No Bus:mtdblock2
+<5>[    4.171966] 0x000000440000-0x000000480000 : "systemdata"
+<7>[    4.171997] device: 'mtd3': device_add
+<7>[    4.172210] PM: Adding info for No Bus:mtd3
+<7>[    4.172698] device: 'mtd3ro': device_add
+<7>[    4.172882] PM: Adding info for No Bus:mtd3ro
+<7>[    4.173736] device: '31:3': device_add
+<7>[    4.173858] PM: Adding info for No Bus:31:3
+<7>[    4.174438] device: 'mtdblock3': device_add
+<7>[    4.174682] PM: Adding info for No Bus:mtdblock3
+<5>[    4.175506] 0x000000480000-0x000001100000 : "modem"
+<7>[    4.175567] device: 'mtd4': device_add
+<7>[    4.176086] PM: Adding info for No Bus:mtd4
+<7>[    4.176635] device: 'mtd4ro': device_add
+<7>[    4.176818] PM: Adding info for No Bus:mtd4ro
+<7>[    4.177673] device: '31:4': device_add
+<7>[    4.177825] PM: Adding info for No Bus:31:4
+<7>[    4.178405] device: 'mtdblock4': device_add
+<7>[    4.178619] PM: Adding info for No Bus:mtdblock4
+<5>[    4.179443] 0x000001100000-0x000001600000 : "param_lfs"
+<7>[    4.179504] device: 'mtd5': device_add
+<7>[    4.179718] PM: Adding info for No Bus:mtd5
+<7>[    4.180236] device: 'mtd5ro': device_add
+<7>[    4.180358] PM: Adding info for No Bus:mtd5ro
+<7>[    4.181182] device: '31:5': device_add
+<7>[    4.181335] PM: Adding info for No Bus:31:5
+<7>[    4.181945] device: 'mtdblock5': device_add
+<7>[    4.182159] PM: Adding info for No Bus:mtdblock5
+<5>[    4.182983] 0x000001600000-0x000001b00000 : "boot"
+<7>[    4.183044] device: 'mtd6': device_add
+<7>[    4.183288] PM: Adding info for No Bus:mtd6
+<7>[    4.184143] device: 'mtd6ro': device_add
+<7>[    4.184326] PM: Adding info for No Bus:mtd6ro
+<7>[    4.185180] device: '31:6': device_add
+<7>[    4.185302] PM: Adding info for No Bus:31:6
+<7>[    4.185882] device: 'mtdblock6': device_add
+<7>[    4.186126] PM: Adding info for No Bus:mtdblock6
+<5>[    4.186950] 0x000001b00000-0x000002000000 : "boot_backup"
+<7>[    4.187011] device: 'mtd7': device_add
+<7>[    4.187286] PM: Adding info for No Bus:mtd7
+<7>[    4.187774] device: 'mtd7ro': device_add
+<7>[    4.187927] PM: Adding info for No Bus:mtd7ro
+<7>[    4.188751] device: '31:7': device_add
+<7>[    4.188903] PM: Adding info for No Bus:31:7
+<7>[    4.189483] device: 'mtdblock7': device_add
+<7>[    4.189697] PM: Adding info for No Bus:mtdblock7
+<5>[    4.190551] 0x000002000000-0x000010600000 : "system"
+<7>[    4.191223] device: 'mtd8': device_add
+<7>[    4.191772] PM: Adding info for No Bus:mtd8
+<7>[    4.192321] device: 'mtd8ro': device_add
+<7>[    4.192565] PM: Adding info for No Bus:mtd8ro
+<7>[    4.193389] device: '31:8': device_add
+<7>[    4.193511] PM: Adding info for No Bus:31:8
+<7>[    4.194091] device: 'mtdblock8': device_add
+<7>[    4.194335] PM: Adding info for No Bus:mtdblock8
+<5>[    4.195190] 0x000010600000-0x000012e00000 : "cache"
+<7>[    4.195312] device: 'mtd9': device_add
+<7>[    4.195587] PM: Adding info for No Bus:mtd9
+<7>[    4.196075] device: 'mtd9ro': device_add
+<7>[    4.196258] PM: Adding info for No Bus:mtd9ro
+<7>[    4.197052] device: '31:9': device_add
+<7>[    4.197204] PM: Adding info for No Bus:31:9
+<7>[    4.197753] device: 'mtdblock9': device_add
+<7>[    4.197998] PM: Adding info for No Bus:mtdblock9
+<5>[    4.198883] 0x000012e00000-0x00001f340000 : "userdata"
+<7>[    4.199768] device: 'mtd10': device_add
+<7>[    4.200073] PM: Adding info for No Bus:mtd10
+<7>[    4.200683] device: 'mtd10ro': device_add
+<7>[    4.200866] PM: Adding info for No Bus:mtd10ro
+<7>[    4.201629] device: '31:10': device_add
+<7>[    4.201812] PM: Adding info for No Bus:31:10
+<7>[    4.202423] device: 'mtdblock10': device_add
+<7>[    4.202606] PM: Adding info for No Bus:mtdblock10
+<5>[    4.203460] 0x00001f340000-0x00001f380000 : "efs"
+<7>[    4.203491] device: 'mtd11': device_add
+<7>[    4.203735] PM: Adding info for No Bus:mtd11
+<7>[    4.204284] device: 'mtd11ro': device_add
+<7>[    4.204467] PM: Adding info for No Bus:mtd11ro
+<7>[    4.205261] device: '31:11': device_add
+<7>[    4.205383] PM: Adding info for No Bus:31:11
+<7>[    4.205963] device: 'mtdblock11': device_add
+<7>[    4.206146] PM: Adding info for No Bus:mtdblock11
+<5>[    4.206970] 0x00001f380000-0x00001f3c0000 : "sysparm_dep"
+<7>[    4.207031] device: 'mtd12': device_add
+<7>[    4.207611] PM: Adding info for No Bus:mtd12
+<7>[    4.208221] device: 'mtd12ro': device_add
+<7>[    4.208404] PM: Adding info for No Bus:mtd12ro
+<7>[    4.209320] device: '31:12': device_add
+<7>[    4.209442] PM: Adding info for No Bus:31:12
+<7>[    4.210021] device: 'mtdblock12': device_add
+<7>[    4.210266] PM: Adding info for No Bus:mtdblock12
+<5>[    4.211059] 0x00001f3c0000-0x00001f400000 : "umts_cal"
+<7>[    4.211090] device: 'mtd13': device_add
+<7>[    4.211395] PM: Adding info for No Bus:mtd13
+<7>[    4.211944] device: 'mtd13ro': device_add
+<7>[    4.212097] PM: Adding info for No Bus:mtd13ro
+<7>[    4.212951] device: '31:13': device_add
+<7>[    4.213104] PM: Adding info for No Bus:31:13
+<7>[    4.213684] device: 'mtdblock13': device_add
+<7>[    4.213897] PM: Adding info for No Bus:mtdblock13
+<5>[    4.214721] 0x00001f400000-0x00001f500000 : "cal"
+<7>[    4.214782] device: 'mtd14': device_add
+<7>[    4.215393] PM: Adding info for No Bus:mtd14
+<7>[    4.215972] device: 'mtd14ro': device_add
+<7>[    4.216186] PM: Adding info for No Bus:mtd14ro
+<7>[    4.217010] device: '31:14': device_add
+<7>[    4.217163] PM: Adding info for No Bus:31:14
+<7>[    4.217712] device: 'mtdblock14': device_add
+<7>[    4.217926] PM: Adding info for No Bus:mtdblock14
+<7>[    4.218750] driver: 'onenand.0': driver_bound: bound to device 'onenand'
+<7>[    4.218750] bus: 'platform': really_probe: bound device onenand.0 to driver onenand
+<6>[    4.219299] PPP generic driver version 2.4.2
+<7>[    4.219421] device class 'ppp': registering
+<7>[    4.219879] device: 'ppp': device_add
+<7>[    4.220123] PM: Adding info for No Bus:ppp
+<6>[    4.220550] PPP Deflate Compression module registered
+<6>[    4.220581] PPP BSD Compression module registered
+<6>[    4.225646] PPP MPPE Compression module registered
+<6>[    4.225677] NET: Registered protocol family 24
+<6>[    4.225769] tun: Universal TUN/TAP device driver, 1.6
+<6>[    4.225769] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+<7>[    4.225799] device: 'tun': device_add
+<7>[    4.226013] PM: Adding info for No Bus:tun
+<6>[    4.226715] brcm_netconsole: network logging started
+<6>[    4.226745] dwc_otg: version 2.60a 22-NOV-2006
+<6>[    4.226745] lm_driver_register()
+<7>[    4.226776] bus: 'logicmodule': add driver dwc_otg
+<6>[    4.226806] lm_match()
+<7>[    4.226837] bus: 'logicmodule': driver_probe_device: matched device lm-2 with driver dwc_otg
+<7>[    4.226837] bus: 'logicmodule': really_probe: probing driver dwc_otg with device lm-2
+<6>[    4.226867] lm_bus_probe()
+<3>[    4.226898] Debug level= 17
+<3>[    4.226898] dwc_otg lm-2: d0a2be14
+<6>[    4.227325] It is Ok to create charging current work queue...
+<4>[    4.227630] DWC_otg: 1
+<4>[    4.227661] DWC_otg: 2
+<4>[    4.227661] DWC_otg: dwc_otg_core_reset() GRSTCTL=80000000
+<4>[    4.227691] DWC_otg: dwc_otg_core_reset() value to set=80000001
+<4>[    4.227691] DWC_otg: 3
+<4>[    4.332061] DWC_otg: 1
+<4>[    4.332092] DWC_otg: 2
+<4>[    4.332122] DWC_otg: dwc_otg_core_reset() GRSTCTL=80000000
+<4>[    4.332122] DWC_otg: dwc_otg_core_reset() value to set=80000001
+<4>[    4.332122] DWC_otg: 3
+<6>[    4.363128] debug: 3001 8 6 
+<6>[    4.363128] bcm_cpufreq_set_speed: mode change: f --> c
+<6>[    4.363128] bcm_cpufreq_set_speed: cpu freq change: 1040000 --> 754000
+<6>[    4.363189] bcm_cpufreq_set_speed: cpu volt change: 1400000 --> 1300000
+<6>[    4.425872] debug: 3001 8 6 
+<6>[    4.425903] bcm_cpufreq_set_speed: mode change: c --> a
+<6>[    4.425903] bcm_cpufreq_set_speed: cpu freq change: 754000 --> 312000
+<6>[    4.425964] bcm_cpufreq_set_speed: cpu volt change: 1300000 --> 1200000
+<4>[    4.441711] dwc_otg_pcd_init(d0a46bc0)
+<4>[    4.441986] Dedicated Tx FIFOs mode
+<7>[    4.442077] device: 'gadget': device_add
+<7>[    4.442291] PM: Adding info for No Bus:gadget
+<4>[    4.442504] registering handler for irq21
+<6>[    4.442749] DWC_otg: pcd->setup_pkt=0xff0c5000, pcd->setup_pkt_dma_handle=0x9173d000
+<6>[    4.442840] DWC_otg: pcd->status_buf=0xff0c6000, pcd->status_buf_dma_handle=0x917a8000
+<4>[    4.442901] pcd->setup_pkt=0xff0c5000, pcd->setup_pkt_dma_handle=0x9173d000
+<4>[    4.442962] pcd->status_buf=0xff0c6000, pcd->status_buf_dma_handle=0x917a8000
+<7>[    4.443023] driver: 'lm-2': driver_bound: bound to device 'dwc_otg'
+<7>[    4.443084] bus: 'logicmodule': really_probe: bound device lm-2 to driver dwc_otg
+<6>[    4.444488] android init
+<6>[    4.444549] adb android enabled  0
+<7>[    4.444610] bus: 'platform': add driver android_usb
+<7>[    4.444824] bus: 'platform': driver_probe_device: matched device android_usb with driver android_usb
+<7>[    4.444885] bus: 'platform': really_probe: probing driver android_usb with device android_usb
+<6>[    4.445037] android_probe pdata: c080d178
+<7>[    4.445068] driver: 'android_usb': driver_bound: bound to device 'android_usb'
+<7>[    4.445129] bus: 'platform': really_probe: bound device android_usb to driver android_usb
+<7>[    4.446563] device: 'android_adb_enable': device_add
+<7>[    4.447052] PM: Adding info for No Bus:android_adb_enable
+<6>[    4.448333] usb_composite_register
+<7>[    4.448425] device class 'usb_composite': registering
+<4>[    4.449981] registering gadget driver 'android_usb'
+<6>[    4.450103] android_bind 0
+<6>[    4.450134] gether_setup 
+<4>[    4.450775] android_usb gadget: d0a2be74
+<4>[    4.450836] android_usb gadget: d0a2be74
+<7>[    4.450988] device: 'usb0': device_add
+<7>[    4.452362] PM: Adding info for No Bus:usb0
+<7>[    4.462432] device: 'ttyGS0': device_add
+<7>[    4.463134] PM: Adding info for No Bus:ttyGS0
+<6>[    4.463714] debug: 3001 8 6 
+<6>[    4.463745] bcm_cpufreq_set_speed: mode change: a --> f
+<6>[    4.463806] bcm_cpufreq_set_speed: cpu freq change: 312000 --> 1040000
+<6>[    4.463897] bcm_cpufreq_set_speed: cpu volt change: 1200000 --> 1400000
+<6>[    4.463928] max8986_get_best_voltage_inx: no possible values for min_uV = 1400000 & max_uV = 1400000
+<7>[    4.464447] device: 'ttyGS1': device_add
+<7>[    4.464752] PM: Adding info for No Bus:ttyGS1
+<6>[    4.465332] dwc_otg_cil_GetPostConfigCurrentIn2maUnit
+<6>[    4.465362] pmu_get_usb_enum_current
+<6>[    4.465362] pmu_get_usb_enum_current:Power driver not initialized 
+<6>[    4.465393] maxCurrent = 255 ma
+<6>[    4.465393] c_android = c0837224,
+<6>[    4.465423] mass_storage_function_add
+<7>[    4.465423] device class 'switch': registering
+<7>[    4.465942] device: 'usb_mass_storage': device_add
+<7>[    4.466033] PM: Adding info for No Bus:usb_mass_storage
+<6>[    4.466461] wake_lock_init name=usb_mass_storage
+<7>[    4.466491] device: 'usb_mass_storage': device_add
+<7>[    4.466583] PM: Adding info for No Bus:usb_mass_storage
+<7>[    4.467010] device: 'lun0': device_add
+<7>[    4.467071] PM: Adding info for No Bus:lun0
+<6>[    4.469604] android_usb gadget: d0a2bd74
+<7>[    4.469726] device: 'acm': device_add
+<7>[    4.469818] PM: Adding info for No Bus:acm
+<6>[    4.470428] acm ttyGS0: dual speed IN/ep2in OUT/ep2out NOTIFY/ep3in
+<7>[    4.470520] device: 'obex': device_add
+<7>[    4.470611] PM: Adding info for No Bus:obex
+<6>[    4.471099] adb_function_add
+<7>[    4.471130] device: 'android_adb': device_add
+<7>[    4.471343] PM: Adding info for No Bus:android_adb
+<7>[    4.471832] device: 'adb': device_add
+<7>[    4.471923] PM: Adding info for No Bus:adb
+<6>[    4.473083] c_rndis = c0837298
+<6>[    4.473083] rndis_do_config: 
+<6>[    4.473114] rndis_bind_config 
+<7>[    4.473175] device: 'rndis': device_add
+<7>[    4.473236] PM: Adding info for No Bus:rndis
+<6>[    4.473785] rndis_bind
+<6>[    4.473846] dwc_otg_cil_USBInitialized
+<6>[    4.473846] pmu_usb_driver_initialized
+<6>[    4.473876] pmu_usb_start
+<6>[    4.473876] Android_USB_Cable_Connection = 0
+<6>[    4.473876] pmu_usb_start: usb stack is not up
+<6>[    4.473907] USBD] android_start_usb: starting ACM_OBEX_MODE
+<4>[    4.473907] dwc_otg_pcd_pullup
+<6>[    4.473937] dwc_otg_cil_SetPreConfigCurrent
+<6>[    4.473937] pmu_set_charging_current:Power driver not initialized 
+<6>[    4.473937] dwc_otg_cli_stop
+<6>[    4.473968] dwc_otg_pcd_stop() 
+<6>[    4.473968] dwc_otg_pcd_stop() Already Disconnected
+<6>[    4.473968] stop_usb_clk_phy
+<6>[    4.497283] USBD] Android_switch_usb_conf: ACM_OBEX_MODE
+<6>[    4.497314] adb_interface_enable+++
+<6>[    4.497314] adb_interface_enable(false)
+<6>[    4.497344] adb_interface_enable---
+<3>[    4.497344] adb_function_enable+++
+<3>[    4.497344] adb_function_enable(false)
+<3>[    4.497344] adb_function_enable---
+<6>[    4.497375] acm_interface_enable+++
+<6>[    4.497375] acm_interface_enable(true)
+<6>[    4.497375] dummy_stop_cb
+<6>[    4.497406] acm ttyGS0 deactivated
+<6>[    4.497406] acm_interface_enable---
+<3>[    4.497406] acm_function_enable=1 +++
+<3>[    4.497436] acm_function_enable---
+<6>[    4.497436] obex_interface_enable+++
+<6>[    4.497436] obex_interface_enable(false)
+<6>[    4.497467] obex_interface_enable---
+<6>[    4.497467] obex_function_enable = 0
+<6>[    4.497467] USB cable is disconnected.....
+<7>[    4.497528] device: 'usb_connected': device_add
+<7>[    4.497589] PM: Adding info for No Bus:usb_connected
+<7>[    4.498107] device: 'usb_configuration': device_add
+<7>[    4.498168] PM: Adding info for No Bus:usb_configuration
+<6>[    4.498626] android_usb gadget: d0a2becc
+<7>[    4.498687] device: 'event0': device_add
+<7>[    4.498901] PM: Adding info for No Bus:event0
+<7>[    4.499420] device: 'event1': device_add
+<7>[    4.499603] PM: Adding info for No Bus:event1
+<7>[    4.500091] device: 'event2': device_add
+<7>[    4.500244] PM: Adding info for No Bus:event2
+<6>[    4.500701] bcm_keypad_device_driver
+<7>[    4.500732] bus: 'platform': add driver bcm_keypad
+<7>[    4.500793] bus: 'platform': driver_probe_device: matched device bcm_keypad with driver bcm_keypad
+<7>[    4.500823] bus: 'platform': really_probe: probing driver bcm_keypad with device bcm_keypad
+<7>[    4.501068] device: 'input3': device_add
+<7>[    4.501220] PM: Adding info for No Bus:input3
+<6>[    4.501800] input: sec_keypad as /devices/virtual/input/input3
+<7>[    4.501831] device: 'event3': device_add
+<7>[    4.502044] PM: Adding info for No Bus:event3
+<7>[    4.502532] device class 'key': registering
+<7>[    4.503021] device: 'key': device_add
+<7>[    4.503112] PM: Adding info for No Bus:key
+<7>[    4.503540] driver: 'bcm_keypad': driver_bound: bound to device 'bcm_keypad'
+<7>[    4.503540] bus: 'platform': really_probe: bound device bcm_keypad to driver bcm_keypad
+<4>[    4.504150] [TSP] silabs_ts_init
+<7>[    4.504394] bus: 'i2c': add driver silabs-f760
+<7>[    4.504455] bus: 'i2c': driver_probe_device: matched device 3-0020 with driver silabs-f760
+<7>[    4.504486] bus: 'i2c': really_probe: probing driver silabs-f760 with device 3-0020
+<4>[    4.504516] [TSP][silabs_ts_probe] Called
+<4>[    5.108520] [TSP] silabs_ts_probe, 651
+<4>[    5.108947] [TSP][Silabs][silabs_ts_check] Passed Silabs i2c
+<4>[    5.109313] [TSP][Silabs][silabs_ts_check][SlaveAddress : 0x20][VendorID : 0x15] [HW : 0x1] [SW : 0xa]
+<7>[    5.109344] device class 'touch': registering
+<7>[    5.109893] device: 'firmware': device_add
+<7>[    5.110046] PM: Adding info for No Bus:firmware
+<7>[    5.110626] device: 'input4': device_add
+<7>[    5.110839] PM: Adding info for No Bus:input4
+<6>[    5.111389] input: sec_touchscreen as /devices/virtual/input/input4
+<7>[    5.111419] device: 'event4': device_add
+<7>[    5.111633] PM: Adding info for No Bus:event4
+<4>[    5.112121] [TSP] silabs_ts_probe, irq=126
+<4>[    5.113067] [TSP] silabs_ts_probe 21, 1, 10
+<7>[    5.113067] driver: '3-0020': driver_bound: bound to device 'silabs-f760'
+<7>[    5.113098] bus: 'i2c': really_probe: bound device 3-0020 to driver silabs-f760
+<4>[    5.113830] [TSP][Synaptics][synaptics_ts_init] Init Func Called
+<4>[    5.113830] [TSP][Synaptics][synaptics_ts_init] Silabs already detected !!
+<7>[    5.113891] device: 'uinput': device_add
+<7>[    5.114074] PM: Adding info for No Bus:uinput
+<7>[    5.114624] bus: 'platform': add driver max8986-ponkey
+<7>[    5.114715] bus: 'platform': driver_probe_device: matched device max8986-ponkey with driver max8986-ponkey
+<7>[    5.114715] bus: 'platform': really_probe: probing driver max8986-ponkey with device max8986-ponkey
+<6>[    5.114776] max8986-ponkey max8986-ponkey: d0a2be24
+<7>[    5.115356] device: 'input5': device_add
+<7>[    5.115539] PM: Adding info for No Bus:input5
+<6>[    5.116088] input: max8986_ponkey as /devices/virtual/input/input5
+<7>[    5.116149] device: 'event5': device_add
+<7>[    5.116333] PM: Adding info for No Bus:event5
+<6>[    5.118072] max8986-ponkey max8986-ponkey: d0a2be24
+<7>[    5.118103] driver: 'max8986-ponkey': driver_bound: bound to device 'max8986-ponkey'
+<7>[    5.118133] bus: 'platform': really_probe: bound device max8986-ponkey to driver max8986-ponkey
+<7>[    5.118591] bus: 'platform': add driver keyreset
+<7>[    5.119171] bus: 'platform': add driver alarm
+<6>[    5.119689] wake_lock_init name=alarm_rtc
+<7>[    5.119750] device: 'alarm': device_add
+<7>[    5.119934] PM: Adding info for No Bus:alarm
+<6>[    5.120422] wake_lock_init name=alarm
+<7>[    5.120452] bus: 'platform': add driver max8986-rtc
+<7>[    5.120513] bus: 'platform': driver_probe_device: matched device max8986-rtc with driver max8986-rtc
+<7>[    5.120544] bus: 'platform': really_probe: probing driver max8986-rtc with device max8986-rtc
+<6>[    5.120574] max8986_rtc_probe
+<7>[    5.121307] device: 'rtc0': device_add
+<7>[    5.121582] PM: Adding info for No Bus:rtc0
+<7>[    5.122070] Registering platform device 'alarm'. Parent at platform
+<7>[    5.122100] device: 'alarm': device_add
+<7>[    5.122161] bus: 'platform': add device alarm
+<7>[    5.122222] PM: Adding info for platform:alarm
+<7>[    5.122711] bus: 'platform': driver_probe_device: matched device alarm with driver alarm
+<7>[    5.122711] bus: 'platform': really_probe: probing driver alarm with device alarm
+<7>[    5.122772] driver: 'alarm': driver_bound: bound to device 'alarm'
+<7>[    5.122772] bus: 'platform': really_probe: bound device alarm to driver alarm
+<6>[    5.122802] using rtc device, max8986-rtc, for alarms
+<6>[    5.122894] max8986-rtc max8986-rtc: d0a2bd8c
+<6>[    5.174713] max8986_rtc_probe: passed
+<7>[    5.174713] driver: 'max8986-rtc': driver_bound: bound to device 'max8986-rtc'
+<7>[    5.174743] bus: 'platform': really_probe: bound device max8986-rtc to driver max8986-rtc
+<6>[    5.175262] i2c /dev entries driver
+<7>[    5.175292] device class 'i2c-dev': registering
+<7>[    5.175964] bus: 'i2c': add driver dev_driver
+<7>[    5.176483] device: 'i2c-0': device_add
+<7>[    5.176757] PM: Adding info for No Bus:i2c-0
+<7>[    5.177276] device: 'i2c-1': device_add
+<7>[    5.177459] PM: Adding info for No Bus:i2c-1
+<7>[    5.177947] device: 'i2c-2': device_add
+<7>[    5.178100] PM: Adding info for No Bus:i2c-2
+<7>[    5.178619] device: 'i2c-3': device_add
+<7>[    5.178802] PM: Adding info for No Bus:i2c-3
+<7>[    5.179351] device: 'i2c-4': device_add
+<7>[    5.179534] PM: Adding info for No Bus:i2c-4
+<7>[    5.180023] device: 'i2c-5': device_add
+<7>[    5.180236] PM: Adding info for No Bus:i2c-5
+<7>[    5.180755] device: 'i2c-6': device_add
+<7>[    5.181030] PM: Adding info for No Bus:i2c-6
+<7>[    5.181549] bus: 'platform': add driver samsung_pwm_haptic
+<7>[    5.182067] bus: 'platform': add driver watchdog
+<7>[    5.182159] bus: 'platform': driver_probe_device: matched device watchdog.0 with driver watchdog
+<7>[    5.182189] bus: 'platform': really_probe: probing driver watchdog with device watchdog.0
+<7>[    5.182250] device: 'watchdog': device_add
+<7>[    5.182434] PM: Adding info for No Bus:watchdog
+<6>[    5.182952] Watchdog memaddr is 0xf88a0010
+<6>[    5.182983] <6>watchdog: BROADCOM  WDT driver
+<7>[    5.182983] driver: 'watchdog.0': driver_bound: bound to device 'watchdog'
+<7>[    5.183013] bus: 'platform': really_probe: bound device watchdog.0 to driver watchdog
+<6>[    5.184082] device-mapper: uevent: version 1.0.3
+<7>[    5.184478] device: 'device-mapper': device_add
+<7>[    5.184692] PM: Adding info for No Bus:device-mapper
+<6>[    5.185241] device-mapper: ioctl: 4.17.0-ioctl (2010-03-05) initialised: dm-devel@redhat.com
+<6>[    5.187286] cpuidle: using governor ladder
+<6>[    5.189758] cpuidle: using governor menu
+<7>[    5.189788] bus: 'mmc': add driver mmcblk
+<7>[    5.190277] bus: 'platform': add driver bcm_sdhc
+<7>[    5.190338] bus: 'platform': driver_probe_device: matched device bcm_sdhc.1 with driver bcm_sdhc
+<7>[    5.190368] bus: 'platform': really_probe: probing driver bcm_sdhc with device bcm_sdhc.1
+<6>[    5.190490] sdhc[1], regulator: vddo_sdio1, start f8110000 - end f811ffff, irq 27 cd -1 f8110000
+<6>[    5.195892] Clock name bcm_sdhc.1 c080b9f8
+<6>[    5.195892] SDHC:slot[1]=>Host version = 33025 ,Host capabilities =0x69ed34b4
+<6>[    5.196014] wake_lock_init name=bcm_sdhc.1
+<7>[    5.196044] device: 'mmc0': device_add
+<7>[    5.196136] PM: Adding info for No Bus:mmc0
+<6>[    5.196838] SDHCI controller on DASH
+<6>[    5.196868] mmc0: SDHCI controller on [bcm_sdhc.1] using ADMA
+<7>[    5.196899] driver: 'bcm_sdhc.1': driver_bound: bound to device 'bcm_sdhc'
+<7>[    5.196899] bus: 'platform': really_probe: bound device bcm_sdhc.1 to driver bcm_sdhc
+<7>[    5.196929] bus: 'platform': driver_probe_device: matched device bcm_sdhc.3 with driver bcm_sdhc
+<7>[    5.196960] bus: 'platform': really_probe: probing driver bcm_sdhc with device bcm_sdhc.3
+<6>[    5.197052] sdhc[3], regulator: sd_a_vdd, start f8400000 - end f840ffff, irq 57 cd 16 f8400000
+<6>[    5.202423] Clock name bcm_sdhc.3 c080ba60
+<6>[    5.202453] SDHC:slot[3]=>Host version = 33025 ,Host capabilities =0x69ed34b4
+<4>[    5.202636] mmc0: mmc_rescan start
+<4>[    5.202667] mmc0: mmc_rescan rescann is out
+<6>[    5.203155] Configuring card detect
+<6>[    5.203186] wake_lock_init name=bcm_sdhc.3
+<7>[    5.203216] device: 'mmc1': device_add
+<7>[    5.203308] PM: Adding info for No Bus:mmc1
+<4>[    5.204101] bcmsdhc_set_ios-SDHC[3] is disabled by calling syscfg_interface()-->CMD/DATA Line is pull-down
+<6>[    5.205139] SDHCI controller on DASH
+<6>[    5.205169] mmc1: SDHCI controller on [bcm_sdhc.3] using ADMA
+<4>[    5.205169] SDIO3 DS is set to 6mA
+<7>[    5.205200] driver: 'bcm_sdhc.3': driver_bound: bound to device 'bcm_sdhc'
+<7>[    5.205230] bus: 'platform': really_probe: bound device bcm_sdhc.3 to driver bcm_sdhc
+<4>[    5.205444] mmc1: mmc_rescan start
+<6>[    5.205444] bcmsdhc_get_cd: mmc1: SD Card Inserted physically<-->host->card_present:1
+<7>[    5.206756] bus: 'hid': registered
+<7>[    5.206848] device: 'uhid': device_add
+<7>[    5.207275] PM: Adding info for No Bus:uhid
+<4>[    5.208465] bcmsdhc_set_ios-SDHC[3] is enabled by calling syscfg_interface()-->CMD/DATA Line is pull-up
+<4>[    5.208496] SDIO3 DS is set to 6mA
+<7>[    5.209167] device: 'binder': device_add
+<7>[    5.209381] PM: Adding info for No Bus:binder
+<7>[    5.210052] device: 'log_main': device_add
+<7>[    5.210205] PM: Adding info for No Bus:log_main
+<6>[    5.210693] logger: created 256K log 'log_main'
+<7>[    5.210754] device: 'log_events': device_add
+<7>[    5.210906] PM: Adding info for No Bus:log_events
+<6>[    5.211425] logger: created 256K log 'log_events'
+<7>[    5.211456] device: 'log_radio': device_add
+<7>[    5.211608] PM: Adding info for No Bus:log_radio
+<6>[    5.212066] logger: created 256K log 'log_radio'
+<7>[    5.212097] device: 'log_system': device_add
+<7>[    5.212249] PM: Adding info for No Bus:log_system
+<6>[    5.212677] logger: created 256K log 'log_system'
+<7>[    5.212707] bus: 'platform': add driver timed-gpio
+<7>[    5.213378] device: '253:0': device_add
+<7>[    5.213531] PM: Adding info for No Bus:253:0
+<7>[    5.214111] device: 'zram0': device_add
+<7>[    5.214294] PM: Adding info for No Bus:zram0
+<6>[    5.215362] zram: Created 1 device(s) ...
+<7>[    5.215515] bmem_init
+<6>[    5.215515] bmem sw build: 1000 
+<7>[    5.215545] bmem_logic_init addr: 0x92600000
+<6>[    5.215545] <6>Camera Driver: 1.00 (built on Jun  8 2017 20:22:51)
+<6>[    5.215545]  sec 5 nsec 211700442
+<7>[    5.215637] device class 'camera': registering
+<7>[    5.216186] device: 'camera': device_add
+<7>[    5.216430] PM: Adding info for No Bus:camera
+<6>[    5.216979] wake_lock_init name=camera
+<6>[    5.217010] CAMDRV_GetIntfConfig 
+<6>[    5.219024] cam_power_down called ++ 
+<6>[    5.219024] CAMDRV_GetIntfConfig 
+<3>[    5.219024] CAMDRV_SetCamSleep(): Empty
+<6>[    5.219055] CAMDRV_GetIntfSeqSel 
+<6>[    5.219055] cam_sensor_cntrl_seq(): 
+<6>[    5.219055] Sequence Length=4: 
+<6>[    5.219085] GPIO_CNTRL(4), GPIO_SetLow
+<6>[    5.219085] PAUSE - 10 ms
+<6>[    5.241821] [csl_cam_set_clk][Info] : csl_cam_set_clk(): disable_clock: 
+<6>[    5.241851] PAUSE - 1 ms
+<4>[    5.253997] ------------[ cut here ]------------
+<4>[    5.254028] WARNING: at drivers/regulator/core.c:1358 _regulator_disable+0x38/0x118()
+<4>[    5.254058] unbalanced disables for MAX8986_REGL_DLDO3
+<4>[    5.254058] Modules linked in:
+<4>[    5.254119] [<c004e5e0>] (unwind_backtrace+0x0/0x168) from [<c05912dc>] (dump_stack+0x18/0x1c)
+<4>[    5.254180] [<c05912dc>] (dump_stack+0x18/0x1c) from [<c008188c>] (warn_slowpath_common+0x54/0x6c)
+<4>[    5.254211] [<c008188c>] (warn_slowpath_common+0x54/0x6c) from [<c0081948>] (warn_slowpath_fmt+0x38/0x40)
+<4>[    5.254241] [<c0081948>] (warn_slowpath_fmt+0x38/0x40) from [<c02b9c58>] (_regulator_disable+0x38/0x118)
+<4>[    5.254272] [<c02b9c58>] (_regulator_disable+0x38/0x118) from [<c02b9e04>] (regulator_disable+0x24/0x38)
+<4>[    5.254302] [<c02b9e04>] (regulator_disable+0x24/0x38) from [<c039a720>] (cam_power_down+0xac/0x100)
+<4>[    5.254364] [<c039a720>] (cam_power_down+0xac/0x100) from [<c002b678>] (cam_init+0x318/0x3b0)
+<4>[    5.254394] [<c002b678>] (cam_init+0x318/0x3b0) from [<c00473dc>] (do_one_initcall+0x5c/0x1a8)
+<4>[    5.254425] [<c00473dc>] (do_one_initcall+0x5c/0x1a8) from [<c0008a94>] (kernel_init+0xb4/0x168)
+<4>[    5.254455] [<c0008a94>] (kernel_init+0xb4/0x168) from [<c0048eb0>] (kernel_thread_exit+0x0/0x8)
+<4>[    5.254486] ---[ end trace 1b75b31a2719ed1d ]---
+<4>[    5.254486] ------------[ cut here ]------------
+<4>[    5.254516] WARNING: at drivers/regulator/core.c:1358 _regulator_disable+0x38/0x118()
+<4>[    5.254516] unbalanced disables for MAX8986_REGL_HCLDO2
+<4>[    5.254547] Modules linked in:
+<4>[    5.254577] [<c004e5e0>] (unwind_backtrace+0x0/0x168) from [<c05912dc>] (dump_stack+0x18/0x1c)
+<4>[    5.254608] [<c05912dc>] (dump_stack+0x18/0x1c) from [<c008188c>] (warn_slowpath_common+0x54/0x6c)
+<4>[    5.254638] [<c008188c>] (warn_slowpath_common+0x54/0x6c) from [<c0081948>] (warn_slowpath_fmt+0x38/0x40)
+<4>[    5.254669] [<c0081948>] (warn_slowpath_fmt+0x38/0x40) from [<c02b9c58>] (_regulator_disable+0x38/0x118)
+<4>[    5.254669] [<c02b9c58>] (_regulator_disable+0x38/0x118) from [<c02b9e04>] (regulator_disable+0x24/0x38)
+<4>[    5.254699] [<c02b9e04>] (regulator_disable+0x24/0x38) from [<c039a734>] (cam_power_down+0xc0/0x100)
+<4>[    5.254730] [<c039a734>] (cam_power_down+0xc0/0x100) from [<c002b678>] (cam_init+0x318/0x3b0)
+<4>[    5.254760] [<c002b678>] (cam_init+0x318/0x3b0) from [<c00473dc>] (do_one_initcall+0x5c/0x1a8)
+<4>[    5.254791] [<c00473dc>] (do_one_initcall+0x5c/0x1a8) from [<c0008a94>] (kernel_init+0xb4/0x168)
+<4>[    5.254821] [<c0008a94>] (kernel_init+0xb4/0x168) from [<c0048eb0>] (kernel_thread_exit+0x0/0x8)
+<4>[    5.254852] ---[ end trace 1b75b31a2719ed1e ]---
+<4>[    5.254852] ------------[ cut here ]------------
+<4>[    5.254882] WARNING: at drivers/regulator/core.c:1358 _regulator_disable+0x38/0x118()
+<4>[    5.254882] unbalanced disables for MAX8986_REGL_DLDO4
+<4>[    5.254913] Modules linked in:
+<4>[    5.254913] [<c004e5e0>] (unwind_backtrace+0x0/0x168) from [<c05912dc>] (dump_stack+0x18/0x1c)
+<4>[    5.254943] [<c05912dc>] (dump_stack+0x18/0x1c) from [<c008188c>] (warn_slowpath_common+0x54/0x6c)
+<4>[    5.254974] [<c008188c>] (warn_slowpath_common+0x54/0x6c) from [<c0081948>] (warn_slowpath_fmt+0x38/0x40)
+<4>[    5.255004] [<c0081948>] (warn_slowpath_fmt+0x38/0x40) from [<c02b9c58>] (_regulator_disable+0x38/0x118)
+<4>[    5.255035] [<c02b9c58>] (_regulator_disable+0x38/0x118) from [<c02b9e04>] (regulator_disable+0x24/0x38)
+<4>[    5.255065] [<c02b9e04>] (regulator_disable+0x24/0x38) from [<c039a748>] (cam_power_down+0xd4/0x100)
+<4>[    5.255096] [<c039a748>] (cam_power_down+0xd4/0x100) from [<c002b678>] (cam_init+0x318/0x3b0)
+<4>[    5.255126] [<c002b678>] (cam_init+0x318/0x3b0) from [<c00473dc>] (do_one_initcall+0x5c/0x1a8)
+<4>[    5.255157] [<c00473dc>] (do_one_initcall+0x5c/0x1a8) from [<c0008a94>] (kernel_init+0xb4/0x168)
+<4>[    5.255187] [<c0008a94>] (kernel_init+0xb4/0x168) from [<c0048eb0>] (kernel_thread_exit+0x0/0x8)
+<4>[    5.255218] ---[ end trace 1b75b31a2719ed1f ]---
+<6>[    5.255218] cam_power_down called -- 
+<6>[    5.255218] Cam_init end sec 5 nsec 251373293
+<4>[    5.255249] ipcs_module_init:: [ipc]: ipcs_module_init start..
+<4>[    5.255279] ipcs_module_init:: [ipc]: create_workqueue
+<4>[    5.255523] ipcs_module_init:: [ipc]: request_irq
+<4>[    5.255615] ipcs_module_init:: [ipc]: ioremap_nocache IPC_BASE
+<6>[    5.255767] wake_lock_init name=ipc_wake_lock
+<4>[    5.255798] ipcs_module_init:: [ipc]: ipcs_init
+<4>[    5.255798] ipcs_ipc_initialised:: IPC Initialization completed
+<4>[    5.255828] ipcs_init:: IPC_Configured() invoked
+<4>[    5.255828] ipcs_module_init:: readyChkCnt=0 time=0us
+<4>[    5.255859] ipcs_module_init:: [ipc]: ipcs_module_init ok
+<6>[    5.255859] RPC Support 1.00 (BUILD TIME Jun  8 2017 20:22:36)
+<7>[    5.255920] device class 'bcm_rpc': registering
+<7>[    5.256561] device: 'bcm_rpc': device_add
+<7>[    5.256866] PM: Adding info for No Bus:bcm_rpc
+<4>[    5.257385] bcm_fuse_rpc_init_module:: bcm_rpc driver(major 205) installed.
+<6>[    5.269134] IPC_SmFifoWrite Fifo D8401048, Count 1, HighWaterMark 1
+<4>[    5.285247] RPC_Init:: RPC_Init: cpReady:1 sleepcount:1 sleeptime:20ms
+<6>[    5.291290] KRIL Support 1.00 (BUILD TIME Jun  8 2017 20:20:25)
+<7>[    5.291351] device class 'bcm_kril': registering
+<7>[    5.295013] device: 'bcm_kril': device_add
+<7>[    5.295257] PM: Adding info for No Bus:bcm_kril
+<6>[    5.302612] wake_lock_init name=kril_sysrpc_wake_lock
+<6>[    5.315704] IPC_SmFifoWrite Fifo D8400038, Count 1, HighWaterMark 1
+<4>[    5.323272] rpc_mem_alloc:: rpc_mem_alloc: successfully preserved array of perm_pkmem, slot: 0
+<4>[    5.324554] rpc_mem_alloc:: rpc_mem_alloc: successfully preserved array of perm_pkmem, slot: 1
+<4>[    5.325592] mmc_sd_init_card : Card go to idle state
+<6>[    5.326782] wake_lock_init name=kril_rsp_wake_lock
+<6>[    5.326812] wake_lock_init name=kril_notify_wake_lock
+<6>[    5.326812] wake_lock_init name=kril_result_wake_lock
+<4>[    5.329559] bcm_fuse_net_init_module:: bcm_fuse_net_init_module: << 
+<6>[    5.329589] wake_lock_init name=knet_wake_lock
+<4>[    5.329650] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[0] = 0xc0a25f60, dev_ptr 0xcfe5a9a0
+<4>[    5.329650] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.329803] device: 'rmnet0': device_add
+<7>[    5.330169] PM: Adding info for No Bus:rmnet0
+<4>[    5.330871] mmc_sd_init_card : send ACMD41
+<4>[    5.331359] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[1] = 0xc0a25fcc, dev_ptr 0xcfe65ac0
+<4>[    5.331390] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.331512] device: 'rmnet1': device_add
+<7>[    5.331848] PM: Adding info for No Bus:rmnet1
+<4>[    5.332794] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[2] = 0xc0a26038, dev_ptr 0xcfe64e00
+<4>[    5.332824] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.332916] device: 'rmnet2': device_add
+<7>[    5.333282] PM: Adding info for No Bus:rmnet2
+<4>[    5.334075] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[3] = 0xc0a260a4, dev_ptr 0xcfe64140
+<4>[    5.334075] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.334136] device: 'rmnet3': device_add
+<7>[    5.334503] PM: Adding info for No Bus:rmnet3
+<4>[    5.335296] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[4] = 0xc0a26110, dev_ptr 0xcfea9260
+<4>[    5.335327] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.335388] device: 'rmnet4': device_add
+<7>[    5.335723] PM: Adding info for No Bus:rmnet4
+<4>[    5.336486] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[5] = 0xc0a2617c, dev_ptr 0xcfea85a0
+<4>[    5.336517] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.336578] device: 'rmnet5': device_add
+<7>[    5.336914] PM: Adding info for No Bus:rmnet5
+<4>[    5.337707] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[6] = 0xc0a261e8, dev_ptr 0xcfeaf6c0
+<4>[    5.337707] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.337799] device: 'rmnet6': device_add
+<7>[    5.338134] PM: Adding info for No Bus:rmnet6
+<4>[    5.338958] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[7] = 0xc0a26254, dev_ptr 0xcfeaea00
+<4>[    5.338989] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.339050] device: 'rmnet7': device_add
+<7>[    5.339416] PM: Adding info for No Bus:rmnet7
+<4>[    5.340332] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[8] = 0xc0a262c0, dev_ptr 0xcfeb5b20
+<4>[    5.340362] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.340454] device: 'rmnet8': device_add
+<7>[    5.340820] PM: Adding info for No Bus:rmnet8
+<4>[    5.341613] bcm_fuse_net_attach:: bcm_fuse_net_attach: g_net_dev_tbl[9] = 0xc0a2632c, dev_ptr 0xcfeb4e60
+<4>[    5.341644] bcm_fuse_net_attach:: bcm_fuse_net_attach: entry_stat 0x0
+<7>[    5.341705] device: 'rmnet9': device_add
+<7>[    5.342071] PM: Adding info for No Bus:rmnet9
+<7>[    5.342895] device class 'bcm_atc': registering
+<7>[    5.343505] device: 'bcm_atc': device_add
+<7>[    5.343811] PM: Adding info for No Bus:bcm_atc
+<4>[    5.344329] bcm_fuse_kpdp_init_module:: bcm_fuse_kpdp_init_module()
+<6>[    5.344329] KPDP Support 1.00 (BUILD TIME Jun  8 2017 20:20:15)
+<7>[    5.344390] device class 'bcm_kpdp': registering
+<7>[    5.344879] device: 'bcm_kpdp': device_add
+<7>[    5.345092] PM: Adding info for No Bus:bcm_kpdp
+<4>[    5.345581] bcm_fuse_kpdp_init_module:: bcm_kpdp driver(major 212) installed.
+<4>[    5.345611] KPDPCAPI2_ClientInit:: CAPI2_ClientInit clientID:0x44 UnsolEnabled:TRUE
+<6>[    5.345611] wake_lock_init name=kpdp_rsp_wake_lock
+<6>[    5.345642] wake_lock_init name=kpdp_notify_wake_lock
+<4>[    5.345642] KPDP_InitHandler:: Enter!
+<7>[    5.346221] device class 'bcm_vsp': registering
+<7>[    5.346771] device: 'bcm_vsp': device_add
+<7>[    5.347015] PM: Adding info for No Bus:bcm_vsp
+<4>[    5.347503] bcm_fuse_vsp_init_module:: vsp: bcm_vsp driver(major 208) installed
+<4>[    5.347503] VSP_Init:: VSP_Init: client ID[69]
+<7>[    5.347564] device class 'v3d': registering
+<7>[    5.348327] device: 'v3d': device_add
+<7>[    5.348571] PM: Adding info for No Bus:v3d
+<6>[    5.349090] v3d_opt.c[v3d_power:328] v3d_power [1] v3d_inuse[0]
+<6>[    5.349365] v3d_opt.c[v3d_opt_init:1918] v3d IDENT0[0x2443356]
+<7>[    5.349426] bus: 'platform': add driver v3d_dev
+<7>[    5.349517] bus: 'platform': driver_probe_device: matched device v3d_dev with driver v3d_dev
+<7>[    5.349517] bus: 'platform': really_probe: probing driver v3d_dev with device v3d_dev
+<7>[    5.349578] driver: 'v3d_dev': driver_bound: bound to device 'v3d_dev'
+<7>[    5.349578] bus: 'platform': really_probe: bound device v3d_dev to driver v3d_dev
+<6>[    5.358428] v3d_opt.c[v3d_opt_init:1940] v3d bin oom phys[0x91800000], size[0x00300000] cpuaddr[0xff0c7000]
+<6>[    5.366577] v3d_opt.c[v3d_opt_init:1951] v3d bin oom2 phys[0x90800000], size[0x00300000] cpuaddr[0xff3c7000]
+<4>[    5.367156] 
+<4>[    5.367187]  ffff6cae:ModuleInit debg=2 id=(null)
+<7>[    5.367218] Registering platform device 'brcm_alsa_device'. Parent at platform
+<7>[    5.367218] device: 'brcm_alsa_device': device_add
+<7>[    5.367309] bus: 'platform': add device brcm_alsa_device
+<7>[    5.367370] PM: Adding info for platform:brcm_alsa_device
+<6>[    5.367614] v3d_opt.c[v3d_thread:1282] v3d_thread launched
+<4>[    5.368041] 
+<4>[    5.368072]  ffff6cae:device register done 0
+<7>[    5.368103] bus: 'platform': add driver brcm_alsa_device
+<7>[    5.368194] bus: 'platform': driver_probe_device: matched device brcm_alsa_device with driver brcm_alsa_device
+<7>[    5.368255] bus: 'platform': really_probe: probing driver brcm_alsa_device with device brcm_alsa_device
+<4>[    5.368286] 
+<4>[    5.368286]  ffff6cae:DriverProbe 
+<4>[    5.371643] 
+<4>[    5.371643]  PcmDeviceNew : PcmDeviceNew err=0
+<7>[    5.371765] device: 'card0': device_add
+<7>[    5.371917] PM: Adding info for No Bus:card0
+<7>[    5.372558] device: 'pcmC0D0p': device_add
+<7>[    5.372802] PM: Adding info for No Bus:pcmC0D0p
+<7>[    5.373687] device: 'pcmC0D0c': device_add
+<7>[    5.373870] PM: Adding info for No Bus:pcmC0D0c
+<7>[    5.374633] device: 'controlC0': device_add
+<7>[    5.374847] PM: Adding info for No Bus:controlC0
+<7>[    5.375457] driver: 'brcm_alsa_device': driver_bound: bound to device 'brcm_alsa_device'
+<7>[    5.375488] bus: 'platform': really_probe: bound device brcm_alsa_device to driver brcm_alsa_device
+<4>[    5.375946] 
+<4>[    5.375946]  ffff6caf:driver register done 0
+<4>[    5.375976] LaunchAudioCtrlThread KFIFO_SIZE= 252 actual =256
+<4>[    5.375976] LaunchAudioCtrlThread KFIFO_SIZE= 252 actual =256
+<7>[    5.376220] device class 'bcm_alsa_pcg': registering
+<7>[    5.376739] device: 'bcm_alsa_pcg': device_add
+<7>[    5.376983] PM: Adding info for No Bus:bcm_alsa_pcg
+<7>[    5.377502] device class 'bcm_alsa_voip': registering
+<7>[    5.378051] device: 'bcm_alsa_voip': device_add
+<7>[    5.378265] PM: Adding info for No Bus:bcm_alsa_voip
+<7>[    5.378723] device class 'bcm_audio_log': registering
+<7>[    5.379394] device: 'bcm_audio_log': device_add
+<7>[    5.379608] PM: Adding info for No Bus:bcm_audio_log
+<4>[    5.380065] enter CNTIN_KERNEL_ModuleInit()
+<7>[    5.380126] device class 'bcm_cntin': registering
+<4>[    5.380615] mydev = 209715200
+<7>[    5.380676] device: 'bcm_cntin': device_add
+<7>[    5.380889] PM: Adding info for No Bus:bcm_cntin
+<4>[    5.381408] exit sucessfuly CNTIN_KERNEL_ModuleInit()
+<4>[    5.381439] enter GPS_KERNEL_ModuleInit()
+<7>[    5.381469] device class 'bcm_gps': registering
+<4>[    5.381927] mydev = 208666624
+<7>[    5.381958] device: 'bcm_gps': device_add
+<7>[    5.382171] PM: Adding info for No Bus:bcm_gps
+<4>[    5.382629] exit sucessfuly GPS_KERNEL_ModuleInit()
+<7>[    5.382659] device: 'timer': device_add
+<7>[    5.382873] PM: Adding info for No Bus:timer
+<7>[    5.383544] bus: 'platform': add driver soc-audio
+<6>[    5.384155] ALSA device list:
+<6>[    5.384185]   #0: Broadcom ALSA PCM 0
+<6>[    5.384338] GACT probability NOT on
+<6>[    5.384368] Mirror/redirect action on
+<6>[    5.384368] u32 classifier
+<6>[    5.384368]     Actions configured
+<6>[    5.384399] Netfilter messages via NETLINK v0.30.
+<6>[    5.384521] nf_conntrack version 0.5.0 (4105 buckets, 16420 max)
+<6>[    5.385192] ctnetlink v0.93: registering with nfnetlink.
+<6>[    5.390167] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+<6>[    5.390197] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+<7>[    5.390594] device: 'xt_qtaguid': device_add
+<7>[    5.390930] PM: Adding info for No Bus:xt_qtaguid
+<6>[    5.391754] xt_time: kernel timezone is -0000
+<6>[    5.391906] IPv4 over IPv4 tunneling driver
+<7>[    5.391998] device: 'tunl0': device_add
+<7>[    5.392395] PM: Adding info for No Bus:tunl0
+<6>[    5.393218] GRE over IPv4 tunneling driver
+<7>[    5.393310] device: 'gre0': device_add
+<7>[    5.393676] PM: Adding info for No Bus:gre0
+<6>[    5.395324] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    5.395782] arp_tables: (C) 2002 David S. Miller
+<6>[    5.395965] TCP cubic registered
+<6>[    5.395965] Initializing XFRM netlink socket
+<6>[    5.396545] NET: Registered protocol family 10
+<6>[    5.397918] lo: Disabled Privacy Extensions
+<6>[    5.401367] tunl0: Disabled Privacy Extensions
+<6>[    5.402374] Mobile IPv6
+<6>[    5.402587] ip6_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    5.403015] IPv6 over IPv4 tunneling driver
+<7>[    5.403137] device: 'sit0': device_add
+<7>[    5.403564] PM: Adding info for No Bus:sit0
+<6>[    5.404846] sit0: Disabled Privacy Extensions
+<7>[    5.405273] device: 'ip6tnl0': device_add
+<7>[    5.405639] PM: Adding info for No Bus:ip6tnl0
+<6>[    5.406707] ip6tnl0: Disabled Privacy Extensions
+<6>[    5.407073] NET: Registered protocol family 17
+<6>[    5.407165] NET: Registered protocol family 15
+<6>[    5.407226] L2TP core driver, V2.0
+<6>[    5.407257] PPPoL2TP kernel driver, V2.0
+<6>[    5.407257] lib80211: common routines for IEEE802.11 drivers
+<7>[    5.407287] lib80211_crypt: registered algorithm 'NULL'
+<7>[    5.407287] lib80211_crypt: registered algorithm 'WEP'
+<7>[    5.407318] lib80211_crypt: registered algorithm 'CCMP'
+<7>[    5.407318] lib80211_crypt: registered algorithm 'TKIP'
+<6>[    5.407348] arch_late_init
+<7>[    5.407379] Registering platform device 'android_pmem.0'. Parent at platform
+<7>[    5.407379] device: 'android_pmem.0': device_add
+<7>[    5.407440] bus: 'platform': add device android_pmem.0
+<7>[    5.407531] PM: Adding info for platform:android_pmem.0
+<7>[    5.408172] bus: 'platform': driver_probe_device: matched device android_pmem.0 with driver android_pmem
+<7>[    5.408203] bus: 'platform': really_probe: probing driver android_pmem with device android_pmem.0
+<6>[    5.408264] pmem_adsp: 0 init
+<7>[    5.408325] device: 'pmem_adsp': device_add
+<7>[    5.408599] PM: Adding info for No Bus:pmem_adsp
+<7>[    5.409454] driver: 'android_pmem.0': driver_bound: bound to device 'android_pmem'
+<7>[    5.409484] bus: 'platform': really_probe: bound device android_pmem.0 to driver android_pmem
+<4>[    5.409515]  ****** arch_late_init:Success PMEM alloc 0x82342000 ****** 
+<4>[    5.409515] brcm_init_wifi_mem...
+<6>[    5.421386] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+<7>[    5.421447] Registering sysdev class 'vfp'
+<7>[    5.422241] Registering sys device of class 'vfp'
+<7>[    5.422271] Registering sys device 'vfp0'
+<7>[    5.422851] device: 'cpu_dma_latency': device_add
+<7>[    5.423095] PM: Adding info for No Bus:cpu_dma_latency
+<7>[    5.423706] device: 'network_latency': device_add
+<7>[    5.423950] PM: Adding info for No Bus:network_latency
+<7>[    5.424499] device: 'network_throughput': device_add
+<7>[    5.424713] PM: Adding info for No Bus:network_throughput
+<4>[    5.425598] regulator_init_complete: incomplete constraints, leaving MAX8986_REGL_ALDO1 on
+<7>[    5.427215] bus: 'platform': add driver max8986-audio
+<7>[    5.427337] bus: 'platform': driver_probe_device: matched device max8986-audio with driver max8986-audio
+<7>[    5.427337] bus: 'platform': really_probe: probing driver max8986-audio with device max8986-audio
+<6>[    5.427398] Inside max8986_audio_probe
+<6>[    5.427825] Inside max8986_audio_hs_ihf_enable_bypass
+<6>[    5.428436] Inside max8986_audio_set_mixer_input
+<6>[    5.428863] Inside max8986_audio_set_mixer_input
+<6>[    5.429290] Inside max8986_audio_set_mixer_input
+<6>[    5.429443] Inside max8986_set_input_preamp_gain
+<6>[    5.429931] Inside max8986_set_input_preamp_gain
+<6>[    5.430389] Inside max8986_set_input_mode
+<6>[    5.430816] Inside max8986_set_input_mode
+<7>[    5.431243] driver: 'max8986-audio': driver_bound: bound to device 'max8986-audio'
+<7>[    5.431243] bus: 'platform': really_probe: bound device max8986-audio to driver max8986-audio
+<6>[    5.432342] max8986-rtc max8986-rtc: d0a2bf24
+<7>[    5.432373] bus: 'platform': add driver max8986-power
+<7>[    5.432464] bus: 'platform': driver_probe_device: matched device max8986-power with driver max8986-power
+<7>[    5.432464] bus: 'platform': really_probe: probing driver max8986-power with device max8986-power
+<6>[    5.432495] max8986_power_probe
+<6>[    5.432556] wake_lock_init name=jig_on_wl
+<6>[    5.432556] wake_lock_init name=usb_charger_wl
+<6>[    5.432556] wake_lock_init name=temp_adc_wl
+<6>[    5.443664] mmc1: new high speed SDHC card at address 0007
+<7>[    5.443756] device: 'mmc1:0007': device_add
+<7>[    5.444030] bus: 'mmc': add device mmc1:0007
+<7>[    5.444305] PM: Adding info for mmc:mmc1:0007
+<7>[    5.445343] bus: 'mmc': driver_probe_device: matched device mmc1:0007 with driver mmcblk
+<7>[    5.445373] bus: 'mmc': really_probe: probing driver mmcblk with device mmc1:0007
+<6>[    5.445892] mmcblk0: mmc1:0007 SL16G 14.4 GiB 
+<7>[    5.445922] device: '179:0': device_add
+<7>[    5.446075] PM: Adding info for No Bus:179:0
+<7>[    5.446990] device: 'mmcblk0': device_add
+<7>[    5.447265] PM: Adding info for No Bus:mmcblk0
+<6>[    5.448516] check_partition: First Time Success kzalloc mmcblk0
+<6>[    5.448516]  mmcblk0: p1
+<7>[    5.449676] device: 'mmcblk0p1': device_add
+<7>[    5.449951] PM: Adding info for No Bus:mmcblk0p1
+<7>[    5.451965] device: 'battery': device_add
+<7>[    5.452087] PM: Adding info for No Bus:battery
+<7>[    5.452758] driver: 'mmc1:0007': driver_bound: bound to device 'mmcblk'
+<7>[    5.452789] bus: 'mmc': really_probe: bound device mmc1:0007 to driver mmcblk
+<4>[    5.452911] mmc1: mmc_rescan rescann is out
+<6>[    5.453125] wake_lock_init name=power-supply
+<7>[    5.453186] device: 'max8986-battery': device_add
+<7>[    5.453338] PM: Adding info for No Bus:max8986-battery
+<6>[    5.454193] wake_lock_init name=power-supply
+<7>[    5.454254] device: 'max8986-usb': device_add
+<7>[    5.454345] PM: Adding info for No Bus:max8986-usb
+<6>[    5.455291] wake_lock_init name=power-supply
+<6>[    5.456390] max8986_is_jig_inserted: STATUS1:0x3f, 2:0x41
+<6>[    5.457672] current_charger_status: STATUS2:0x41
+<6>[    5.457702] max8986_ctrl_charging:START CHARGING
+<6>[    5.457885] max8986_ctrl_charging:Success
+<6>[    5.458557] max8986_power_probe: success
+<7>[    5.458587] driver: 'max8986-power': driver_bound: bound to device 'max8986-power'
+<7>[    5.458587] bus: 'platform': really_probe: bound device max8986-power to driver max8986-power
+<6>[    5.458679] max8986_irq
+<4>[    5.459320] CamacqCoreInit IN
+<4>[    5.459350] CreateCamacqSensorManager IN
+<4>[    5.459350] CreateCamacqSensor IN
+<4>[    5.459381] InitCamacqSensorInfo IN
+<4>[    5.459381] InitCamacqSensorInfo OUT
+<4>[    5.459381] InitCamacqSensorSettings IN
+<4>[    5.459411] InitCamacqSensorSettings OUT
+<4>[    5.459411] InitCamacqSensorControls IN
+<4>[    5.459472] InitCamacqSensorControls OUT
+<4>[    5.459472] InitCamacqAPIs IN
+<4>[    5.459503] InitCamacqAPIs OUT
+<4>[    5.459503] InitCamacqExtAPIs IN
+<4>[    5.459503] InitCamacqExtAPIs OUT
+<4>[    5.459533] CreateCamacqSensor OUT
+<4>[    5.459533] CreateCamacqSensorManager OUT
+<7>[    5.459564] bus: 'i2c': add driver cami2c
+<7>[    5.459594] bus: 'i2c': driver_probe_device: matched device 1-0020 with driver cami2c
+<7>[    5.459625] bus: 'i2c': really_probe: probing driver cami2c with device 1-0020
+<4>[    5.459655] CamacqCoreProbe IN
+<4>[    5.459686] CamacqCoreProbepClient : d0a46d00, name : cami2c
+<4>[    5.459686] CamacqAPIDetect IN
+<4>[    5.459686] SensorPowerOn IN
+<4>[    5.459686] PowerOn_MAIN IN
+<4>[    5.459716] PowerOn_MAIN OUT
+<4>[    5.459716] SensorPowerOn OUT
+<4>[    5.459716] CamacqAPIDetectDetect cami2c
+<4>[    5.459747] SensorPowerOff IN
+<4>[    5.459747] PowerOff_MAIN IN
+<4>[    5.459747] PowerOff_MAIN OUT
+<4>[    5.459777] SensorPowerOff OUT
+<4>[    5.459777] CamacqAPIDetect OUT
+<4>[    5.459777] CamacqCoreProbe : success to detect sensor !!!!!
+<4>[    5.459777] CamacqCoreProbe OUT
+<7>[    5.459808] driver: '1-0020': driver_bound: bound to device 'cami2c'
+<7>[    5.459808] bus: 'i2c': really_probe: bound device 1-0020 to driver cami2c
+<6>[    5.460571] max8986_muic_isr: intr = 33
+<4>[    5.460723] CamacqCoreInit : iRet[0]
+<6>[    5.460754] ccic_sensor_attach(): 
+<4>[    5.460754] CamacqCoreInit OUT
+<6>[    5.460876] max8986_irq
+<6>[    5.461425] brcm_init_bt_wake( gpio_bt_wake: 39 )
+<6>[    5.461456] wake_lock_init name=BTWAKE
+<6>[    5.461456] wake_lock_init name=HOSTWAKE
+<6>[    5.461456] host wake irq=134 
+<6>[    5.461517] request_irq returned value=0 
+<6>[    5.461700] Freeing init memory: 252K
+<6>[    5.465270] max8986_muic_isr: MAX8986_MUIC_INT2_CHGDETRUN - 1
+<6>[    5.465972] max8986_power_isr:interrupt id = 9
+<6>[    5.466003] max8986_power_isr: Charger Removed
+<4>[    5.466003] [TSP] [2] set_tsp_for_ta_detect!!! state=0
+<3>[    5.468231] init: /recovery.rc: 9: invalid command 'setcon'
+<3>[    5.468322] init: /recovery.rc: 11: invalid option 'seclabel'
+<3>[    5.468444] init: /recovery.rc: 22: invalid command 'load_all_props'
+<3>[    5.468505] init: /recovery.rc: 25: invalid command 'load_system_props'
+<3>[    5.468536] init: /recovery.rc: 28: invalid command 'load_persist_props'
+<3>[    5.468566] init: /recovery.rc: 29: invalid command 'rm'
+<3>[    5.468627] init: /recovery.rc: 46: invalid command 'powerctl'
+<3>[    5.468658] init: /recovery.rc: 47: invalid option 'seclabel'
+<3>[    5.468688] init: /recovery.rc: 48: invalid option 'seclabel'
+<3>[    5.468719] init: /recovery.rc: 50: invalid option 'seclabel'
+<4>[    5.477020] healthd: Unrecognized healthd option: ?
+<3>[    5.477081] healthd: wakealarm_init: timerfd_create failed
+<6>[    5.545257] max8986_irq
+<6>[    5.547576] max8986_muic_isr: intr = 33
+<6>[    5.548706] max8986_muic_isr: MAX8986_MUIC_INT2_CHGDETRUN - 0
+<6>[    5.549041] max8986_muic_chgtype_isr: type = 1
+<6>[    5.549041] max8986_muic_chgtype_isr: USB Plugged in..... 
+<6>[    5.550262] max8986_muic_event:event = 0 param = 1
+<6>[    5.550292] pmu_event_callback: PMU_EVENT_CHARGER_INSERT
+<6>[    5.550292] pmu_usb_start
+<6>[    5.550323] Android_USB_Cable_Connection = 1
+<6>[    5.550323] max8986_muic_get_charger_type:type = 1
+<6>[    5.550354] BC11 charger type = 1 **********************
+<6>[    5.550354] android_force_reenum
+<4>[    5.566894] dwc_otg_pcd_pullup
+<6>[    5.566925] start_usb_clk_phy
+<6>[    5.566925] dwc_otg_cli_start
+<4>[    5.566925] DWC_otg: 1
+<4>[    5.566955] DWC_otg: 2
+<4>[    5.566955] DWC_otg: dwc_otg_core_reset() GRSTCTL=80000000
+<4>[    5.566986] DWC_otg: dwc_otg_core_reset() value to set=80000001
+<4>[    5.566986] DWC_otg: 3
+<6>[    5.607910] max8986_irq
+<6>[    5.699493] Starting resume...
+<6>[    5.699523] DWC_otg: USB RESET
+<6>[    5.699554] Android_cancel_reenum
+<6>[    5.699829] pmu_start_charging: charger_type:1 
+<6>[    5.699829] max8986_get_charging_current:cc = 21,supply_type = 3
+<6>[    5.699890] change_preenum_charging_current
+<6>[    5.699920] pmu_usb_enum_started
+<6>[    5.699920] dwc_otg_cil_SetPreConfigCurrent
+<6>[    5.700134] BC11 charger type = 1 **********************
+<6>[    5.785705] pmu_usb_start: usb stack is UP
+<6>[    5.785736] max8986_get_charging_current:cc = 21,supply_type = 3
+<6>[    5.785797] android_reenum_thread
+<6>[    5.785797] g_need_reenum = FALSE
+<6>[    5.786041] BC11 charger type = 1 **********************
+<6>[    5.794006] max8986_power_isr:interrupt id = 8
+<4>[    5.794036] [TSP] [1] set_tsp_for_ta_detect!!! state=1
+<6>[    5.794799] max8986_power_isr: Charger inserted
+<6>[    5.812774] USB_DT_DEVICE
+<6>[    5.812805] gadget->speed = 3
+<6>[    5.812835] config count= 1
+<6>[    5.816467] Starting resume...
+<6>[    5.816528] DWC_otg: USB RESET
+<6>[    5.816558] Android_cancel_reenum
+<6>[    5.816864] pmu_start_charging: charger_type:1 
+<6>[    5.816864] max8986_get_charging_current:cc = 21,supply_type = 3
+<6>[    5.816955] change_preenum_charging_current
+<6>[    5.816955] pmu_usb_enum_started
+<6>[    5.816955] dwc_otg_cil_SetPreConfigCurrent
+<6>[    5.817169] BC11 charger type = 1 **********************
+<6>[    5.926086] SET_ADDRESS:19
+<6>[    5.949493] USB_DT_DEVICE
+<6>[    5.949523] gadget->speed = 3
+<6>[    5.949523] config count= 1
+<6>[    5.949676] USB_DT_CONFIG
+<6>[    5.949707] c = c0837224,
+<6>[    5.949707] c_current = c0837224
+<6>[    5.949920] USB_DT_CONFIG
+<6>[    5.949920] c = c0837224,
+<6>[    5.949951] c_current = c0837224
+<6>[    5.950195] USB_DT_STRING
+<6>[    5.950286] USB_DT_STRING
+<6>[    5.950408] USB_DT_STRING
+<6>[    5.950531] USB_DT_STRING
+<6>[    5.951110] USB_REQ_SET_CONFIGURATION
+<6>[    5.951110] --ok
+<6>[    5.951141] android_usb gadget: d0a37a34
+<6>[    5.951141] fsg->buf_size = 0x10000
+<6>[    5.951141]  do_set_interface 
+<6>[    5.951202] init acm ctrl interface 1
+<6>[    5.951232] activate acm ttyGS0
+<6>[    5.951232] acm_disconnect
+<6>[    5.951232] acm ttyGS0 serial state 0000
+<6>[    5.951263] dummy_start_cb
+<1>[    5.952758] Completing Delayed Status
+<6>[    5.962554] USB_DT_STRING
+<6>[    5.963256] acm ttyGS0 req21.20 v0000 i0001 l7
+<6>[    5.963287] acm ttyGS0 req21.20 v0000 i0001 l7
+<6>[    5.963317] acm ttyGS0 short resp, len 0
+<6>[    5.964752] max8986_batt_lvl_mon_wq: cnt_func_called=1 init_batt_lvl_interval=1
+<6>[    5.964904] USB_DT_STRING
+<6>[    5.975646] max8986_get_batt_level: batt_lvl read from ADC: 781
+<6>[    5.975677] max8986_get_batt_level_adc:ADC average = 771, batt_level = 781
+<6>[    5.975677] max8986_get_batt_level_adc:battery percentage = 1
+<6>[    5.975708] calculate_batt_level: scaled_level=33 prev_scaled_level = 0
+<6>[    5.975708] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[    5.975738] max8986_get_batt_level_adc: Battery percentage : 33, volt = 3734
+<6>[    6.005371] dwc_otg_cil_SetPostConfigCurrent
+<6>[    6.005401] PMU_MUIC_CHGTYP_USB
+<3>[    6.153045] init: failed that mount s:'pstore', t:'/sys/fs/pstore', f:pstore ,op :(null) (No such file or directory)
+<3>[    6.155456] init: failed that mount s:'adb', t:'/dev/usb-ffs/adb', f:functionfs ,op :uid=2000,gid=2000 (No such device)
+<3>[    6.155883] init: Unable to open persistent property directory /data/property errno: 2
+<6>[    6.172637] adb_enable_open
+<6>[    6.172668] enable_adb: enable = 1
+<4>[    6.172698] dwc_otg_pcd_pullup
+<6>[    6.172698] dwc_otg_cil_SetPreConfigCurrent
+<4>[    6.174346] healthd: Unrecognized healthd option: ?
+<3>[    6.174407] healthd: wakealarm_init: timerfd_create failed
+<6>[    6.184661] dwc_otg_cli_stop
+<6>[    6.184692] dwc_otg_pcd_stop() 
+<6>[    6.184722] USB PCD driver->disconnect
+<6>[    6.184722] composite_disconnect
+<6>[    6.184753] composite: reset config
+<6>[    6.184753] fsg_function_disable
+<6>[    6.184753]  do_set_interface 
+<6>[    6.184783] dummy_stop_cb
+<6>[    6.184814] acm ttyGS0 deactivated
+<4>[    6.184814] BCMLOG: ACM device stopped
+<6>[    6.184814] obex ttyGS1 disable
+<6>[    6.184844] stop_usb_clk_phy
+<4>[    6.184875] DWC_otg: dwc_otg_pcd_ep_dequeue, bad argument
+<6>[    6.207153] USBD] Android_switch_usb_conf: ADB_MSC_MOD
+<6>[    6.207183] adb_interface_enable+++
+<6>[    6.207183] adb_interface_enable(true)
+<6>[    6.207214] adb_interface_enable---
+<3>[    6.207214] adb_function_enable+++
+<3>[    6.207214] adb_function_enable(true)
+<3>[    6.207214] adb_function_enable---
+<6>[    6.207244] acm_interface_enable+++
+<6>[    6.207244] acm_interface_enable(true)
+<6>[    6.207244] dummy_stop_cb
+<6>[    6.207275] acm ttyGS0 deactivated
+<6>[    6.207275] acm_interface_enable---
+<3>[    6.207275] acm_function_enable=1 +++
+<3>[    6.207305] acm_function_enable---
+<6>[    6.207305] obex_interface_enable+++
+<6>[    6.207305] obex_interface_enable(false)
+<6>[    6.207336] obex_interface_enable---
+<6>[    6.207336] obex_function_enable = 0
+<6>[    6.207336] android_force_reenum
+<4>[    6.230712] dwc_otg_pcd_pullup
+<6>[    6.230743] start_usb_clk_phy
+<6>[    6.230743] dwc_otg_cli_start
+<4>[    6.230743] DWC_otg: 1
+<4>[    6.230773] DWC_otg: 2
+<4>[    6.230804] DWC_otg: dwc_otg_core_reset() GRSTCTL=80000000
+<4>[    6.230804] DWC_otg: dwc_otg_core_reset() value to set=80000001
+<4>[    6.230804] DWC_otg: 3
+<6>[    6.392791] Starting resume...
+<6>[    6.392852] DWC_otg: USB RESET
+<6>[    6.392852] Android_cancel_reenum
+<6>[    6.392913] pmu_start_charging: charger_type:1 
+<6>[    6.392913] max8986_get_charging_current:cc = 21,supply_type = 3
+<6>[    6.393005] change_preenum_charging_current
+<6>[    6.393005] pmu_usb_enum_started
+<6>[    6.393005] dwc_otg_cil_SetPreConfigCurrent
+<6>[    6.393493] BC11 charger type = 1 **********************
+<6>[    6.450103] android_reenum_thread
+<6>[    6.450134] g_need_reenum = FALSE
+<4>[    6.452392] healthd: BatteryPresentPath not found
+<6>[    6.452484] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[    6.457305] adb_open
+<6>[    6.483245] wake_lock_init name=event5-1305
+<6>[    6.483551] wake_lock_init name=event4-1305
+<6>[    6.483795] wake_lock_init name=event3-1305
+<6>[    6.484008] wake_lock_init name=event2-1305
+<6>[    6.484252] wake_lock_init name=event1-1305
+<6>[    6.484466] wake_lock_init name=event0-1305
+<6>[    6.488800] yaffs: dev is 32505865 name is "mtdblock9" rw
+<6>[    6.488830] yaffs: passed flags ""
+<7>[    6.488830] yaffs: Attempting MTD mount of 31.9,"mtdblock9"
+<7>[    6.491149] yaffs: restored from checkpoint
+<7>[    6.491546] yaffs_read_super: isCheckpointed 1
+<6>[    6.506164] USB_DT_DEVICE
+<6>[    6.506195] gadget->speed = 3
+<6>[    6.506195] config count= 1
+<6>[    6.509826] Starting resume...
+<6>[    6.509887] DWC_otg: USB RESET
+<6>[    6.509918] Android_cancel_reenum
+<6>[    6.509979] pmu_start_charging: charger_type:1 
+<6>[    6.509979] max8986_get_charging_current:cc = 21,supply_type = 3
+<6>[    6.510040] change_preenum_charging_current
+<6>[    6.510070] pmu_usb_enum_started
+<6>[    6.510070] dwc_otg_cil_SetPreConfigCurrent
+<6>[    6.510528] BC11 charger type = 1 **********************
+<6>[    6.619476] SET_ADDRESS:20
+<6>[    6.642700] USB_DT_DEVICE
+<6>[    6.642730] gadget->speed = 3
+<6>[    6.642730] config count= 1
+<6>[    6.642944] USB_DT_CONFIG
+<6>[    6.642974] c = c0837224,
+<6>[    6.642974] c_current = c0837224
+<6>[    6.643066] USB_DT_CONFIG
+<6>[    6.643066] c = c0837224,
+<6>[    6.643066] c_current = c0837224
+<6>[    6.643188] USB_DT_STRING
+<6>[    6.643310] USB_DT_STRING
+<6>[    6.643432] USB_DT_STRING
+<6>[    6.643554] USB_DT_STRING
+<6>[    6.644012] USB_REQ_SET_CONFIGURATION
+<6>[    6.644012] --ok
+<6>[    6.644042] android_usb gadget: cffd59fc
+<6>[    6.644042] fsg->buf_size = 0x10000
+<6>[    6.644042]  do_set_interface 
+<6>[    6.644134] init acm ctrl interface 1
+<6>[    6.644165] activate acm ttyGS0
+<6>[    6.644165] acm_disconnect
+<6>[    6.644165] acm ttyGS0 serial state 0000
+<6>[    6.644195] dummy_start_cb
+<1>[    6.646362] Completing Delayed Status
+<6>[    6.651031] USB_DT_STRING
+<6>[    6.651550] acm ttyGS0 req21.20 v0000 i0001 l7
+<6>[    6.651580] acm ttyGS0 req21.20 v0000 i0001 l7
+<6>[    6.651611] acm ttyGS0 short resp, len 0
+<6>[    6.652008] USB_DT_STRING
+<6>[    6.691925] dwc_otg_cil_SetPostConfigCurrent
+<6>[    6.691955] PMU_MUIC_CHGTYP_USB
+<6>[    6.728698] yaffs: dev is 32505866 name is "mtdblock10" rw
+<6>[    6.728729] yaffs: passed flags ""
+<7>[    6.728729] yaffs: Attempting MTD mount of 31.10,"mtdblock10"
+<7>[    6.732452] yaffs: restored from checkpoint
+<7>[    6.732818] yaffs_read_super: isCheckpointed 1
+<7>[    6.746612] save exit: isCheckpointed 1
+<6>[    6.747528] yaffs: dev is 32505864 name is "mtdblock8" ro
+<6>[    6.747528] yaffs: passed flags ""
+<7>[    6.747558] yaffs: Attempting MTD mount of 31.8,"mtdblock8"
+<7>[    6.770538] yaffs: restored from checkpoint
+<7>[    6.770599] yaffs_read_super: isCheckpointed 1
+<7>[    6.771331] save exit: isCheckpointed 1
+<6>[    7.452758] binder: 1304:1304 transaction failed 29189, size 0-0
+<7>[    7.981658] save exit: isCheckpointed 1
+<7>[    8.064117] save exit: isCheckpointed 1
+<6>[    8.216827] yaffs: dev is 32505864 name is "mtdblock8" ro
+<6>[    8.216827] yaffs: passed flags ""
+<7>[    8.216857] yaffs: Attempting MTD mount of 31.8,"mtdblock8"
+<7>[    8.240417] yaffs: restored from checkpoint
+<7>[    8.240509] yaffs_read_super: isCheckpointed 1
+<7>[    8.241302] save exit: isCheckpointed 1
+<6>[    8.452972] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[    9.453216] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   10.453521] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   11.453765] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   12.454071] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   13.454376] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   14.454620] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   15.454895] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   16.006439] max8986_batt_lvl_mon_wq: cnt_func_called=1 init_batt_lvl_interval=2
+<6>[   16.007293] max8986_get_batt_level: batt_lvl read from ADC: 783
+<6>[   16.007293] max8986_get_batt_level_adc:ADC average = 773, batt_level = 783
+<6>[   16.007324] max8986_get_batt_level_adc:battery percentage = 33
+<6>[   16.007324] calculate_batt_level: scaled_level=35 prev_scaled_level = 33
+<6>[   16.007354] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[   16.007354] max8986_get_batt_level_adc: Battery percentage : 35, volt = 3743
+<6>[   16.455230] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   17.455474] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   18.455718] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   19.455963] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   20.456207] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   21.456451] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   22.456726] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   23.457031] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   24.457336] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   25.457611] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   26.036285] max8986_batt_lvl_mon_wq: cnt_func_called=1 init_batt_lvl_interval=3
+<6>[   26.037109] max8986_get_batt_level: batt_lvl read from ADC: 785
+<6>[   26.037139] max8986_get_batt_level_adc:ADC average = 775, batt_level = 785
+<6>[   26.037139] max8986_get_batt_level_adc:battery percentage = 35
+<6>[   26.037170] calculate_batt_level: scaled_level=38 prev_scaled_level = 35
+<6>[   26.037170] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[   26.037200] max8986_get_batt_level_adc: Battery percentage : 36, volt = 3752
+<6>[   26.457855] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   27.458099] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   28.458374] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   29.458648] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   30.458892] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   31.459197] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   32.459472] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   33.459747] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   34.459991] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   35.460327] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   36.460571] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   37.460815] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   38.461090] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   39.461364] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   40.461639] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   41.461944] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   42.462188] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   43.462432] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   44.462707] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   45.462921] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   46.463165] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   47.463439] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   48.463745] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   49.463989] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   50.464294] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   51.464538] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   52.464813] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   53.465026] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   54.465332] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   55.465637] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   56.465911] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   57.466156] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   58.466400] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   59.466705] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   60.466979] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   61.467224] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   62.467498] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   63.467773] binder: 1304:1304 transaction failed 29189, size 0-0
+<5>[   64.291564] Vibrator: Set duration: 80ms
+<5>[   64.457000] Vibrator: off
+<6>[   64.467987] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   65.240509] yaffs: dev is 32505866 name is "mtdblock10" rw
+<6>[   65.240509] yaffs: passed flags ""
+<7>[   65.240539] yaffs: Attempting MTD mount of 31.10,"mtdblock10"
+<7>[   65.244018] yaffs: restored from checkpoint
+<7>[   65.244415] yaffs_read_super: isCheckpointed 1
+<5>[   65.244903] Vibrator: Set duration: 80ms
+<5>[   65.410125] Vibrator: off
+<6>[   65.468139] binder: 1304:1304 transaction failed 29189, size 0-0
+<7>[   65.776550] save exit: isCheckpointed 1
+<5>[   65.777221] Vibrator: Set duration: 80ms
+<5>[   65.941375] Vibrator: off
+<6>[   66.287139] yaffs: dev is 32505866 name is "mtdblock10" rw
+<6>[   66.287139] yaffs: passed flags ""
+<7>[   66.287170] yaffs: Attempting MTD mount of 31.10,"mtdblock10"
+<7>[   66.290802] yaffs: restored from checkpoint
+<7>[   66.291198] yaffs_read_super: isCheckpointed 1
+<5>[   66.291687] Vibrator: Set duration: 80ms
+<5>[   66.457000] Vibrator: off
+<6>[   66.468383] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   66.901031] yaffs: dev is 32505864 name is "mtdblock8" rw
+<6>[   66.901062] yaffs: passed flags ""
+<7>[   66.901062] yaffs: Attempting MTD mount of 31.8,"mtdblock8"
+<7>[   66.924774] yaffs: restored from checkpoint
+<7>[   66.925537] yaffs_read_super: isCheckpointed 1
+<5>[   66.926666] Vibrator: Set duration: 80ms
+<5>[   67.089813] Vibrator: off
+<6>[   67.468566] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   68.468841] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   69.468963] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   70.469268] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   71.469573] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   72.469879] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   73.470153] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   74.470489] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   75.470855] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   76.471099] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   77.471435] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   78.471740] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   79.472076] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   80.472381] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   81.472686] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   82.472930] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   83.473266] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   84.473571] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   85.473907] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   86.474182] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   87.474517] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   88.474822] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   89.475219] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   90.475433] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   91.475708] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   92.476013] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   93.476348] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   94.476654] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   95.476867] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   96.477081] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   97.477386] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   98.477691] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[   99.477996] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  100.478271] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  101.478576] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  102.478942] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  103.479248] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  104.479553] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  105.479858] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  106.480102] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  107.480407] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  108.480682] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  109.480957] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  110.481262] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  111.481567] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  112.481872] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  113.482177] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  114.482452] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  115.482757] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  116.483001] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  117.483337] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  118.483642] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  119.483947] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  120.484222] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  121.484527] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  122.484863] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  123.485168] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  124.485504] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  125.485809] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  126.348785] max8986_batt_lvl_mon_wq: cnt_func_called=10 init_batt_lvl_interval=4
+<6>[  126.349609] max8986_get_batt_level: batt_lvl read from ADC: 788
+<6>[  126.349639] max8986_get_batt_level_adc:ADC average = 778, batt_level = 788
+<6>[  126.349639] max8986_get_batt_level_adc:battery percentage = 36
+<6>[  126.349670] calculate_batt_level: scaled_level=43 prev_scaled_level = 36
+<6>[  126.349670] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[  126.349700] max8986_get_batt_level_adc: Battery percentage : 37, volt = 3767
+<6>[  126.486114] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  127.486450] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  128.486755] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  129.487091] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  130.487396] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  131.487670] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  132.487976] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  133.488342] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  134.488525] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  135.488861] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  136.489166] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  137.489471] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  138.489776] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  139.490112] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  140.490356] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  141.490631] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  142.490905] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  143.491210] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  144.491485] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  145.491790] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  146.492095] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  147.492340] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  148.492614] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  149.492919] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  150.493164] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  151.493438] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  152.493713] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  153.494018] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  154.494293] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  155.494567] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  156.494873] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  157.495147] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  158.495422] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  159.495727] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  160.495971] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  161.496185] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  162.496429] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  163.496765] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  164.497009] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  165.497253] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  166.497528] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  167.497772] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  168.497985] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  169.498321] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  170.498535] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  171.498809] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  172.499053] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  173.499298] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  174.499511] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  175.499816] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  176.500091] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  177.500396] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  178.500671] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  179.500976] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  180.501190] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  181.501525] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  182.501861] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  183.502166] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  184.502410] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  185.502685] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  186.503021] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  187.503326] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  188.503662] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  189.503967] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  190.504272] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  191.504577] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  192.504882] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  193.505157] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  194.505432] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  195.505676] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  196.505981] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  197.506286] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  198.506622] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  199.506958] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  200.507232] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  201.507568] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  202.507904] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  203.508209] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  204.508544] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  205.508819] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  206.509155] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  207.509460] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  208.509765] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  209.510101] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  210.510375] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  211.510711] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  212.510955] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  213.511322] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  214.511535] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  215.511779] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  216.512054] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  217.512359] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  218.512725] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  219.513000] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  220.513366] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  221.513610] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  222.513977] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  223.514312] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  224.514587] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  225.514862] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  226.515136] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  226.661224] max8986_batt_lvl_mon_wq: cnt_func_called=10 init_batt_lvl_interval=4
+<6>[  226.662078] max8986_get_batt_level: batt_lvl read from ADC: 792
+<6>[  226.662078] max8986_get_batt_level_adc:ADC average = 782, batt_level = 792
+<6>[  226.662109] max8986_get_batt_level_adc:battery percentage = 37
+<6>[  226.662109] calculate_batt_level: scaled_level=48 prev_scaled_level = 37
+<6>[  226.662139] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[  226.662139] max8986_get_batt_level_adc: Battery percentage : 38, volt = 3785
+<6>[  227.515411] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  228.515716] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  229.516021] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  230.516326] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  231.516601] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  232.516937] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  233.517272] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  234.517608] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  235.517913] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  236.518218] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  237.518524] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  238.518890] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  239.519195] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  240.519531] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  241.519866] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  242.520172] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  243.520477] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  244.520721] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  245.521026] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  246.521362] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  247.521667] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  248.522003] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  249.522338] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  250.522644] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  251.522949] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  252.523223] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  253.523529] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  254.523864] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  255.524139] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  256.524475] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  257.524780] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  258.525085] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  259.525360] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  260.525665] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  261.526000] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  262.526336] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  263.526611] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  264.526916] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  265.527221] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  266.527557] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  267.527801] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  268.528137] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  269.528411] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  270.528717] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  271.528991] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  272.529327] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  273.529632] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  274.529937] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  275.530181] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  276.530426] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  277.530670] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  278.530944] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  279.531219] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  280.531433] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  281.531707] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  282.531951] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  283.532165] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  284.532440] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  285.532684] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  286.532897] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  287.533142] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  288.533386] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  289.533691] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  290.533935] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  291.534179] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  292.534423] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  293.534667] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  294.534912] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  295.535156] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  296.535888] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  297.536163] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  298.536468] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  299.536743] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  300.536987] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  301.537231] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  302.537414] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  303.537658] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  304.537963] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  305.538208] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  306.538452] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  307.538726] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  308.539031] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  309.539337] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  310.539672] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  311.539978] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  312.540283] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  313.540557] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  314.540863] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  315.541137] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  316.541503] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  317.541748] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  318.542083] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  319.542358] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  320.542663] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  321.542938] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  322.543457] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  323.543731] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  324.544036] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  325.544342] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  326.544647] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  326.973724] max8986_batt_lvl_mon_wq: cnt_func_called=10 init_batt_lvl_interval=4
+<6>[  326.974578] max8986_get_batt_level: batt_lvl read from ADC: 795
+<6>[  326.974578] max8986_get_batt_level_adc:ADC average = 785, batt_level = 795
+<6>[  326.974609] max8986_get_batt_level_adc:battery percentage = 38
+<6>[  326.974609] calculate_batt_level: scaled_level=52 prev_scaled_level = 38
+<6>[  326.974639] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[  326.974639] max8986_get_batt_level_adc: Battery percentage : 39, volt = 3800
+<6>[  327.544952] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  328.545318] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  329.545623] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  330.545898] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  331.546203] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  332.546508] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  333.546813] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  334.547119] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  335.547454] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  336.547760] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  337.548065] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  338.548400] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  339.548706] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  340.548980] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  341.549285] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  342.549591] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  343.549896] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  344.550201] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  345.550506] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  346.550811] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  347.551116] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  348.551483] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  349.551788] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  350.552093] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  351.552459] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  352.552734] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  353.553039] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  354.553314] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  355.553649] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  356.553985] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  357.554260] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  358.554565] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  359.554840] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  360.555145] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  361.555419] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  362.555755] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  363.556060] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  364.556396] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  365.556671] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  366.556945] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  367.557250] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  368.557586] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  369.557891] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  370.558166] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  371.558502] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  372.558776] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  373.559082] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  374.559387] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  375.559722] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  376.560028] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  377.560333] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  378.560699] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  379.561035] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  380.561340] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  381.561645] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  382.561950] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  383.562286] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  384.562622] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  385.562927] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  386.563201] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  387.563507] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  388.563842] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  389.564086] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  390.564392] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  391.564697] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  392.565002] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  393.565307] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  394.565643] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  395.565917] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  396.566223] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  397.566528] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  398.566864] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  399.567138] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  400.567474] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  401.567749] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  402.568084] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  403.568389] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  404.568664] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  405.568939] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  406.569183] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  407.569549] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  408.569763] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  409.570037] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  410.570281] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  411.570556] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  412.570770] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  413.571044] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  414.571319] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  415.571594] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  416.571807] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  417.572021] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  418.572326] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  419.572662] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  420.572937] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  421.573181] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  422.573455] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  423.573638] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  424.573852] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  425.574035] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  426.574279] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  427.286285] max8986_batt_lvl_mon_wq: cnt_func_called=10 init_batt_lvl_interval=4
+<6>[  427.287109] max8986_get_batt_level: batt_lvl read from ADC: 799
+<6>[  427.287109] max8986_get_batt_level_adc:ADC average = 789, batt_level = 799
+<6>[  427.287139] max8986_get_batt_level_adc:battery percentage = 39
+<6>[  427.287139] calculate_batt_level: scaled_level=56 prev_scaled_level = 39
+<6>[  427.287170] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[  427.287170] max8986_get_batt_level_adc: Battery percentage : 40, volt = 3819
+<6>[  427.574523] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  428.574768] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  429.574981] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  430.575225] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  431.575469] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  432.575744] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  433.575988] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  434.576232] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  435.576477] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  436.576690] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  437.576965] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  438.577270] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  439.577636] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  440.577911] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  441.578247] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  442.578521] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  443.578826] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  444.579132] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  445.579437] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  446.579681] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  447.579956] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  448.580261] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  449.580505] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  450.580810] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  451.581054] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  452.581329] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  453.581634] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  454.581939] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  455.582244] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  456.582550] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  457.582824] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  458.583099] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  459.583404] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  460.583709] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  461.584045] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  462.584350] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  463.584625] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  464.584930] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  465.585235] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  466.585540] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  467.585815] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  468.586059] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  469.586395] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  470.586700] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  471.586975] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  472.587310] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  473.587615] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  474.587921] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  475.588256] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  476.588562] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  477.588806] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  478.589172] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  479.589538] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  480.589874] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  481.590209] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  482.590484] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  483.590820] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  484.591125] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  485.591461] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  486.591796] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  487.592102] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  488.592468] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  489.592803] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  490.593017] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  491.593322] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  492.593627] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  493.593963] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  494.594268] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  495.594573] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  496.594879] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  497.595123] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  498.595428] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  499.595733] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  500.596008] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  501.596313] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  502.596618] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  503.596954] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  504.597290] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  505.597625] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  506.597991] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  507.598297] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  508.598602] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  509.598937] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  510.599243] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  511.599578] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  512.599914] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  513.600219] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  514.600524] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  515.600708] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  516.600952] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  517.601226] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  518.601470] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  519.601776] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  520.602081] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  521.602355] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  522.602630] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  523.602905] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  524.603210] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  525.603485] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  526.603759] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  527.598785] max8986_batt_lvl_mon_wq: cnt_func_called=10 init_batt_lvl_interval=4
+<6>[  527.599609] max8986_get_batt_level: batt_lvl read from ADC: 803
+<6>[  527.599609] max8986_get_batt_level_adc:ADC average = 793, batt_level = 803
+<6>[  527.599639] max8986_get_batt_level_adc:battery percentage = 40
+<6>[  527.599639] calculate_batt_level: scaled_level=60 prev_scaled_level = 40
+<6>[  527.599670] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[  527.599670] max8986_get_batt_level_adc: Battery percentage : 41, volt = 3838
+<6>[  527.604095] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  528.604339] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  529.604705] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  530.605010] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  531.605316] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  532.605621] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  533.605895] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  534.606262] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  535.606597] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  536.606872] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  537.607116] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  538.607482] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  539.607696] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  540.608062] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  541.608276] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  542.608642] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  543.608886] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  544.609283] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  545.609497] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  546.609771] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  547.610046] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  548.610351] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  549.610687] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  550.610961] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  551.611236] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  552.611511] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  553.611755] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  554.612060] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  555.612396] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  556.612762] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  557.613128] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  558.613372] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  559.613647] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  560.613983] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  561.614318] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  562.614715] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  563.615020] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  564.615325] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  565.615600] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  566.615844] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  567.616119] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  568.616485] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  569.616790] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  570.617004] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  571.617279] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  572.617614] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  573.617889] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  574.618133] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  575.618377] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  576.618682] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  577.618988] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  578.619201] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  579.619476] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  580.619781] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  581.620117] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  582.620391] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  583.620666] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  584.620941] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  585.621215] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  586.621490] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  587.621765] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  588.622039] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  589.622344] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  590.622619] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  591.622863] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  592.623138] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  593.623413] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  594.623718] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  595.623992] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  596.624237] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  597.624511] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  598.624755] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  599.625030] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  600.625335] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  601.625610] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  602.625885] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  603.626159] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  604.626464] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  605.626739] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  606.627044] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  607.627319] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  608.627593] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  609.627929] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  610.628204] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  611.628509] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  612.628814] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  613.629089] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  614.629394] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  615.629699] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  616.630004] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  617.630279] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  618.630554] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  619.630859] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  620.631164] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  621.631439] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  622.631744] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  623.632019] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  624.632324] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  625.632598] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  626.632873] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  627.633087] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  627.911285] max8986_batt_lvl_mon_wq: cnt_func_called=10 init_batt_lvl_interval=4
+<6>[  627.912109] max8986_get_batt_level: batt_lvl read from ADC: 807
+<6>[  627.912109] max8986_get_batt_level_adc:ADC average = 797, batt_level = 807
+<6>[  627.912139] max8986_get_batt_level_adc:battery percentage = 41
+<6>[  627.912139] calculate_batt_level: scaled_level=64 prev_scaled_level = 41
+<6>[  627.912170] max8986_get_batt_level_adc:max8986_power->charging_status = 1
+<6>[  627.912170] max8986_get_batt_level_adc: Battery percentage : 42, volt = 3858
+<6>[  628.633361] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  629.633636] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  630.633941] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  631.634185] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  632.634490] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  633.634796] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  634.635070] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  635.635406] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  636.635711] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  637.636016] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  638.636352] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  639.636688] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  640.637420] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  641.637725] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  642.638031] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  643.638366] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  644.638702] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  645.638946] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  646.639251] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  647.639556] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  648.639862] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  649.640197] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  650.640502] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  651.640808] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  652.641113] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  653.641754] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  654.642059] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  655.642333] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  656.642608] binder: 1304:1304 transaction failed 29189, size 0-0
+<5>[  656.914672] Vibrator: Set duration: 80ms
+<5>[  657.074188] Vibrator: off
+<6>[  657.642944] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  658.643280] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  659.643615] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  660.643920] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  661.644226] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  662.644531] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  663.644836] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  664.645141] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  665.645446] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  666.645751] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  667.646057] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  668.646362] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  669.646697] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  670.646972] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  671.647247] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  672.647521] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  673.647827] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  674.648101] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  675.648406] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  676.648651] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  677.648895] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  678.649230] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  679.649505] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  680.649841] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  681.650146] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  682.650390] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  683.650665] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  684.650939] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  685.651214] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  686.651519] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  687.651824] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  688.652069] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  689.652374] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  690.653106] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  691.653381] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  692.653656] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  693.653961] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  694.654205] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  695.654418] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  696.654724] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  697.654937] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  698.655242] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  699.655517] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  700.655761] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  701.656036] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  702.656372] binder: 1304:1304 transaction failed 29189, size 0-0
+<6>[  703.656646] binder: 1304:1304 transaction failed 29189, size 0-0

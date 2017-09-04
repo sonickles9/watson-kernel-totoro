@@ -1,0 +1,51 @@
+Watson Kernel for Totoro (SAMSUNG Galaxy Youg GT-S5360)
+(The first ever to support MTD on Gingerbread!!!)
+
+by sonickles9
+
+This is a kernel I developed for my Galaxy Y with the following things in mind:
+>Improve it's performance
+>Be universally compatible
+>Exeriment as much as I can (thanks robcore!!!!)
+But since I lost my device, I cannot continue developing it. I am then releasing the source code (sorry, no flashable stuff, I deleted it long ago :p) for you to continue(?) my work if your heart so desires.
+
+The repository contains:
+
+-A copy of dsixda(is that how it is spelled? I forgot :p)'s Android Image Kitchen for Linux
+-The ramdisks:
+->Gingerbread version (MTD-only, compatible with TouchWiz as far as I tested, got little success with CM7)
+->ICS version (MTD-only, compatible with CM9; I tried to mitigate the bugs as much as possible, but this is my first project and I had little success, although you may probably see some graphical improvements)
+->KitKat version (MTD-only, compatible with CM11; again, I tried to make the device as snappy as I could, and you may probably see some improvement)
+-The source code (it is universal and is the same code for all 3 versions, just pick the right script for your build target)
+
+Instructions:
+
+1. Get yourself a cross-compiler for ARM (Samsung recommends CodeSourcery G++ Lite 2011(?), but I compiled it just fine with Linaro GCC 4.6.2 so I recommend it)
+2. Edit the three automate*.sh scripts on the source folder and replace the path in "CROSS_COMPILE=[]" with the path for your cross-compiler
+2.1. Optionally, you can change the number of jobs in the script (take note of your processor, all the instructions are in the script)
+2.2. Optionally, you can plug your device to your PC to access ADB, the automation scripts require adb root access (most custom kernels will have it) and TWRP. Automatic flashing is NOT supported on CWM, but you may be able to flash it manually because the scripts push a copy of the kernel to the root of your sdcard.
+3. Navigate to the source folder and run, through the command line, either automate.sh (for a KitKat kernel), or automate-ics.sh (for an ICS kernel), or automate-gb.sh (for a TW kernel)
+3.1. If you didn't plug your device, after building the zip file and the tar file the script will freeze. Press Ctrl+C to stop the script.
+3.2. If you did plug your device, and TWRP is installed, it will reboot automatically to recovery and flash automatically, so you can just sit and watch your device do the work.
+4. The output is located at the watson-bcm21553-img/zip folder (for KK), or at the watson-bcm21553-img-ics/zip folder (for CM9), or at the watson-bcm21553-img-gb/zip folder (for TW)
+
+This kernel features:
+-OC up to 1040MHz (It's questionable even today if the bcm21553 OCs really work, but I tried hacking a way that works very similarly to MarocOS's one, maybe even better. Be warned though, the source around it is messy)
+-GPU hacks for performance (Again, even I don't know if they do work, probably the values are just there to be seen, I'm not sure. I do know though that increasing the CPU speed will much likely increase the speed of V3D too)
+-DVFS disabled (I found out DVFS is mostly the culpirit in the "832MHz crisis" where the kernel would forcefully scale itself to 832MHz, so I eliminated any reference to it in kernel code. Apparently DVFS on the processor is only available under the bcm21553 governor, but it is present on the other drivers as well. The idea for disabling DVFS came from my friend @robcore)
+-A few additional governors and a buggy interactive governor (which is the default xd)
+-MTD support for Gingerbread (Thanks Samsung Epic 4G! Although it only works on TouchWiz (I tried it with SL v2 and v2.1 and it works, but under NougatME(CM7) I got no success and loads of segfaults), it works ALMOST perfectly. See bugs for details )
+-Some scraped source code from Samsung's FSR I found on the internet (barely compilable, though)
+
+Bugs:
+>Gingerbread version:
+-IMEI won't appear in the Status screen, I also faced problems with non-working radio for calls. Data works just fine, but calling and receiving calls is unavailable. I believe it is EFS-related. My suggestion is backing up the EFS partition's file structure, then converting it to MTD, then restoring the backup.
+-TWRP will crash and panic when exiting, a workaround is force rebooting
+
+>ICS version:
+-TWRP will crash and panic when exiting (I believe fixing it here will fix the bug above too)
+
+>KitKat version:
+-Flashing images fail randomly, you may also be unable to reboot normally if you do so. I tried addressing this but I couldn't get anywhere.
+
+

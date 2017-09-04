@@ -1,0 +1,5 @@
+/boot       mtd       boot                                    flags=backup=1
+/cache      yaffs2    cache                                   flags=backup=1
+/data       yaffs2    userdata                                flags=backup=1
+/system     yaffs2    system                                  flags=backup=1
+/sdcard     vfat      /dev/block/mmcblk0p1 /dev/block/mmcblk0 flags=display="Micro SDcard";storage;wipeingui;removable
