@@ -2,6 +2,13 @@
 
 # automation script for a MTD-compatible Touchwiz kernel
 
+# the file hierarchy necessary for correct operation MUST be as specified:
+
+#./ (the folder where the folder for the source is located
+#./watson-kernel-bcm21553-img-gb (the folder where the KitKat boot.img, update.zip structure and ramdisk will be
+#./watson-kernel-bcm21553-src (the folder for the source)
+#./AIK-Linux (dsixda's kitchen)
+
 export ARCH=arm
 # put here the path for your cross-compiler: I recommend Linaro or older (because those are the ones I worked with)
 export CROSS_COMPILE=~/Android/kernel/toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-
